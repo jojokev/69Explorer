@@ -10,6 +10,17 @@ import Swal from 'sweetalert2';
 import 'bootstrap';
 // ***
 
+
+document.addEventListener('shown.bs.tab', function (event) {
+  // Actualiza todos los carousels
+  document.querySelectorAll('.mainCarousel').forEach(function (carouselEl) {
+    if (carouselEl.swiper) {
+      carouselEl.swiper.update();
+    }
+  });
+});
+
+
 // swiper
 var swiper = new Swiper(".sliderReviews", {
   allowTouchMove: false, 
@@ -25,6 +36,34 @@ var swiper = new Swiper(".sliderReviews", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+var swiperMainCarousel = new Swiper(".mainCarousel", {
+  preloadImages: true,
+  watchSlidesProgress: true,
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 5,
+    },
+    700: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true, 
+  },
+});
+
 var swipermain = new Swiper(".mySwiper1", {
   slidesPerView: 2,
   spaceBetween: 10,

@@ -1,36 +1,36 @@
-<div class="pt-5">
-  <div class="container-xxl">
-     <div class="row gy-3 align-items-center">
-     <div class="col-md-3">
-          <h2 class="fs-2 text-center">
+<section class="py-default position-relative">
+  <div class="container">
+    <!-- titulo -->
+    <div class="w-lg-75 mx-auto mb-45 text-center position-relative z-2">
+        <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('Permits','Permisos','许可证','Autorizações') ?></span>
+        <h2 class="fw-bold h3 text-uppercase mb-3">
             <?php echo PearTheme::lang('Our Permits and Certifications','Nuestros Permisos y Certificaciones','我们的执照和认证','Nossas licenças e certificações') ?>
-          </h2>
-      </div>
-      <div class="col-md-9">
-         <div class="d-flex flex-wrap">
-             <div class=" px-3" style="max-width: 150px;">
-                <img class="img-fluid px-3" src="https://69explorer.com/wp-content/uploads/2024/08/promperu.jpg" alt="">
-             </div>
-             <div class=" px-3" style="max-width: 150px;">
-                <img class="img-fluid px-3" src="https://69explorer.com/wp-content/uploads/2024/08/mincetur.jpg" alt="">
-             </div>
-             <div class=" px-3" style="max-width: 150px;">
-                <img class="img-fluid" src="https://69explorer.com/wp-content/uploads/2024/08/getyout-guide.jpg" alt="">
-             </div>
-     
-             <div class=" px-3" style="max-width: 150px;">
-                <img class="img-fluid" src="https://69explorer.com/wp-content/uploads/2024/08/tripadvidor.jpg" alt="">
-             </div>
- 
-             <div class=" px-3" style="max-width: 150px;">
-                <img class="img-fluid" src="https://69explorer.com/wp-content/uploads/2024/08/carbonoperu.jpg" alt="">
-             </div>
-         </div>
-      </div>
-     </div>
+        </h2>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-center align-items-center">
+        <div class="px-3" style="max-width: 150px;">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-lonely.webp" alt="background page">
+        </div>
+        <div class="px-3" style="max-width: 150px;height: 120px;">
+            <img class="w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-mominee.webp" alt="background page">
+        </div>
+        <div class="px-3" style="max-width: 150px;">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-peru.webp" alt="background page">
+        </div>
+        <div class="px-3" style="max-width: 150px;">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-tourradar.webp" alt="background page">
+        </div>
+        <div class="px-3" style="max-width: 150px;">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-tripadvisorr.webp" alt="background page">
+        </div>
+        <div class="px-3" style="max-width: 150px;">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-traveler.webp" alt="background page">
+        </div>
+    </div>
   </div>
-</div>
-<footer class="pt-5">
+</section>
+<footer class="">
   <div class="container-xxl">
       <div class="row gy-3 py-5">
           <div class="col-12 col-sm-6 col-lg-3 ">

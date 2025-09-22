@@ -16,7 +16,7 @@ $custom-pumpkin-colors: (
 $primary: #eb0000;
 $dark: #15252d;
 $info: #CEF4FC;
-$success: #ff3f00; 
+$success: #E91E3E; 
 $light: #f1f8fa; 
 $complementary: #008D8D;
 $tripadvisor: #00852f;
@@ -73,7 +73,7 @@ html {
   }
 }
 // Loop to generate width 
-@for $i from 100 through 600 {
+@for $i from 50 through 600 {
   @if $i % 10 == 0 {
     .wx-#{$i} {
       width:  #{$i}px ;
@@ -109,8 +109,54 @@ html {
     color: map-get($custom-pumpkin-colors, #{$i});
   }
 }
+// ######################################################
+// Classes de soporte 
+// ######################################################
+.w-lg-75{
+    width: 100% !important;
+    @media (min-width:768px) {
+        width: 75% !important
+    }
+}
+//
+.px-45{
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+.mb-45{
+  margin-bottom: 2.25rem;
+}
+//
+.wx-responsive{
+    @media (max-width:767px) {
+      width: 550px;
+    }
+    @media (max-width:575px) {
+      width: 340px;
+    }
+    @media (max-width:360px) {
+      width: 300px;
+    }
+}
+.hx-responsive{
+    @media (max-width:767px) {
+      height: 550px;
+    }
+    @media (max-width:575px) {
+      height: 340px;
+    }
+    @media (max-width:360px) {
+      height: 300px;
+    }
+}
+//
 .nav-link.active {
   color: $primary !important;
+}
+//
+.py-default{
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
 }
 //
 .swiper {
