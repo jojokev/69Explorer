@@ -1,0 +1,548 @@
+<?php 
+/*
+Template Name:New tours
+Template Post Type: tour
+*/
+get_header();
+$post_id = get_the_ID();    
+$lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+$images = get_post_meta(get_the_ID(), 'vdw_gallery_id', true); 
+
+$dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+$grupo = get_post_meta(get_the_ID(), 'custom_field_grupo', true);
+$altitud = get_post_meta(get_the_ID(), 'custom_field_altitud', true);
+$dificultad = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+$estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+?>
+<?php 
+    $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+?>
+
+<main id="stickycontent">
+    <section class="py-3 position-relative mb-5" >
+        <div class="container-xxl">
+            <div class="row gy-3 align-items-center mb-4">
+                <div class="col-md-8">
+                    <h1 class="h2 pt-3 fw-bold"><?php the_title() ?> </h1>
+                    <div class="d-block mb-3 text-muted">
+                        <strong><i class="bi bi-geo-alt"></i></strong>
+                        <span><?php echo $lugares  ?></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="position-relative">
+                        <div class="text-start text-md-end">
+                        <span><?php echo PearTheme::lang('from','desde','从') ?></span>
+                            <b class="fs-1 d-inline-block" style="margin-bottom:-1rem;">$<?php echo $precio ?></b>
+                            <span class="fs-sm d-block"> <?php echo PearTheme::lang('Per person','Por persona','每人') ?></span>
+                            <div class=" fw-bold">
+                              <?php echo PearTheme::lang('Save your space with a deposit payment','Aparta tu espacio con un pago de depósito','支付押金即可预订座位') ?>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- slider images -->
+            <div class="swiper mySwipersingle custom-controls-single mb-4">
+                <div class="swiper-wrapper ">
+                    <?php foreach ($images as $key=>$value ):?>
+                    <div class="swiper-slide">
+                        <figure>
+                            <a rel="nofollow" href="<?php echo wp_get_attachment_image_url($value,'full-size') ?>"
+                                class="text-decoration-none" data-fslightbox="gallery">
+                                <?php echo wp_get_attachment_image($value,'full-size',null,array('class'=>'img-cover max-h-350 min-h-350')) ?>
+                            </a>
+                        </figure>
+                    </div>
+                    <?php endforeach;  ?>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+        <!-- overview -->
+        <div class="container-xxl mb-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="content-info-cards-tour mb-2">
+                        <div class="item-info-card-tour">
+                            <div class="position-relative">
+                                <div class="d-flex align-items-center  svg-primary">
+                                    <svg width="30" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M1139 4581 c-28 -29 -29 -32 -29 -130 l0 -101 -235 0 c-184 0 -242
+                                        -3 -263 -14 -41 -21 -81 -68 -92 -107 -6 -21 -10 -677 -10 -1804 0 -1701 1
+                                        -1772 19 -1811 22 -47 59 -80 110 -95 25 -7 565 -9 1721 -7 l1685 3 70 23
+                                        c125 42 204 90 290 177 87 86 135 165 177 290 l23 70 3 1545 c2 850 0 1564 -3
+                                        1588 -4 27 -17 55 -37 78 -55 63 -62 64 -323 64 l-235 0 0 101 c0 98 -1 101
+                                        -29 130 -38 38 -74 38 -112 0 -28 -29 -29 -32 -29 -130 l0 -101 -255 0 -255 0
+                                        0 93 c0 103 -11 135 -54 155 -33 17 -69 9 -96 -20 -17 -19 -20 -35 -20 -125
+                                        l0 -103 -255 0 -255 0 0 85 c0 103 -15 147 -59 164 -25 11 -37 11 -62 0 -44
+                                        -17 -59 -61 -59 -164 l0 -85 -255 0 -255 0 0 104 0 104 -32 27 c-25 21 -38 25
+                                        -62 21 -60 -12 -71 -35 -74 -151 l-4 -105 -254 0 -254 0 0 101 c0 98 -1 101
+                                        -29 130 -18 17 -40 29 -56 29 -16 0 -38 -12 -56 -29z m-29 -501 c0 -94 2 -103
+                                        25 -125 16 -17 35 -25 60 -25 25 0 44 8 60 25 23 22 25 31 25 125 l0 100 255
+                                        0 255 0 0 -90 c0 -129 19 -160 95 -160 24 0 39 7 54 26 18 23 21 41 21 125 l0
+                                        99 254 0 254 0 4 -100 c3 -88 6 -102 28 -125 17 -18 34 -25 60 -25 26 0 43 7
+                                        60 25 22 23 25 37 28 125 l4 100 254 0 254 0 0 -99 c0 -84 3 -102 21 -125 15
+                                        -19 30 -26 54 -26 76 0 95 31 95 160 l0 90 255 0 255 0 0 -100 c0 -94 2 -103
+                                        25 -125 33 -34 87 -34 120 0 23 22 25 31 25 125 l0 100 215 0 215 0 0 -255 0
+                                        -255 -1880 0 -1880 0 0 255 0 255 215 0 215 0 0 -100z m3330 -1506 l0 -927
+                                        -45 42 c-119 110 -221 155 -432 191 -1 0 9 11 22 25 25 24 25 25 25 225 l0
+                                        202 -29 29 -29 29 -192 0 c-193 0 -220 -4 -247 -39 -9 -11 -12 -75 -13 -219 0
+                                        -266 -12 -252 202 -253 151 -1 152 -1 93 -14 -279 -61 -479 -261 -540 -540
+                                        -13 -59 -13 -58 -14 93 -1 214 13 202 -253 202 -144 -1 -208 -4 -219 -13 -35
+                                        -27 -39 -54 -39 -247 l0 -192 29 -29 29 -29 202 0 c200 0 201 0 225 25 14 13
+                                        25 23 25 22 36 -211 81 -313 191 -432 l42 -45 -1397 0 -1396 0 0 1410 0 1410
+                                        1880 0 1880 0 0 -926z m-600 -439 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0
+                                        -85z m245 -456 c208 -64 349 -260 349 -484 0 -287 -222 -509 -509 -509 -177 0
+                                        -327 80 -425 226 -153 230 -91 553 136 703 138 92 290 113 449 64z m-1015
+                                        -314 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z"></path>
+                                            <path d="M1238 3144 c-42 -22 -50 -67 -46 -266 3 -171 4 -177 27 -202 l24 -26
+                                        204 0 c114 0 212 4 223 10 32 17 40 67 40 247 0 190 -7 219 -55 241 -40 19
+                                        -382 16 -417 -4z m300 -241 l3 -83 -86 0 -85 0 0 85 0 86 83 -3 82 -3 3 -82z">
+                                            </path>
+                                            <path d="M2010 3147 c-44 -22 -50 -49 -50 -245 0 -190 8 -231 45 -246 9 -3
+                                        108 -6 219 -6 267 0 246 -21 246 247 0 111 -3 209 -6 218 -15 37 -56 45 -246
+                                        45 -127 0 -191 -4 -208 -13z m290 -242 l0 -85 -85 0 -85 0 0 78 c0 43 3 82 7
+                                        85 3 4 42 7 85 7 l78 0 0 -85z"></path>
+                                            <path d="M2783 3150 c-50 -20 -54 -42 -51 -260 4 -262 -20 -240 258 -240 l209
+                                        0 20 26 c20 25 21 39 21 229 l0 203 -31 26 c-31 26 -31 26 -217 25 -103 0
+                                        -197 -4 -209 -9z m287 -245 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z">
+                                            </path>
+                                            <path d="M3554 3150 c-50 -20 -54 -40 -54 -253 0 -267 -20 -247 255 -247 275
+                                        0 255 -20 255 249 0 197 0 200 -24 228 l-24 28 -194 2 c-106 1 -203 -2 -214
+                                        -7z m286 -245 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z"></path>
+                                            <path d="M1225 2366 c-33 -33 -37 -68 -33 -266 l3 -172 28 -24 c28 -24 31 -24
+                                        231 -24 l203 0 24 26 c24 25 24 27 24 231 l0 205 -28 24 c-28 24 -31 24 -228
+                                        24 -197 0 -200 0 -224 -24z m315 -231 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0
+                                        0 -85z"></path>
+                                            <path d="M1994 2366 l-29 -24 -3 -200 -3 -199 26 -32 27 -31 203 0 c190 0 204
+                                        1 229 21 l26 20 0 209 c0 278 22 254 -243 258 l-205 3 -28 -25z m306 -231 l0
+                                        -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z"></path>
+                                            <path d="M2759 2361 l-29 -29 0 -192 c0 -199 7 -239 45 -254 9 -3 106 -6 216
+                                        -6 268 0 249 -19 249 249 0 110 -3 207 -6 216 -15 38 -55 45 -254 45 l-192 0
+                                        -29 -29z m311 -226 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z"></path>
+                                            <path d="M1223 1596 l-28 -24 0 -207 0 -207 28 -24 c28 -24 31 -24 227 -24
+                                        196 0 199 0 227 24 l28 24 0 207 0 207 -28 24 c-28 24 -31 24 -227 24 -196 0
+                                        -199 0 -227 -24z m317 -231 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z">
+                                            </path>
+                                            <path d="M1993 1596 l-28 -24 0 -207 0 -207 28 -24 c28 -24 31 -24 228 -24
+                                        269 0 249 -20 249 255 0 275 20 255 -249 255 -197 0 -200 0 -228 -24z m307
+                                        -231 l0 -85 -85 0 -85 0 0 85 0 85 85 0 85 0 0 -85z"></path>
+                                            <path d="M3903 1533 c-13 -2 -32 -16 -43 -30 -17 -22 -20 -41 -20 -124 l0 -99
+                                        -50 0 c-60 0 -94 -15 -109 -47 -22 -48 -9 -87 36 -111 28 -15 214 -16 246 -1
+                                        40 18 47 49 47 209 0 140 -1 150 -22 174 -25 27 -51 35 -85 29z"></path>
+                                        </g>
+                                    </svg>
+                                    <strong class="ms-2">
+                                       <?php echo PearTheme::lang('Duration','Duración','期间') ?> :
+                                        
+                                    </strong>
+                                </div>
+                                <div class="d-block fs-sm-9  py-2 text-muted">
+                                     <?php echo PearTheme::days($dias) ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-card-tour">
+                            <div class="position-relative">
+                                <div class="d-flex-align-items-center svg-primary">
+                                    <svg width="30" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M912 5109 c-123 -24 -231 -108 -289 -227 l-38 -76 0 -186 0 -185 32
+                                        -67 c17 -37 52 -88 77 -113 l46 -46 0 -79 0 -79 -346 -3 -346 -3 -24 -28 -24
+                                        -28 0 -639 c0 -447 3 -646 11 -663 20 -43 45 -47 314 -47 l255 0 0 -67 c0
+                                        -107 57 -203 137 -234 l23 -9 0 -835 0 -835 -97 0 -98 0 -272 -273 c-301 -300
+                                        -301 -301 -244 -358 l29 -29 2496 0 c1877 0 2501 3 2521 12 16 7 29 24 36 47
+                                        7 24 9 303 7 834 l-3 799 -24 19 c-22 18 -46 19 -510 19 l-486 0 -245 -245
+                                        -245 -245 -522 0 -523 0 0 53 c0 29 -6 61 -14 72 -8 11 -82 54 -165 95 l-151
+                                        74 0 442 0 441 -22 31 c-13 17 -161 151 -330 298 l-308 266 0 134 c0 101 3
+                                        134 13 134 6 0 55 -11 107 -25 92 -24 107 -25 431 -25 301 0 338 -2 350 -17 8
+                                        -9 33 -25 57 -35 23 -10 42 -22 42 -26 0 -15 243 -1737 246 -1741 5 -5 139 10
+                                        152 18 8 5 -22 245 -103 841 -63 459 -117 849 -120 866 -5 28 -1 33 42 61 34
+                                        20 57 46 78 84 29 53 30 57 30 194 0 93 -5 153 -14 179 -28 80 -123 155 -197
+                                        156 -38 0 -30 -32 -80 325 -20 143 -37 261 -39 263 -1 1 -38 -3 -81 -11 -69
+                                        -11 -79 -15 -77 -32 1 -11 21 -152 44 -313 33 -235 39 -295 29 -307 -10 -13
+                                        -55 -15 -280 -15 l-267 0 -284 100 c-155 55 -296 111 -313 124 -17 13 -46 31
+                                        -63 40 -32 16 -33 18 -33 81 l0 65 58 0 c48 0 62 4 80 23 21 22 22 31 22 245
+                                        l0 222 165 0 165 0 0 85 0 85 -169 0 -169 0 -7 33 c-29 131 -170 260 -314 287
+                                        -62 11 -98 11 -159 -1z m162 -171 c45 -14 129 -89 138 -126 l6 -22 -229 0
+                                        -229 0 19 38 c51 99 174 146 295 110z m166 -484 l0 -166 -152 4 c-128 3 -160
+                                        7 -198 24 -91 42 -137 116 -147 234 l-6 70 252 0 251 0 0 -166z m-169 -411 c0
+                                        -49 4 -97 8 -107 4 -11 50 -54 101 -95 101 -82 156 -151 192 -240 21 -52 23
+                                        -77 28 -356 3 -165 9 -308 14 -317 4 -9 151 -141 327 -294 l319 -277 0 -229 0
+                                        -228 -80 0 -80 0 0 85 c0 55 -5 96 -14 114 -10 18 -95 80 -256 186 l-242 158
+                                        7 92 7 92 -77 7 c-43 4 -80 5 -83 2 -3 -3 -33 -299 -66 -658 l-61 -653 -102
+                                        -3 -103 -3 -2 555 c-3 523 -4 555 -22 574 -10 12 -32 24 -50 27 -60 12 -68 17
+                                        -82 51 -8 18 -14 51 -14 72 l0 40 60 4 c45 3 66 10 83 26 22 22 22 24 25 452
+                                        l3 430 79 0 80 0 0 -370 0 -370 85 0 86 0 -3 430 -3 429 -23 23 c-20 21 -33
+                                        23 -162 26 l-140 4 0 204 0 204 80 0 80 0 1 -87z m-331 -243 l0 -80 -202 -2
+                                        -203 -3 -3 -82 -3 -83 206 0 205 0 0 -205 0 -205 -285 0 -285 0 0 370 0 370
+                                        285 0 285 0 0 -80z m971 -185 l184 -65 248 0 247 0 0 -80 0 -80 -291 0 c-260
+                                        0 -299 2 -372 21 -172 43 -154 32 -162 96 -4 32 -15 84 -25 115 -10 32 -17 58
+                                        -15 58 1 0 85 -29 186 -65z m986 -7 c21 -20 23 -29 23 -138 0 -126 -9 -153
+                                        -54 -164 -29 -7 -74 8 -92 32 -9 12 -13 53 -14 130 0 107 1 114 25 137 31 32
+                                        80 33 112 3z m-1957 -718 l0 -80 -285 0 -285 0 0 80 0 80 285 0 285 0 0 -80z
+                                        m823 -759 l167 -114 0 -421 0 -421 -168 -162 -169 -161 -71 46 c-54 35 -72 53
+                                        -72 70 0 22 104 1137 115 1240 5 38 10 50 19 45 7 -5 87 -59 179 -122z m497
+                                        -481 l0 -80 -80 0 -80 0 0 80 0 80 80 0 80 0 0 -80z m2890 -780 l0 -700 -2332
+                                        0 -2333 0 165 165 165 165 329 0 330 0 286 285 285 285 893 0 c743 0 898 2
+                                        925 14 18 8 138 120 267 250 l235 236 392 0 393 0 0 -700z m-2685 468 c89 -45
+                                        125 -68 125 -80 0 -17 -17 -18 -245 -18 l-245 0 0 80 0 80 120 0 120 0 125
+                                        -62z m-1173 -223 c-1 -22 -5 -59 -8 -82 l-5 -43 -85 0 -84 0 0 85 0 86 93 -3
+                                        92 -3 -3 -40z m106 -336 l74 -51 -33 -34 -33 -34 -148 0 -148 0 0 85 0 85 108
+                                        0 107 0 73 -51z"></path>
+                                            <path d="M3505 810 l-69 -70 -331 0 -330 0 -135 -135 -135 -135 58 -57 57 -58
+                                        113 113 112 112 328 0 328 0 95 93 95 92 -58 57 -59 58 -69 -70z"></path>
+                                            <path d="M3978 5109 c-139 -20 -272 -130 -318 -261 -17 -48 -22 -54 -57 -62
+                                        -71 -15 -124 -38 -166 -70 -198 -151 -150 -478 83 -567 47 -18 82 -19 638 -19
+                                        363 0 601 4 623 10 53 15 128 85 155 145 13 30 37 63 58 78 52 40 94 107 113
+                                        181 33 123 -13 256 -115 339 -66 52 -127 70 -221 65 -60 -3 -88 -11 -130 -33
+                                        -49 -27 -141 -116 -141 -136 0 -22 -41 -7 -52 19 -44 107 -70 152 -114 195
+                                        -96 95 -222 136 -356 116z m198 -194 c63 -40 102 -103 114 -185 11 -77 28 -96
+                                        98 -110 72 -13 110 -42 138 -107 30 -67 57 -82 120 -65 63 17 84 15 111 -10
+                                        35 -33 32 -89 -8 -122 l-31 -27 -567 3 -567 3 -41 27 c-101 67 -98 205 7 276
+                                        31 22 43 23 109 19 108 -8 140 14 141 96 0 91 50 170 132 212 46 23 63 26 124
+                                        23 58 -3 80 -9 120 -33z m680 -144 c70 -32 105 -104 90 -184 -3 -18 -12 -42
+                                        -20 -52 -13 -17 -15 -17 -48 16 -47 48 -101 71 -164 73 -45 1 -55 5 -68 27
+                                        -14 23 -13 28 3 55 23 38 43 53 88 70 51 18 71 17 119 -5z"></path>
+                                            <path d="M4005 3121 c-16 -10 -250 -240 -520 -510 l-490 -491 58 -57 57 -58
+                                        260 260 259 259 150 -147 c182 -180 180 -179 280 -82 l67 64 134 -134 c138
+                                        -139 174 -165 214 -158 13 3 70 52 127 109 l104 104 137 -137 138 -138 57 58
+                                        58 57 -495 496 c-443 444 -529 524 -557 524 -4 0 -21 -9 -38 -19z m520 -791
+                                        l-65 -64 -137 135 c-76 75 -149 142 -161 149 -37 19 -70 4 -139 -63 l-64 -61
+                                        -107 107 -107 107 150 150 150 150 272 -272 273 -273 -65 -65z"></path>
+                                        </g>
+                                    </svg>
+                                    <strong class="ms-2">
+
+                                        <?php echo PearTheme::lang('Type Tours','Tipo de Tours','类型旅游') ?> :
+                                    </strong>
+                                </div>
+                                <div class="d-block fs-sm-9 py-2 text-muted">
+                                    <?php echo $estilo ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-card-tour">
+                            <div class="position-relative">
+                                <div class="d-flex-align-items-center svg-primary">
+                                    <svg width="30" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M2330 4200 c-892 -87 -1668 -620 -2060 -1415 -93 -187 -136 -302
+                                        -185 -486 -61 -232 -76 -359 -82 -681 l-6 -288 537 0 536 0 0 105 0 105 -427
+                                        2 -428 3 3 155 c7 450 143 881 398 1260 35 52 75 109 89 125 l25 30 212 -212
+                                        c117 -117 218 -213 223 -213 6 0 42 32 80 70 l70 70 -223 223 -223 223 78 75
+                                        c299 285 673 487 1083 583 126 30 298 56 369 56 l51 0 2 -262 3 -263 105 0
+                                        105 0 3 263 2 262 51 0 c71 0 243 -26 369 -56 410 -96 784 -298 1083 -583 l78
+                                        -75 -223 -223 -223 -223 70 -70 c38 -38 74 -70 80 -70 5 0 106 96 223 213
+                                        l212 212 25 -30 c14 -16 54 -73 89 -125 255 -379 391 -810 398 -1260 l3 -155
+                                        -427 -3 -428 -2 0 -105 0 -105 536 0 537 0 -6 288 c-6 322 -21 449 -82 681
+                                        -49 184 -92 299 -185 486 -249 504 -651 906 -1155 1155 -254 126 -479 198
+                                        -750 240 -147 23 -475 34 -615 20z"></path>
+                                            <path d="M3060 2316 c-394 -188 -738 -355 -765 -371 -72 -41 -155 -130 -197
+                                        -210 -119 -228 -83 -482 96 -661 115 -115 242 -168 401 -166 191 1 368 97 467
+                                        252 37 58 723 1489 717 1494 -2 2 -326 -150 -719 -338z m53 -571 c-241 -507
+                                        -261 -538 -371 -592 -50 -25 -68 -28 -152 -28 -85 0 -101 3 -153 29 -71 36
+                                        -130 99 -165 174 -22 48 -27 71 -27 142 0 71 5 94 27 142 45 97 94 136 295
+                                        233 432 208 758 362 761 360 2 -1 -95 -209 -215 -460z"></path>
+                                        </g>
+                                    </svg>
+                                    <strong class="ms-2">
+                                    <?php echo PearTheme::lang('Difficulty','Dificultad','困难') ?> :
+                                    </strong>
+                                </div>
+                                <div class="d-block fs-sm-9  py-2 text-muted">
+                                    <span> <?php echo $dificultad ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-info-card-tour">
+                            <div class="position-relative">
+                                <div class="d-flex align-items-center svg-primary">
+                                    <svg width="30" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 512.000000 512.000000" preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                            stroke="none">
+                                            <path d="M2210 5016 c-116 -33 -217 -116 -271 -224 -32 -64 -34 -72 -34 -178
+                                    0 -107 1 -112 38 -186 154 -312 590 -313 744 -1 32 65 37 86 41 163 5 100 -11
+                                    164 -60 242 -96 153 -289 231 -458 184z m202 -146 c106 -40 177 -144 178 -260
+                                    0 -111 -66 -211 -167 -256 -50 -22 -166 -22 -216 0 -101 45 -167 145 -167 256
+                                    0 196 190 328 372 260z"></path>
+                                            <path d="M4099 5016 c-115 -32 -221 -121 -276 -234 -26 -52 -28 -67 -28 -168
+                                    0 -107 1 -112 38 -186 154 -313 590 -313 744 0 37 74 38 79 38 186 0 106 -2
+                                    114 -34 178 -90 179 -296 275 -482 224z m203 -146 c191 -71 240 -326 90 -462
+                                    -59 -54 -105 -71 -187 -71 -82 0 -128 17 -187 71 -118 106 -118 292 -1 405 76
+                                    73 185 95 285 57z"></path>
+                                            <path d="M3165 4756 c-166 -40 -289 -173 -317 -342 -46 -274 202 -522 476
+                                    -476 179 29 314 163 347 345 53 287 -221 543 -506 473z m214 -155 c59 -31 94
+                                    -65 126 -123 25 -45 29 -64 29 -128 0 -64  -4 -83 -29 -128 -54 -100 -132 -146
+                                    -245 -146 -113 0 -191 46 -245 146 -25 45 -29 64 -29 128 0 78 11 112 61 177
+                                    26 36 97 81 146 94 48 12 142 2 186 -20z"></path>
+                                            <path d="M2195 4123 c-64 -9 -153 -36 -223 -69 -286 -132 -475 -417 -477 -719
+                                    0 -91 2 -104 27 -147 65 -109 220 -191 442 -233 106 -20 341 -36 431 -29 l70
+                                    6 20 -32 c59 -93 248 -178 480 -216 144 -23 438 -24 580 -1 220 35 377 100
+                                    463 191 l49 52 164 1 c396 4 681 99 776 260 26 44 28 56 28 148 -1 105 -17
+                                    181 -59 287 -75 184 -231 346 -418 432 -104 48 -177 66 -303 73 -237 13 -444
+                                    -67 -621 -239 l-71 -69 -79 23 c-64 18 -104 22 -214 22 -110 0 -150 -4 -214
+                                    -22 l-79 -23 -71 69 c-122 119 -261 194 -418 226 -71 15 -210 19 -283 9z m281
+                                    -153 c111 -28 214 -83 291 -154 l66 -61 -59 -45 c-116 -87 -209 -201 -265
+                                    -326 -34 -75 -69 -211 -69 -271 l0 -41 -58 -7 c-70 -8 -305 10 -405 30 -198
+                                    42 -323 111 -343 192 -18 69 24 244 83 353 52 95 187 225 283 273 153 76 320
+                                    96 476 57z m1890 0 c129 -32 217 -82 315 -180 47 -47 100 -110 117 -140 45
+                                    -82 82 -200 88 -288 5 -66 3 -81 -15 -110 -40 -62 -153 -118 -311 -153 -109
+                                    -23 -346 -43 -422 -34 l-58 7 0 41 c0 60 -35 196 -69 271 -56 125 -150 239
+                                    -268 329 l-56 42 66 61 c159 147 399 208 613 154z m-969 -256 c308 -63 542
+                                    -339 543 -638 0 -58 -4 -74 -24 -101 -47 -62 -193 -121 -376 -152 -130 -22
+                                    -430 -22 -560 0 -183 31 -329 90 -376 152 -46 61 -27 228 41 369 137 280 448
+                                    433 752 370z"></path>
+                                            <path d="M1773 2255 c-92 -20 -205 -68 -558 -238 l-320 -154 -32 66 c-49 101
+                                    -120 151 -213 151 -32 0 -256 -86 -405 -154 -111 -52 -164 -131 -152 -231 6
+                                    -51 600 -1479 634 -1524 31 -41 114 -81 167 -81 39 0 229 71 401 150 153 70
+                                    198 173 140 315 -14 33 -25 63 -25 67 0 14 240 128 302 144 37 10 77 14 102
+                                    10 23 -4 221 -59 441 -124 l400 -116 120 0 c98 0 140 5 230 28 139 35 1730
+                                    646 1800 691 144 92 237 272 222 433 -14 148 -106 253 -261 297 -73 21 -231
+                                    22 -337 1 -41 -8 -293 -78 -560 -156 l-484 -142 -20 28 c-37 54 -110 120 -156
+                                    141 -25 12 -194 61 -375 109 -301 81 -335 92 -397 132 -95 61 -259 137 -338
+                                    156 -79 19 -239 20 -326 1z m301 -141 c81 -21 184 -69 285 -134 80 -51 92 -55
+                                    424 -145 188 -50 356 -99 372 -107 75 -40 119 -117 119 -208 0 -101 -51 -179
+                                    -144 -218 -68 -29 -118 -20 -588 107 -408 110 -455 121 -479 109 -39 -19 -51
+                                    -63 -26 -97 18 -23 65 -38 474 -149 510 -138 551 -144 662 -102 131 50 228
+                                    176 244 319 l8 65 470 138 c259 76 503 145 544 153 95 20 241 20 307 0 100
+                                    -30 152 -112 141 -222 -10 -97 -92 -219 -177 -263 -63 -32 -1595 -619 -1685
+                                    -645 -118 -34 -217 -48 -290 -42 -33 2 -238 56 -460 120 -220 64 -425 119
+                                    -455 122 -85 10 -178 -15 -333 -89 l-137 -65 -16 37 c-166 396 -384 924 -384
+                                    930 0 9 643 317 730 350 150 55 276 67 394 36z m-1371 -196 c27 -25 608 -1410
+                                    614 -1463 2 -16 -3 -38 -11 -48 -16 -21 -380 -176 -413 -177 -12 0 -33 10 -46
+                                    23 -16 15 -121 255 -317 727 -162 388 -295 717 -298 731 -7 47 31 74 223 153
+                                    99 41 190 75 202 75 12 1 33 -9 46 -21z"></path>
+                                        </g>
+                                    </svg>
+                                    <strong class="ms-2">
+                                        <?php echo PearTheme::lang('Gruop size','Tamaño del grupo','团体规模') ?> :
+                                    </strong>
+                                </div>
+                                <div class="d-block fs-sm-9  py-2 text-muted">
+                                    <span>2 <?php echo PearTheme::lang('min.','min.','最小') ?> - <?php echo $grupo ?> <?php echo PearTheme::lang('max.','max.','最大') ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card px-4 rounded-0 py-4">
+                        <div class="content-read pb-4 ">
+                            <div class="readmore">
+                                <?php the_field('description')  ?>
+                            </div>
+                            <div id="fade-itinerary"></div>
+
+                            <span id="more-itinerary" type="button"
+                                class="text-primary px-4 py-1 fs-sm-9   fw-bold-500 rounded-pill"> <?php echo PearTheme::lang('Read More','Leer mas','阅读更多') ?> <i
+                                    class="bi bi-caret-down-fill"></i></span>
+                            <span id="less-itinerary" type="button"
+                                class="text-primary px-4 py-1 fs-sm-9   fw-bold-500 rounded-pill"> <?php echo PearTheme::lang('Read Less','Leer Menos','阅读较少') ?>  <i
+                                    class="bi bi-caret-up-fill"></i></span>
+                            <!-- <span  id="evenmore">Even more information</span> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-1  rounded-0 margin-top position-sticky top-10">
+                        <div class="card-body  p-0">
+                            <div class="position-relative p-3">
+                                <div class="">
+                                    <!-- start btn  -->
+                                    <div class="fw-bold pb-2 text-center">
+                                        "<?php  the_title(); ?>"
+                                    </div>
+                                    <div class="text-center">
+                                        <a rel="nofollow"
+                                            href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>"
+                                            class="btn btn-primary w-100 text-white m-auto text-uppercase py-2 rounded-0 fw-bold">
+                  
+                                            <?php echo PearTheme::lang('BOOK NOW','Reservar Ahora','立即预订') ?> 
+                                        </a>
+
+                                    </div>
+                                    <!--  end btn code -->
+                                    <div class="py-3 mb-4">
+                                        <span class="fw-bold">
+                                            <?php echo PearTheme::lang('Secure Payments With:','Pagos seguros con','安全的付款方式：') ?> 
+                                        </span>
+                                        <img width="150" class="img-fluid"
+                                            src="<?php echo get_template_directory_uri() ?>/assets/imagenes/icon-payments.png"
+                                            alt="">
+                                    </div>
+                                    <h4 class="fw-bold fs-5 text-muted"> <span>
+                                            <?php echo PearTheme::lang('Need Help To Book?','¿Necesitas ayuda para reservar?','需要帮忙预订吗？') ?> 
+                                         </span></h4>
+                                    <p class="text-muted">
+                                      <?php echo PearTheme::lang('Our dedicated team of travel experts is here to assist you
+                                        every step of the way, ensuring a seamless and unforgettable journey.','Nuestro dedicado equipo de expertos en viajes está aquí para ayudarle en cada paso del camino, garantizando un viaje perfecto e inolvidable.','我们专业的旅游专家团队将全程为您提供协助，确保您拥有顺利而难忘的旅程。') ?> 
+                                       
+                                    </p>
+                                    <div class="text-center">
+                                        <a href="#" id="openmodal"
+                                            class="text-dark fs-sm-9 text-decoration-none fw-bold openmodal" data-bs-toggle="modal" data-bs-target="#staticForm">
+                                            <span
+                                                class=" fs-6 bg-opacity-25 d-inline-block text-center lh-lg rounded-circle"><i
+                                                    class="bi bi-envelope-fill"></i></span>
+                                            <span>  <?php echo PearTheme::lang('Inquire now ','Preguntar ahora','立即咨询') ?> </span>
+                                        </a>
+                                        <a href="https://wa.link/kzzn2w" rel="nofollow" target="_blank"
+                                            class="text-dark ms-2 fs-sm-9 text-decoration-none fw-bold">
+                                            <span
+                                                class=" fs-6 bg-opacity-25 d-inline-block text-center lh-lg rounded-circle"><i
+                                                    class="bi bi-whatsapp"></i></span>
+                                            <span>+51 992 126 224</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Price sticky -->
+        <div id="sticky" class="py-2 d-none border-top sticky bg-white w-100 border-bottom bottom-0">
+            <div class="container-xxl">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-5 text-center d-none d-lg-inline-block">
+                        <div class="fw-bold text-900">
+                            <?php the_title() ?>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center">
+                        <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>"
+                            class="w-100 text-white rounded-0 shadow-white  btn btn-primary btn-sm py-0  w-75 fw-bold text-uppercase letter-spacing-1">
+                            <div class="fs-sm-9">
+                                <i class="bi bi-bag-check-fill"></i>
+                                <span><?php echo PearTheme::lang('From','desde','从') ?></span>
+                                <span class="fw-bold fs-6">$<?php echo $precio ?></span>
+                                <span class="vr text-white border-2 opacity-75 position-relative top-4 mx-0 mx-xl-3"
+                                    style="height: 19px;"></span>
+                                <span> <?php echo PearTheme::lang('Book Now','Reservar ahora','立即预订') ?></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+        <div class="position-relative">
+            <div class="container-xxl">
+                <div class="py-5 text-center">
+                    <h2 class="fs-2 pb-3 border-2 border-primary d-inline-block fw-bold border-bottom not-menu"> <?php echo PearTheme::lang('Trip Details','Detalles del viaje','行程详情') ?>
+                    </h2>
+                </div>
+            </div>
+            <div id="menu-title-tour" lang="<?php echo PearTheme::lang('en','es','zn') ?>"></div>
+            <div class="container-xxl">
+                <div class="card border-0 px-2">
+                    <div id="wrapper-menu-title-tour" class="content-single border px-2 check">
+                        <?php the_content();?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- olds -->
+
+    <?php get_template_part('template/reviews','reviews',array('class'=>'bg-light')) ?>
+    <?php get_template_part('template/formulario','formulario') ?>
+    <section class="position-relative py-5">
+        <div class="container-xxl py-5">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold text-uppercase"> <?php echo PearTheme::lang('Similar tours that may interest you','Tours similares que te pueden interesar','您可能感兴趣的类似旅游') ?></h3>
+                <p>  <?php echo PearTheme::lang('Explore Related Tours: Discover More with 69 Explorer','Explorar tours relacionados: Descubra más con 69 Explorer','探索相关旅游：与 69 Explorer 一起探索更多') ?> </p>
+            </div>
+            <!-- row tours -->
+            <div class="row gy-3">
+                <?php $categories = get_the_category();
+                    if ( ! empty( $categories ) ) {
+                    $id = ( $categories[0]->cat_ID );}
+                ?>
+                <?php
+                    $toursofperu = get_posts([
+                        'post_type' => 'tour',
+                        'numberposts' => 3,
+                        'order' => 'desc',
+                        'orderby' => 'rand',
+                        'ignore_sticky_posts' => 0,
+                        'cat'=>array( $id ),
+                        'post__not_in'=> array(get_the_ID())
+                    ]);
+
+                    foreach ($toursofperu as $post) :
+                        $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+                        $lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+                        $dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+                        $dificulty = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+                        $estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+                ?>
+                <div class="col-12 col-sm-6 col-lg-4">
+                            <div class="position-relative h-100 rounded-2 px-2 py-2 overflow-hidden content-information-tour-home">
+                                <div class="card-body p-0">
+                                    <figure class="position-relative m-0">
+                                        <?php the_post_thumbnail('full-size',array('class'=>'img-cover min-h-250 max-h-250 rounded-2') ) ?>
+                                    </figure>
+                                    <div class="px-3 py-3">
+                                        <span class="mb-2 d-block"><i class="bi bi-map"></i> <?php echo $estilo; ?></span>
+                                        <h3 class="mb-3">
+                                            <a href="<?php the_permalink(); ?>"
+                                                class="text-decoration-none text-dark stretched-link h4"><?php the_title(); ?></a>
+                                        </h3>
+                                        <span class="mb-2 d-block"><i class="bi bi-geo-alt"></i> <?php echo $lugares; ?></span>
+                                        <div class="content-details-duration-tour mb-4">
+                                            <span><i class="bi bi-clock"></i> <?php echo PearTheme::days($dias);  ?></span>
+                                            <span><i class="bi bi-reception-4"></i> <?php echo $dificulty; ?></span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <div class="">
+                                                <span class="h4 fw-bold-500">$<?php echo $precio; ?></span>
+                                                <span><?php echo PearTheme::lang('/per Person','/por persona','/每人') ?></span>
+                                            </div>
+                                            <div class="content-btn-tour">
+                                                <a class="btn btn-primary" href="#">Ver mas <i class="bi bi-arrow-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <?php  endforeach;
+                    wp_reset_postdata();
+                ?>
+            </div>
+        </div>
+    </section>
+    <section class="py-3">
+
+    </section>
+    <script>
+
+
+  function scrollToCenter(element) {
+    const container = element.parentElement; // UL
+    const containerWidth = container.clientWidth;
+    const elementWidth = element.offsetWidth;
+    
+  }
+    </script>
+</main>
+<!-- Modal Inquiry -->
+    <?php get_template_part('template/', 'formulario');?>
+<?php
+get_footer();
+?>

@@ -1,0 +1,515 @@
+@use "sass:math";
+
+$custom-pumpkin-colors: (
+  "50": #fff0f0,
+  "100": #ffdddd,
+  "200": #ffc1c1,
+  "300": #ff9595,
+  "400": #ff5959,
+  "500": #ff2626,
+  "600": #fc0606,
+  "700": #eb0000,
+  "800": #af0505,
+  "900": #900c0c,
+  "950": #500000
+);
+$primary: #eb0000;
+$dark: #15252d;
+$info: #CEF4FC;
+$success: #ff3f00; 
+$light: #f1f8fa; 
+$complementary: #008D8D;
+$tripadvisor: #00852f;
+$opaco: #535643;
+
+$theme-colors: (
+  "primary":    $primary,
+  //"secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  //"warning":    $warning,
+  //"danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "complementary": $complementary,
+  "tripadvisor":  $tripadvisor,
+  "opaco":  $opaco
+);
+
+// $info
+// $secondary:
+html {
+  scroll-behavior: smooth;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// Loop to generate line-clamp 
+@for $i from 1 through 5 {
+  .line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+    overflow: hidden;
+    p,strong,a{
+      color: $dark;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+  }
+}
+// Loop to generate negative margin top (px)
+@for $i from 10 through 400 {
+  @if $i % 10 == 0 {
+    .mtn-#{$i} {
+      margin-top:  -#{$i}px ;
+    }
+  }
+}
+// Loop to generate background utility classes
+@for $i from 50 through 950 {
+  .bg-#{$i} {
+    background-color: map-get($custom-pumpkin-colors, #{$i});
+  }
+}
+// Loop to generate width 
+@for $i from 100 through 600 {
+  @if $i % 10 == 0 {
+    .wx-#{$i} {
+      width:  #{$i}px ;
+    }
+  }
+}
+// Loop to generate height
+@for $i from 50 through 600 {
+  @if $i % 10 == 0 {
+    .hx-#{$i} {
+      height:  #{$i}px ;
+    }
+  }
+}
+// Loop to generate max height
+@for $i from 50 through 600 {
+  @if $i % 10 == 0 {
+    .hmx-#{$i} {
+      max-height:  #{$i}px ;
+    }
+  }
+}
+// Loop to generate text 
+@for $i from 70 through 95 {
+  .fs-#{$i} {
+    font-size:  math.div($i, 100)  * 1rem;
+  }
+}
+
+// Loop to generate text utility classes
+@for $i from 50 through 950 {
+  .text-#{$i} {
+    color: map-get($custom-pumpkin-colors, #{$i});
+  }
+}
+.nav-link.active {
+  color: $primary !important;
+}
+//
+.swiper {
+  position: relative;
+  overflow: hidden;
+}
+//
+.custom-controls-reviews {
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: relative !important;
+    width: 33px;
+    height: 33px;
+    background-color: #000;
+  }
+  .swiper-button-next {
+    &::after {
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+  .swiper-button-prev {
+    left: -30px;
+    &::after {
+      color: #fff;
+      font-size: 15px;
+    }
+  }
+}
+.custom-controls-reviews.controls-relative {
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: relative !important;
+  }
+}
+// custom controls
+.custom-controls-single {
+  .swiper-button-next,
+  .swiper-button-prev {
+    // position: relative !important;
+    width: 45px;
+    height: 45px;
+    background-color: #000;
+  }
+  .swiper-button-next {
+    right: 0;
+    &::after {
+      content: "\F138";
+      font-family: bootstrap-icons !important;
+      color: #fff;
+      font-size: 22px;
+    }
+  }
+  .swiper-button-prev {
+    left: 0;
+    &::after {
+      content: "\F12F";
+      font-family: bootstrap-icons !important;
+      color: #fff;
+      font-size: 22px;
+    }
+  }
+}
+
+// top seller
+.top-seller {
+  color: #fff;
+  background: #ff4646;
+  border-radius: 2px 2px 0 0;
+  position: absolute;
+  top: 43px;
+  left: -14px;
+  height: 32px;
+  rotate: -45deg;
+  padding: 0 32px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: "";
+    border-left-color: transparent;
+    left: -31px;
+    content: "";
+    position: absolute;
+    border: 16px solid #ff4646;
+    border-top-color: transparent;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    border-right-color: transparent;
+    right: -31px;
+    position: absolute;
+    border: 16px solid #ff4646;
+    border-top-color: transparent;
+    z-index: -1;
+  }
+}
+.mySwiper1 {
+  .swiper-button-next,
+  .swiper-button-prev {
+    align-items: center;
+    background: #fc0606;
+    box-shadow:
+      0 0 5px #fff,
+      0 0 25px #fff;
+    color: #fff !important;
+    display: flex;
+    height: 35px !important;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px !important;
+    z-index: 9999;
+  }
+  .swiper-button-prev {
+    left: 0px !important;
+    &::after {
+      content: "\f12f";
+      font-family: bootstrap-icons !important;
+      font-size: 20px;
+    }
+  }
+  .swiper-button-next {
+    right: 0px !important;
+    &::after {
+      content: "\f138";
+      font-family: bootstrap-icons !important;
+      font-size: 20px;
+    }
+  }
+}
+
+// /******************** Styles Header******************/
+.lang-dropdown {
+  select {
+    border: 0px;
+    background-color: transparent;
+    color: $dark;
+    option {
+      color: red;
+      font-weight: 900;
+      border: 0px;
+    }
+  }
+}
+
+// end  header
+.list-style-none {
+  list-style: none !important;
+}
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+.fs-sm-9 {
+  font-size: 0.9rem;
+}
+.fs-sm {
+  font-size: 0.8rem !important;
+}
+.fw-bold-900 {
+  font-weight: 900 !important;
+}
+.fw-bold-600 {
+  font-weight: 600 !important;
+}
+.fw-bold-500 {
+  font-weight: 500 !important;
+}
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.absolute-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//  custom
+.fill-dark {
+  svg {
+    fill: $dark;
+    height: 30px;
+  }
+}
+.btn.active {
+  background-color: #ff2626;
+  color: white;
+}
+.fill-dark.active {
+  svg {
+    fill: #fff;
+    height: 30px;
+  }
+}
+// top for ap ten
+@for $i from 1 through 10 {
+  .top-#{$i} {
+    top: #{$i}px;
+  }
+  .top--#{$i} {
+    top: -#{$i}px;
+  }
+}
+
+// filter
+@for $i from 1 through 10 {
+  .filter-#{$i} {
+    filter: brightness(0.1 * $i);
+  }
+}
+// max -width
+@for $i from 100 through 1000 {
+  .max-w-#{$i} {
+    max-width: #{$i}px;
+  }
+}
+
+// min hight
+@for $i from 50 through 700 {
+  // @media (min-width:750px) {
+  .min-h-#{$i} {
+    min-height: #{$i}px;
+  }
+  // }
+  @media (max-width: 750px) {
+    .min-sm-h-#{$i} {
+      min-height: #{$i}px;
+    }
+  }
+}
+
+// max hiegt
+@for $i from 50 through 700 {
+  .max-h-#{$i} {
+    max-height: #{$i}px;
+  }
+}
+.check {
+  ul {
+    list-style: none;
+    li {
+      &::before {
+        content: "";
+      }
+    }
+  }
+}
+
+// content single
+.content-single {
+  h2 {
+    font-weight: 700;
+    padding: 1rem 0.5rem;
+    position: relative;
+    font-size: 1.7rem;
+    border-bottom: 1px dashed #ff8ea2;
+    margin-bottom: 2rem;
+  }
+  .secciont-tab.inclusions_content .wp-block-columns:nth-child(3) {
+    h3 {
+      position: relative;
+      font-weight: 700 !important;
+      &::before {
+        background: #f7f7f7;
+        border-radius: 50%;
+        color: #01b31f;
+        content: "\f170";
+        display: inline-block;
+        font-family: bootstrap-icons !important;
+        height: 40px;
+        line-height: 32px;
+        margin-right: 5px;
+        padding: 2px;
+        text-align: center;
+        width: 40px;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        &::before {
+          color: #01b31f;
+          content: "\f633";
+          display: inline-block;
+          font-family: bootstrap-icons !important;
+          margin-right: 5px;
+          padding: 5px 0;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+  }
+  .secciont-tab.inclusions_content .wp-block-columns:nth-child(4) {
+    h3 {
+      position: relative;
+      font-weight: 700 !important;
+      &::before {
+        background: #f7f7f7;
+        border-radius: 50%;
+        color: red;
+        content: "\f659";
+        display: inline-block;
+        font-family: bootstrap-icons !important;
+        height: 40px;
+        line-height: 37px;
+        margin-right: 6px;
+        padding: 2px;
+        text-align: center;
+        width: 40px;
+      }
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        &::before {
+          color: red;
+          content: "\f659";
+          display: inline-block;
+          font-family: bootstrap-icons !important;
+          font-size: 13px;
+          font-weight: 700;
+          margin-right: 9px;
+          padding: 7px 0;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+// styles read more
+.content-read {
+  height: auto;
+  max-height: 300px; /*whatever you want*/
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 250ms linear 0ms;
+
+  .readmore {
+    height: auto;
+    margin: auto;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+  }
+  #fade-itinerary {
+    width: 100%;
+    height: 180px;
+    margin: auto;
+    padding: 0px;
+    position: absolute;
+    bottom: 0px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 85%);
+    z-index: 1;
+    display: block;
+    &.active{
+      display: none;
+    }
+  }
+  #more-itinerary {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    text-decoration: none;
+    z-index: 2;
+    display: block;
+    &.active{
+      display: none;
+    }
+  }
+  #less-itinerary {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    text-decoration: none;
+    z-index: 2;
+    display: none;
+    &.active{
+      display: block;
+    }
+  }
+  #evenmore {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    text-decoration: none;
+    z-index: 2;
+    display: none;
+  }
+}
