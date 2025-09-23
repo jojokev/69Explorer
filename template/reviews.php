@@ -61,7 +61,7 @@
                 <div class="swiper-wrapper">
                     <?php foreach ($getreviewstripadvisor as $review =>$valueReviews): ?>
                         <div class="swiper-slide h-auto">
-                            <div class="position-relative h-100 border rounded-3 p-3 d-flex flex-column">
+                            <div class="position-relative h-100 border rounded-3 p-3 d-flex flex-column bg-white">
                                 <div class="d-flex align-items-center mb-3">
                                     <img src="<?php echo $valueReviews['image'] ?>" alt="tripadvisor user" class="rounded-circle wx-70 hx-70 object-fit-cover">
                                     <div class="ps-3">
@@ -95,7 +95,7 @@
                                                 </clipPath>
                                               </defs>
                                             </svg>
-                                            Family
+                                            <?php echo $valueReviews['type'] ?>
                                         </span>
                                     </div>
                                 </div>

@@ -127,6 +127,10 @@ html {
   margin-bottom: 2.25rem;
 }
 //
+.cursor-pointer{
+  cursor: pointer;
+}
+//
 .wx-responsive{
     @media (max-width:767px) {
       width: 550px;

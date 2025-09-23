@@ -38,15 +38,15 @@
     <!-- About us -->
     <section class="py-default position-relative">
         <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/fondos/Bg-sections.webp" alt="background page">
+        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
 
         <div class="container">
             <div class="d-flex align-items-center px-0 px-sm-2 px-lg-5 flex-wrap flex-md-nowrap">
                 <div class="d-flex justify-content-center w-100 order-2 order-md-1">
                     <div class="position-relative w-auto">
-                        <?php echo wp_get_attachment_image(3415, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
+                        <?php echo wp_get_attachment_image(4843, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
                         <span class="wx-480 hx-480 wx-responsive hx-responsive rounded-circle bg-primary position-absolute top-9 start-0 z-1"></span>
-                        <?php echo wp_get_attachment_image(3416, 'full', false, ['class' => 'wx-130 h-auto z-3 position-absolute top-100 start-50 translate-middle px-3 py-2 bg-white rounded-3']); ?>
+                        <?php echo wp_get_attachment_image(4844, 'full', false, ['class' => 'wx-130 h-auto z-3 position-absolute top-100 start-50 translate-middle px-3 py-2 bg-white rounded-3']); ?>
                     </div>
                 </div>
 
@@ -54,7 +54,7 @@
                     <div class="mb-4 home-page__title home-page__list">
                         <?php the_content(); ?>
                     </div>
-                    <a href="#" class="home-page__buttom1">
+                    <a href="<?php echo  get_permalink(pll_get_post(333)); ?>" class="home-page__buttom1">
                         <?php echo PearTheme::lang('Learn more','Leer más','了解更多','Leia mais')?> 
                         <i class="bi bi-arrow-right"></i>
                     </a>
@@ -411,7 +411,7 @@
 
     <!-- Tours inca trail -->
     <section class="py-default position-relative pt-5">
-        <?php echo wp_get_attachment_image(3437, 'full', false, ['class' => 'w-100 hx-600 object-fit-cover position-absolute top-0 start-0 z-1 filter-5']); ?>
+        <?php echo wp_get_attachment_image(4846, 'full', false, ['class' => 'w-100 hx-600 object-fit-cover position-absolute top-0 start-0 z-1 filter-5']); ?>
         <span class="pt-5 d-block"></span>
         <div class="container position-relative z-2 pt-5 mt-5">
             <!-- titulo -->
@@ -524,7 +524,7 @@
     <!-- Categories Home -->
     <section class="py-default position-relative">
         <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/fondos/Bg-sections.webp" alt="background page">
+        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
 
         <div class="container">
             <!-- titulo -->
@@ -625,7 +625,7 @@
                 <div class="col-sm-6 col-lg-3 mb-3 mb-lg-0">
                   <div class="bg-success px-3 py-3 d-flex flex-column align-items-center rounded-4 position-relative h-100">
                       <!-- Background -->
-                      <img class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover z-1" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/fondos/bg-cards.webp" alt="background page">
+                      <img class="position-absolute start-0 top-0 w-100 h-100 object-fit-cover z-1" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/bg-cards.webp" alt="background page">
 
                       <div class="mb-3 rounded-circle px-3 py-3 bg-white">
                           <?php if($count===1){
@@ -695,7 +695,7 @@
     <!-- Blogs -->
     <section class="py-default position-relative">
         <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/fondos/Bg-sections.webp" alt="background page">
+        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
 
         <div class="container">
             <!-- titulo -->
@@ -736,20 +736,18 @@
                     </div>
                 </div>
                 <?php
-                        endwhile;
-                        wp_reset_postdata(); 
+                    endwhile;
+                    wp_reset_postdata(); 
                     endif;
                 ?>
             </div>
 
             <!-- Blogs Link -->
             <div class="d-flex w-100 justify-content-center">
-                <div>
-                    <a href="<?php echo get_permalink(pll_get_post(335)); ?>" class="home-page__buttom1">
-                        <?php echo PearTheme::lang('View All Blogs','Ver todos los blogs','查看所有博客','Ver todos os blogs') ?> 
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
+                <a href="<?php echo get_permalink(pll_get_post(335)); ?>" class="home-page__buttom1">
+                    <?php echo PearTheme::lang('View All Blogs','Ver todos los blogs','查看所有博客','Ver todos os blogs') ?> 
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </div>
 
         </div>

@@ -1052,4 +1052,30 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 
+
+  //
+  // Table Content de los blogs
+  //
+
+  const $tableContentBlogs = document.getElementById("contentTitlesBlog");
+  const $titleH2Blogs = document.querySelectorAll("#text-blog h2");
+  const $fragmentTitle = document.createDocumentFragment();
+  if($tableContentBlogs){
+
+    $titleH2Blogs.forEach(title => {
+        const $li = document.createElement("li");
+        $li.textContent = title.textContent;
+
+        $li.addEventListener('click',()=>{
+            title.scrollIntoView({
+                behavior: "smooth",
+            })
+        })
+
+        $fragmentTitle.appendChild($li)
+    });
+
+    $tableContentBlogs.appendChild($fragmentTitle)
+  }
+
 });

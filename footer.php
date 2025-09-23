@@ -10,22 +10,22 @@
 
     <div class="d-flex flex-wrap justify-content-center align-items-center">
         <div class="px-3" style="max-width: 150px;">
-            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-lonely.webp" alt="background page">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-lonely.webp" alt="background page">
         </div>
         <div class="px-3" style="max-width: 150px;height: 120px;">
-            <img class="w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-mominee.webp" alt="background page">
+            <img class="w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-mominee.webp" alt="background page">
         </div>
         <div class="px-3" style="max-width: 150px;">
-            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-peru.webp" alt="background page">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-peru.webp" alt="background page">
         </div>
         <div class="px-3" style="max-width: 150px;">
-            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-tourradar.webp" alt="background page">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-tourradar.webp" alt="background page">
         </div>
         <div class="px-3" style="max-width: 150px;">
-            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-tripadvisorr.webp" alt="background page">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-tripadvisorr.webp" alt="background page">
         </div>
         <div class="px-3" style="max-width: 150px;">
-            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>./assets/imagenes/iconos/icon-traveler.webp" alt="background page">
+            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/iconos/icon-traveler.webp" alt="background page">
         </div>
     </div>
   </div>
