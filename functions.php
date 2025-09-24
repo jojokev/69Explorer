@@ -311,53 +311,6 @@ function agregarclase2( $atts, $content = null ) {
 
 add_shortcode('div2', 'agregarclase2');
 
-/* perticion de form de blogs */
-
-function search_tours_ajax() {
-    $search_query = isset($_POST['s']) ? sanitize_text_field($_POST['s']) : '';
-
-    $args = array(
-        'post_type' => 'blog', // Filtrar solo tours
-        'posts_per_page' => 10,
-        's' => $search_query, // Buscar por palabra clave
-    );
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) { ?>
-        <h2 class="h3 mb-3 text-primary">
-            <?php echo PearTheme::lang('Search results','Resultados de la búsqueda','搜索结果') ?>:
-            <span class="ffe"> <?php echo $search_query; ?> </span>
-        </h2>
-        <?php
-        while ($query->have_posts()) {
-            $query->the_post();
-            ?>
-            <div class="blog_article col-12 col-md-6">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail( 'medium_large' ); ?>
-                    <div class="text_blog_article">
-                        <span><i class="bi bi-calendar-check text-primary"></i> <?php the_time( 'F j, Y' );?></span>
-                        <h3><?php the_title(); ?></h3>
-                        <?php
-                            $excerpt = get_the_excerpt();
-                            $excerpt_200 = wp_trim_words($excerpt, 35);
-                        ?>
-                        <p>
-                            <?php echo $excerpt_200;?>
-                        </p>
-                    </div>
-                </a>
-            </div>
-            <?php
-        }
-    } else {
-        echo '<h2 class="text-primary">No se encontraron tours.</h2>';
-    }
-    wp_die();
-}
-add_action('wp_ajax_search_tours', 'search_tours_ajax');
-add_action('wp_ajax_nopriv_search_tours', 'search_tours_ajax');
 
 add_filter('wpseo_breadcrumb_links', function($links) {
     if (!empty($links)) {
@@ -368,8 +321,6 @@ add_filter('wpseo_breadcrumb_links', function($links) {
     }
     return $links;
 });
-
-
 
 // Buscador de tours
 

@@ -5,8 +5,8 @@ get_header();
 <!-- Contenido Blog -->
 <section class="py-default position-relative">
     <div class="container">
-        <div class="row gx-5">
-            <div class="col-8 article-blog">
+        <div class="row gx-3 gy-4 w-100">
+            <div class="col-12 col-lg-8 article-blog pe-0 pe-lg-4">
                 <h1 class="h1 fw-bold mb-3 text-center"><?php the_title(); ?></h1>
                 <div class="d-flex justify-content-center mb-45">
                     <span class="fs-94 text-opaco me-3">
@@ -19,7 +19,10 @@ get_header();
                         <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                           <path d="M10.9991 1.00003C12.9392 0.999677 14.8376 1.56371 16.4628 2.62339C18.0879 3.68306 19.3698 5.19262 20.152 6.96807C20.9343 8.74352 21.1832 10.7082 20.8684 12.6226C20.5536 14.537 19.6887 16.3186 18.3791 17.75M10.9991 5.00003V11L14.9991 13M1.49908 7.87503C1.18043 8.84369 1.01182 9.85539 0.999084 10.875M1.82908 15C2.39059 16.2919 3.21867 17.4505 4.25908 18.4M3.63508 4.23503C3.91413 3.93126 4.21169 3.64505 4.52608 3.37803M7.64308 20.42C10.1368 21.3084 12.881 21.1717 15.2741 20.04" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        5 min. read
+                        <?php $readingTime = get_field("reading_time");
+                            if($readingTime){ echo $readingTime." min. read";}
+                            else{ echo "5 min. read";}
+                        ?>
                     </span>
                 </div>
                 <div class="w-100 mb-45">
@@ -29,7 +32,7 @@ get_header();
                     <?php  the_content(); ?>
                 </article>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-8 col-lg-4 mx-auto ps-0 ps-lg-4">
                 <!-- Find Your Blog -->
                 <div class="px-3 py-3 border rounded-3 mb-4" style="background-color: #FAFAFA;">
                     <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">Find Your Blog</h2>
@@ -39,7 +42,7 @@ get_header();
                             <button class="roun rounded-end-3 bg-primary text-white px-3 py-2 border-0">
                                 <i class="bi bi-search"></i>
                             </button>
-                            <input type="hidden" name="post_type" value="tour"> 
+                            <input type="hidden" name="post_type" value="blog"> 
                         </div>
                     </form>
                 </div>
@@ -69,7 +72,7 @@ get_header();
                             if ($toursofperu->have_posts()) :
                                 while ($toursofperu->have_posts()) : $toursofperu->the_post();
                         ?>
-                            <div class="col">
+                            <div class="col-12">
                                 <div class="d-flex border rounded-3 px-2 py-2">
                                     <?php if ( has_post_thumbnail() ) {
                                         the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover rounded-3' ) );

@@ -908,25 +908,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Search Blogs page
-  const $formSearchBlogs = document.getElementById("form-search-blogs");
-  const $wrapperSearchBlogs = document.getElementById("items-search-blogs");
-
-  if($formSearchBlogs){
-      $formSearchBlogs.addEventListener("submit",(event)=>{
-          event.preventDefault();
-          let formDataBlog = new FormData($formSearchBlogs);
-          fetch($formSearchBlogs.getAttribute("action"),{
-              method: "POST",
-              body: formDataBlog,
-          })
-          .then(response => response.text())
-          .then(data=>{
-              $wrapperSearchBlogs.innerHTML = data;
-          })
-          .catch(error => console.error("Error de la perticion: ",error));
-      });
-  }
 
   //
   //
