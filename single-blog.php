@@ -35,7 +35,9 @@ get_header();
             <div class="col-12 col-sm-8 col-lg-4 mx-auto ps-0 ps-lg-4">
                 <!-- Find Your Blog -->
                 <div class="px-3 py-3 border rounded-3 mb-4" style="background-color: #FAFAFA;">
-                    <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">Find Your Blog</h2>
+                    <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">
+                        <?php echo PearTheme::lang('Find Your Blog','Encuentra tu blog','找到你的博客','Encontre seu blog') ?>
+                    </h2>
                     <form action="<?php echo esc_url(home_url('/')); ?>" role="search">
                         <div class="d-flex ">
                             <input type="text" class="w-100 px-2 py-2 fs-95 border rounded-3 rounded-end-0" placeholder="<?php echo PearTheme::lang('Destinos, Excursões','Destinos, Tours','目的地、旅行','Destinos') ?>" name="s" aria-label="Username" aria-describedby="basic-addon1">
@@ -50,7 +52,7 @@ get_header();
                 <!-- Table contents -->
                 <div class="px-3 py-3 border rounded-3 mb-4" style="background-color: #FAFAFA;">
                     <h2 class="cursor-pointer h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1 d-flex justify-content-between" data-bs-toggle="collapse" data-bs-target="#contentTitlesBlog" aria-controls="contentTitlesBlog" aria-expanded="false" aria-label="Toggle navigation">
-                        Table Contents
+                        <?php echo PearTheme::lang('Table Contents','Índice de contenidos','目录','Índice da tabela') ?>
                         <i class="ms-2 bi bi-chevron-down"></i>
                     </h2>
                     <ul class="collapse mt-4" id="contentTitlesBlog">
@@ -59,7 +61,9 @@ get_header();
              
                 <!-- Latest Blogs -->
                 <div class="px-3 py-3 border rounded-3 mb-4 position-sticky top-5 lastest-blogs" style="background-color: #FAFAFA;">
-                    <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">Latest Blogs</h2>
+                    <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">
+                        <?php echo PearTheme::lang('Latest Blogs','Últimos blogs','最新博客','Blogs mais recentes') ?>
+                    </h2>
                     <div class="row gy-3">
                         <?php
                             $args = array(
@@ -74,9 +78,11 @@ get_header();
                         ?>
                             <div class="col-12">
                                 <div class="d-flex border rounded-3 px-2 py-2">
-                                    <?php if ( has_post_thumbnail() ) {
-                                        the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover rounded-3' ) );
-                                    } ?>
+                                    <a class="" href="<?php the_permalink(); ?>">
+                                         <?php if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover rounded-3' ) );
+                                        } ?>
+                                    </a>
                                     <div class="w-100 ps-2">
                                         <h3 class="h6 mb-2">
                                             <a class="h6s fw-bold-600" href="<?php the_permalink(); ?>"><?php the_title();?></a>

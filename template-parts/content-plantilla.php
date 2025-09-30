@@ -12,9 +12,17 @@
     </div>
 <?php endif; ?>
     
-<div class="wp_page">
+<div class="wp_page py-default position-relative">
     <div class="container">
         <?php the_content(); ?>
     </div>
 </div>
-<?php get_template_part('template-parts/about-item') ?>
+
+<!--  Why Choose home -->
+<div class="position-relative">
+    <!-- Background -->
+    <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
+
+    <?php get_template_part('/template/why-us','/why-us') ?>
+</div>
+<!-- Fin Why Choose home -->

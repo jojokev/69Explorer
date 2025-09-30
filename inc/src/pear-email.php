@@ -94,7 +94,7 @@ class Pearmail extends PearMailTemplate {
        $attachments=[];
     //    
      // validate all fields  empty
-      $requiredFields = ['fullname','email','subject','country','messaje'];
+      $requiredFields = ['fullname','email','subject','country'];
      $result=    PearValidate::validateFields($data,$requiredFields);
         if ($result!==true) {
             return  ['status' => 500, 'title' => 'Error', 'message' => "The field $result is required"] ; // 

@@ -76,7 +76,8 @@ html {
 @for $i from 50 through 600 {
   @if $i % 10 == 0 {
     .wx-#{$i} {
-      width:  #{$i}px ;
+      width:  #{$i}px;
+      min-width: #{$i}px;
     }
   }
 }
@@ -120,6 +121,19 @@ html {
 }
 //
 //wordpress
+//
+.is-provider-youtube {
+    height: 460px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.is-provider-youtube iframe,.is-provider-youtube div {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
 .wp-block-image{
   margin-bottom: 1rem;
 }
@@ -139,12 +153,15 @@ html {
 .wx-responsive{
     @media (max-width:767px) {
       width: 550px;
+      min-width: 550px;
     }
     @media (max-width:575px) {
       width: 340px;
+      min-width: 340px;
     }
     @media (max-width:360px) {
       width: 300px;
+      min-width: 300px;
     }
 }
 .hx-responsive{

@@ -1,25 +1,27 @@
 <main class=" ">
-    <div class="banner_blog bg-50 mb-5">
-        <?php if (has_post_thumbnail()) {
-            the_post_thumbnail('list_articles_thumbs');
-        } ?>
-        <div class="titulo_h2">
-            <h1><?php the_title(); ?></h1>
-        </div>
-    </div>
+    <div class="py-default position-relative mb-45">
+		<!-- Background -->
+    	<img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
+
+		<div class="container">
+			<h1 class="h2 fw-bold mb-3 text-center z-2 position-relative"><?php the_title(); ?></h1>
+		</div>
+	</div>
     <div class="container-xl">
         <div class="texto__blog__page mb-5">
             <?php the_content(); ?>
         </div>
         <div class="row gx-3 gy-4 w-100">
             <div class="col-12 col-lg-8 pe-0 pe-lg-4">
-                <h2 class="h3 mb-3 text-primary"><?php echo PearTheme::lang('Recent Blogs','Blogs Recientes','最近的博客','Blogs recentes') ?></h2>
+                <h2 class="h3 fw-bold-600 mb-4 text-primary"><?php echo PearTheme::lang('Recent Blogs','Blogs Recientes','最近的博客','Blogs recentes') ?></h2>
                 <div class="row gy-3">
                     <?php
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array(
                             'post_type' => 'blog',
                             'posts_per_page' => 10,
-                            'order' => 'DESC'
+                            'order' => 'DESC',
+                            'paged'          => $paged
                         );
                         $toursofperu = new WP_Query($args);
                         if ($toursofperu->have_posts()) :
@@ -52,6 +54,31 @@
                             </div>
                         <?php
                             endwhile;
+                        ?>
+                            <nav aria-label="navigation my-4">
+                              <ul class="pagination justify-content-center py-4">
+                                <?php
+                                echo paginate_links(array(
+                                    'total'   => $toursofperu->max_num_pages,
+                                    'current' => $paged,
+                                    'prev_text' => '<span class="page-link">« Anterior</span>',
+                                    'next_text' => '<span class="page-link">Siguiente »</span>',
+                                    'type'    => 'array',
+                                )) ? implode('', array_map(function($link){
+                                    // Aseguramos clases Bootstrap en cada <li>
+                                    $active = strpos($link, 'current') !== false ? ' active' : '';
+                                    return '<li class="page-item'.$active.'">'.str_replace('page-numbers', 'page-link', $link).'</li>';
+                                }, paginate_links(array(
+                                    'total'   => $toursofperu->max_num_pages,
+                                    'current' => $paged,
+                                    'prev_text' => '«',
+                                    'next_text' => '»',
+                                    'type'    => 'array',
+                                )))) : '';
+                                ?>
+                              </ul>
+                            </nav>
+                        <?php
                             wp_reset_postdata();
                         else :
                             echo 'No hay publicaciones con la categoría "inca-trail".';
@@ -62,7 +89,9 @@
             <div class="col-12 col-sm-8 col-lg-4 mx-auto ps-0 ps-lg-4">
                 <!-- Find Your Blog -->
               <div class="px-3 py-3 border rounded-3 mb-4" style="background-color: #FAFAFA;">
-                  <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">Find Your Blog</h2>
+                  <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">
+                    <?php echo PearTheme::lang('Find Your Blog','Encuentra tu blog','找到你的博客','Encontre seu blog') ?>
+                  </h2>
                   <form action="<?php echo esc_url(home_url('/')); ?>" role="search">
                       <div class="d-flex ">
                           <input type="text" class="w-100 px-2 py-2 fs-95 border rounded-3 rounded-end-0" placeholder="<?php echo PearTheme::lang('Destinos, Excursões','Destinos, Tours','目的地、旅行','Destinos') ?>" name="s" aria-label="Username" aria-describedby="basic-addon1">
@@ -76,7 +105,9 @@
 
               <!-- Latest Blogs -->
               <div class="px-3 py-3 border rounded-3 mb-4 position-sticky top-5 lastest-blogs" style="background-color: #FAFAFA;">
-                  <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">Latest Blogs</h2>
+                  <h2 class="mb-4 h5 fw-bold-600 border-start border-primary border-3 ps-2 py-1">
+                    <?php echo PearTheme::lang('Latest Blogs','Últimos blogs','最新博客','Blogs mais recentes') ?>
+                  </h2>
                   <div class="row gy-3">
                       <?php
                           $args = array(
@@ -91,9 +122,11 @@
                       ?>
                           <div class="col-12">
                               <div class="d-flex border rounded-3 px-2 py-2">
-                                  <?php if ( has_post_thumbnail() ) {
-                                      the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover rounded-3' ) );
-                                  } ?>
+                                  <a class="" href="<?php the_permalink(); ?>">
+                                    <?php if ( has_post_thumbnail() ) {
+                                       the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover    rounded-3' ) );
+                                    } ?>
+                                  </a>
                                   <div class="w-100 ps-2">
                                       <h3 class="h6 mb-2">
                                           <a class="h6s fw-bold-600" href="<?php the_permalink(); ?>"><?php the_title();?></a>
@@ -118,6 +151,7 @@
               </div>
             </div>
         </div>
+        
     </div>
     <section class="container">
         <?php get_template_part('template-parts/why_us') ?>

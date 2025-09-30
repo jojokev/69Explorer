@@ -54,164 +54,169 @@
     </div>
 </div> 
 
-<header class="container-xl">
-    <div class="d-flex justify-content-between align-items-center border-bottom py-3 flex-column flex-lg-row">
-        <div class="logo">
-            <a href="<?php echo APP_LANG == 'en' ? esc_url(get_permalink(7)) : (APP_LANG == 'es' ? esc_url(get_permalink(603)) :(APP_LANG == 'pt'?esc_url(get_permalink(4045)):esc_url(get_permalink(2873)))); ?>">
-                <?php echo wp_get_attachment_image(544,'full-size', null, array('class'=>'wx-250 h-auto'))?>
-            </a>
-        </div>
-        <ul class="p-0 d-flex jutify-content-center flex-wrap px-2  ">
-            <a href="https://www.facebook.com/69explorerperu" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/69explorerperu/" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com/@69explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
-              <i class="bi bi-tiktok"></i>
-            </a>
-            <a href="https://www.youtube.com/@69Explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
-              <i class="bi bi-youtube"></i>
-            </a>
-        </ul>
-        <div class="content-nav-page w-auto">
-            <div class="items-links-header d-flex align-items-center justify-content-center justify-content-lg-end text-center mb-2">
-                <div class="" id="copy-links-header"> 
-                    <!-- copy-links-header - crear una copia de este div en el menu de navegacion de un tour -->
-                    <a href="<?php echo  get_permalink(pll_get_post(927)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Inca Trail Availability','Disponibilidad del Camino Inca','印加古道可用情况','Disponibilidade da Trilha Inca') ?></a>
-                    <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-3 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
-                    <a href="<?php echo  get_permalink(pll_get_post(420)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Payments','Pagos','支付','Pagamentos') ?></a>
-                    <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
-                </div>
-                <div class="lang-dropdown position-relative my-2 m-sm-0" id="content-languages-page">
-                    <span id="language-page" lang="<?php echo PearTheme::lang('en','es','zh','pt')?>"></span>
-                    <ul id="languages-options">
-                        <?php pll_the_languages( array( 'show_flags' => 1,'show_names' => 1,'display_names_as'  => 'slug') ); ?>
-                    </ul>
-                    <i class="bi bi-arrow-down"></i>
-                </div>
-                <script>
-                    let $wrapperLangPage = document.getElementById("content-languages-page");
-                    let $langSelectedPage = document.getElementById("language-page");
-                    let $languagesOptionsPage = document.getElementById("languages-options");
-                    if($langSelectedPage.getAttribute("lang") === "en") $langSelectedPage.appendChild($languagesOptionsPage.children[0]);
-                    if($langSelectedPage.getAttribute("lang") === "es") $langSelectedPage.appendChild($languagesOptionsPage.children[1]);
-                    if($langSelectedPage.getAttribute("lang") === "zh") $langSelectedPage.appendChild($languagesOptionsPage.children[2]);
-                    if($langSelectedPage.getAttribute("lang") === "pt") $langSelectedPage.appendChild($languagesOptionsPage.children[3]);
-                    $langSelectedPage.querySelector("a").setAttribute("href","#");
-                </script>
+<header class="">
+    <div class="container-xl">
+        <div class="d-flex justify-content-between align-items-center border-bottom py-3 flex-column flex-lg-row">
+            <div class="logo">
+                <a href="<?php echo APP_LANG == 'en' ? esc_url(get_permalink(7)) : (APP_LANG == 'es' ? esc_url(get_permalink(603)) :(APP_LANG == 'pt'?esc_url(get_permalink(4045)):esc_url(get_permalink(2873)))); ?>">
+                    <?php echo wp_get_attachment_image(544,'full-size', null, array('class'=>'wx-250 h-auto'))?>
+                </a>
             </div>
-            <div class="items-links-header d-flex justify-content-center justify-content-lg-end">
-                <a href="https://api.whatsapp.com/send?phone=51961721125&text=Hello%2C%20Explorer%2069!%20%F0%9F%8C%8D" target="_blank" rel="nofollow" class="fs-95 text-dark fw-bold-600 py-2 py-sm-0">
-                    <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <g clip-path="url(#clip0_182_534)">
-                        <path d="M9.22125 11.045C9.35894 11.1082 9.51405 11.1227 9.66105 11.086C9.80804 11.0492 9.93814 10.9636 10.0299 10.843L10.2666 10.533C10.3908 10.3674 10.5518 10.233 10.737 10.1404C10.9221 10.0479 11.1263 9.99967 11.3333 9.99967H13.3333C13.6869 9.99967 14.026 10.1402 14.2761 10.3902C14.5261 10.6402 14.6666 10.9794 14.6666 11.333V13.333C14.6666 13.6866 14.5261 14.0258 14.2761 14.2758C14.026 14.5259 13.6869 14.6663 13.3333 14.6663C10.1507 14.6663 7.09841 13.4021 4.84797 11.1516C2.59753 8.90119 1.33325 5.84894 1.33325 2.66634C1.33325 2.31272 1.47373 1.97358 1.72378 1.72353C1.97382 1.47348 2.31296 1.33301 2.66659 1.33301H4.66659C5.02021 1.33301 5.35935 1.47348 5.60939 1.72353C5.85944 1.97358 5.99992 2.31272 5.99992 2.66634V4.66634C5.99992 4.87333 5.95173 5.07749 5.85915 5.26263C5.76658 5.44777 5.63218 5.60881 5.46658 5.73301L5.15458 5.96701C5.0322 6.06046 4.94593 6.1934 4.91045 6.34324C4.87496 6.49308 4.89244 6.65059 4.95992 6.78901C5.87104 8.63958 7.36953 10.1362 9.22125 11.045Z" stroke="#E91E3E" stroke-linecap="round" stroke-linejoin="round"/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_182_534">
-                          <rect width="16" height="16" fill="white"/>
-                        </clipPath>
-                      </defs>
-                    </svg>
-                    +51 961 721 125
+            <ul class="p-0 d-flex jutify-content-center flex-wrap px-2  ">
+                <a href="https://www.facebook.com/69explorerperu" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                  <i class="bi bi-facebook"></i>
                 </a>
-                <a href="mailto:info@69explorer.com" class="fs-95 text-dark fw-bold-600 py-2 py-sm-0">
-                    <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M11.3333 12.6667C11.3333 13.0203 11.1928 13.3594 10.9427 13.6095C10.6927 13.8595 10.3535 14 9.99992 14H2.66659C2.31296 14 1.97382 13.8595 1.72378 13.6095C1.47373 13.3594 1.33325 13.0203 1.33325 12.6667V7.33333C1.33326 7.09929 1.39487 6.86937 1.51189 6.66669C1.62892 6.464 1.79723 6.29569 1.99992 6.17867M14.6666 3.66667L10.3873 6.45267C10.1723 6.59078 9.92211 6.66421 9.66658 6.66421C9.41105 6.66421 9.16091 6.59078 8.94592 6.45267L4.66659 3.66667M5.99992 2H13.3333C14.0696 2 14.6666 2.59695 14.6666 3.33333V8.66667C14.6666 9.40305 14.0696 10 13.3333 10H5.99992C5.26354 10 4.66659 9.40305 4.66659 8.66667V3.33333C4.66659 2.59695 5.26354 2 5.99992 2Z" stroke="#E91E3E" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    info@69explorer.com
+                <a href="https://www.instagram.com/69explorerperu/" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                  <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d27140492-Reviews-69_Explorer_Peru-Cusco_Cusco_Region.html" target="_blank" class="d-flex align-items-center fs-95 text-tripadvisor fw-bold-600 py-2 py-sm-0">
-                    <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M11.745 7.43055C11.0105 7.43055 10.4155 8.02605 10.4155 8.76005C10.4155 9.49405 11.011 10.0895 11.745 10.0895C12.4795 10.0895 13.0745 9.49405 13.0745 8.76005C13.0745 8.51505 13.0085 8.28605 12.893 8.08905L12.8965 8.09555C12.6625 7.69555 12.2345 7.43055 11.745 7.43055ZM4.25245 7.43055C3.51795 7.43055 2.92295 8.02605 2.92295 8.76005C2.92295 9.49405 3.51845 10.0895 4.25245 10.0895C4.98695 10.0895 5.58195 9.49405 5.58195 8.76005C5.58195 8.51505 5.51595 8.28605 5.40045 8.08905L5.40395 8.09555C5.16995 7.69555 4.74195 7.43055 4.25245 7.43055ZM11.745 6.22455C11.7455 6.22455 11.7455 6.22455 11.746 6.22455C13.146 6.22455 14.281 7.35955 14.281 8.75955C14.281 10.1595 13.146 11.2945 11.746 11.2945C10.346 11.2945 9.21095 10.1595 9.21095 8.75955C9.21095 8.29305 9.33695 7.85605 9.55645 7.48055L9.54995 7.49255C9.99595 6.72905 10.8115 6.22505 11.745 6.22455ZM4.25245 6.22305C5.65295 6.22305 6.78845 7.35855 6.78845 8.75905C6.78845 10.1595 5.65295 11.295 4.25245 11.295C2.85195 11.295 1.71645 10.1595 1.71645 8.75905C1.71645 8.29205 1.84245 7.85455 2.06245 7.47905L2.05595 7.49105C2.50245 6.72755 3.31845 6.22305 4.25245 6.22305ZM7.99995 4.41005C9.01595 4.41055 9.98295 4.61805 10.862 4.99255L10.814 4.97455C9.22745 5.51955 8.09045 6.95955 7.99995 8.67705L7.99945 8.68705C7.90945 6.95955 6.77195 5.51905 5.21445 4.98305L5.18545 4.97455C6.01645 4.61855 6.98395 4.41155 7.99945 4.41105L7.99995 4.41005ZM8.00395 3.18555C8.00295 3.18555 8.00145 3.18555 8.00045 3.18555C6.21795 3.18555 4.56395 3.73505 3.19845 4.67455L3.22695 4.65605H0.501953L1.72845 5.99005C0.974453 6.67805 0.503453 7.66455 0.503453 8.76105C0.503453 10.83 2.18095 12.5075 4.24995 12.5075C5.23545 12.5075 6.13195 12.127 6.80095 11.505L6.79845 11.507L7.99945 12.814L9.20045 11.508C9.86695 12.1275 10.7635 12.508 11.749 12.508C13.8185 12.508 15.496 10.8305 15.496 8.76105C15.496 7.66455 15.025 6.67755 14.274 5.99255L14.271 5.99005L15.4975 4.65605H12.7795C11.443 3.73555 9.78945 3.18605 8.00695 3.18605C8.00545 3.18605 8.00445 3.18605 8.00295 3.18605L8.00395 3.18555Z" fill="#00852F"/>
-                    </svg>
-                    <?php echo PearTheme::lang('Reviews','Reseñas','评论','Comentários') ?>
+                <a href="https://www.tiktok.com/@69explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                  <i class="bi bi-tiktok"></i>
                 </a>
-                <a href="<?php echo  get_permalink(pll_get_post(324)); ?>" class="d-flex align-items-center fs-95 fw-bold-600  py-2 py-sm-0">
-                    <?php echo PearTheme::lang('Inquire Now','Contáctenos','联系我们','Informe-se agora') ?>
-                    <i class="bi bi-arrow-right ms-1"></i>
+                <a href="https://www.youtube.com/@69Explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                  <i class="bi bi-youtube"></i>
                 </a>
+            </ul>
+            <div class="content-nav-page w-auto">
+                <div class="items-links-header d-flex align-items-center justify-content-center justify-content-lg-end text-center mb-2">
+                    <div class="" id="copy-links-header"> 
+                        <!-- copy-links-header - crear una copia de este div en el menu de navegacion de un tour -->
+                        <a href="<?php echo  get_permalink(pll_get_post(927)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Inca Trail Availability','Disponibilidad del Camino Inca','印加古道可用情况','Disponibilidade da Trilha Inca') ?></a>
+                        <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-3 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
+                        <a href="<?php echo  get_permalink(pll_get_post(420)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Payments','Pagos','支付','Pagamentos') ?></a>
+                        <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
+                    </div>
+                    <div class="lang-dropdown position-relative my-2 m-sm-0" id="content-languages-page">
+                        <span id="language-page" lang="<?php echo PearTheme::lang('en','es','zh','pt')?>"></span>
+                        <ul id="languages-options">
+                            <?php pll_the_languages( array( 'show_flags' => 1,'show_names' => 1,'display_names_as'  => 'slug') ); ?>
+                        </ul>
+                        <i class="bi bi-arrow-down"></i>
+                    </div>
+                    <script>
+                        let $wrapperLangPage = document.getElementById("content-languages-page");
+                        let $langSelectedPage = document.getElementById("language-page");
+                        let $languagesOptionsPage = document.getElementById("languages-options");
+                        if($langSelectedPage.getAttribute("lang") === "en") $langSelectedPage.appendChild($languagesOptionsPage.children[0]);
+                        if($langSelectedPage.getAttribute("lang") === "es") $langSelectedPage.appendChild($languagesOptionsPage.children[1]);
+                        if($langSelectedPage.getAttribute("lang") === "zh") $langSelectedPage.appendChild($languagesOptionsPage.children[2]);
+                        if($langSelectedPage.getAttribute("lang") === "pt") $langSelectedPage.appendChild($languagesOptionsPage.children[3]);
+                        $langSelectedPage.querySelector("a").setAttribute("href","#");
+                    </script>
+                </div>
+                <div class="items-links-header d-flex justify-content-center justify-content-lg-end">
+                    <a href="https://api.whatsapp.com/send?phone=51961721125&text=Hello%2C%20Explorer%2069!%20%F0%9F%8C%8D" target="_blank" rel="nofollow" class="fs-95 text-dark fw-bold-600 py-2 py-sm-0">
+                        <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <g clip-path="url(#clip0_182_534)">
+                            <path d="M9.22125 11.045C9.35894 11.1082 9.51405 11.1227 9.66105 11.086C9.80804 11.0492 9.93814 10.9636 10.0299 10.843L10.2666 10.533C10.3908 10.3674 10.5518 10.233 10.737 10.1404C10.9221 10.0479 11.1263 9.99967 11.3333 9.99967H13.3333C13.6869 9.99967 14.026 10.1402 14.2761 10.3902C14.5261 10.6402 14.6666 10.9794 14.6666 11.333V13.333C14.6666 13.6866 14.5261 14.0258 14.2761 14.2758C14.026 14.5259 13.6869 14.6663 13.3333 14.6663C10.1507 14.6663 7.09841 13.4021 4.84797 11.1516C2.59753 8.90119 1.33325 5.84894 1.33325 2.66634C1.33325 2.31272 1.47373 1.97358 1.72378 1.72353C1.97382 1.47348 2.31296 1.33301 2.66659 1.33301H4.66659C5.02021 1.33301 5.35935 1.47348 5.60939 1.72353C5.85944 1.97358 5.99992 2.31272 5.99992 2.66634V4.66634C5.99992 4.87333 5.95173 5.07749 5.85915 5.26263C5.76658 5.44777 5.63218 5.60881 5.46658 5.73301L5.15458 5.96701C5.0322 6.06046 4.94593 6.1934 4.91045 6.34324C4.87496 6.49308 4.89244 6.65059 4.95992 6.78901C5.87104 8.63958 7.36953 10.1362 9.22125 11.045Z" stroke="#E91E3E" stroke-linecap="round" stroke-linejoin="round"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_182_534">
+                              <rect width="16" height="16" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        +51 961 721 125
+                    </a>
+                    <a href="mailto:info@69explorer.com" class="fs-95 text-dark fw-bold-600 py-2 py-sm-0">
+                        <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M11.3333 12.6667C11.3333 13.0203 11.1928 13.3594 10.9427 13.6095C10.6927 13.8595 10.3535 14 9.99992 14H2.66659C2.31296 14 1.97382 13.8595 1.72378 13.6095C1.47373 13.3594 1.33325 13.0203 1.33325 12.6667V7.33333C1.33326 7.09929 1.39487 6.86937 1.51189 6.66669C1.62892 6.464 1.79723 6.29569 1.99992 6.17867M14.6666 3.66667L10.3873 6.45267C10.1723 6.59078 9.92211 6.66421 9.66658 6.66421C9.41105 6.66421 9.16091 6.59078 8.94592 6.45267L4.66659 3.66667M5.99992 2H13.3333C14.0696 2 14.6666 2.59695 14.6666 3.33333V8.66667C14.6666 9.40305 14.0696 10 13.3333 10H5.99992C5.26354 10 4.66659 9.40305 4.66659 8.66667V3.33333C4.66659 2.59695 5.26354 2 5.99992 2Z" stroke="#E91E3E" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        info@69explorer.com
+                    </a>
+                    <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d27140492-Reviews-69_Explorer_Peru-Cusco_Cusco_Region.html" target="_blank" class="d-flex align-items-center fs-95 text-tripadvisor fw-bold-600 py-2 py-sm-0">
+                        <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M11.745 7.43055C11.0105 7.43055 10.4155 8.02605 10.4155 8.76005C10.4155 9.49405 11.011 10.0895 11.745 10.0895C12.4795 10.0895 13.0745 9.49405 13.0745 8.76005C13.0745 8.51505 13.0085 8.28605 12.893 8.08905L12.8965 8.09555C12.6625 7.69555 12.2345 7.43055 11.745 7.43055ZM4.25245 7.43055C3.51795 7.43055 2.92295 8.02605 2.92295 8.76005C2.92295 9.49405 3.51845 10.0895 4.25245 10.0895C4.98695 10.0895 5.58195 9.49405 5.58195 8.76005C5.58195 8.51505 5.51595 8.28605 5.40045 8.08905L5.40395 8.09555C5.16995 7.69555 4.74195 7.43055 4.25245 7.43055ZM11.745 6.22455C11.7455 6.22455 11.7455 6.22455 11.746 6.22455C13.146 6.22455 14.281 7.35955 14.281 8.75955C14.281 10.1595 13.146 11.2945 11.746 11.2945C10.346 11.2945 9.21095 10.1595 9.21095 8.75955C9.21095 8.29305 9.33695 7.85605 9.55645 7.48055L9.54995 7.49255C9.99595 6.72905 10.8115 6.22505 11.745 6.22455ZM4.25245 6.22305C5.65295 6.22305 6.78845 7.35855 6.78845 8.75905C6.78845 10.1595 5.65295 11.295 4.25245 11.295C2.85195 11.295 1.71645 10.1595 1.71645 8.75905C1.71645 8.29205 1.84245 7.85455 2.06245 7.47905L2.05595 7.49105C2.50245 6.72755 3.31845 6.22305 4.25245 6.22305ZM7.99995 4.41005C9.01595 4.41055 9.98295 4.61805 10.862 4.99255L10.814 4.97455C9.22745 5.51955 8.09045 6.95955 7.99995 8.67705L7.99945 8.68705C7.90945 6.95955 6.77195 5.51905 5.21445 4.98305L5.18545 4.97455C6.01645 4.61855 6.98395 4.41155 7.99945 4.41105L7.99995 4.41005ZM8.00395 3.18555C8.00295 3.18555 8.00145 3.18555 8.00045 3.18555C6.21795 3.18555 4.56395 3.73505 3.19845 4.67455L3.22695 4.65605H0.501953L1.72845 5.99005C0.974453 6.67805 0.503453 7.66455 0.503453 8.76105C0.503453 10.83 2.18095 12.5075 4.24995 12.5075C5.23545 12.5075 6.13195 12.127 6.80095 11.505L6.79845 11.507L7.99945 12.814L9.20045 11.508C9.86695 12.1275 10.7635 12.508 11.749 12.508C13.8185 12.508 15.496 10.8305 15.496 8.76105C15.496 7.66455 15.025 6.67755 14.274 5.99255L14.271 5.99005L15.4975 4.65605H12.7795C11.443 3.73555 9.78945 3.18605 8.00695 3.18605C8.00545 3.18605 8.00445 3.18605 8.00295 3.18605L8.00395 3.18555Z" fill="#00852F"/>
+                        </svg>
+                        <?php echo PearTheme::lang('Reviews','Reseñas','评论','Comentários') ?>
+                    </a>
+                    <a href="<?php echo  get_permalink(pll_get_post(324)); ?>" class="d-flex align-items-center fs-95 fw-bold-600  py-2 py-sm-0">
+                        <?php echo PearTheme::lang('Inquire Now','Contáctenos','联系我们','Informe-se agora') ?>
+                        <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <nav class="navigation-page py-2">
-        <ul class="d-flex justify-content-center">
-            <?php
-                $args = array(
-                    'post_type' => 'page',
-                    'posts_per_page' => 6,
-                    'order' => 'ASC',
-                    'post__in' => array( 290, 294, 296, 298, 282)
-                );
-                $toursofperu_query = new WP_Query($args);
+    
+    <nav class="bg-primary">
+        <div class="navigation-page py-2">
+            <ul class="d-flex justify-content-center">
+                <?php
+                    $args = array(
+                        'post_type' => 'page',
+                        'posts_per_page' => 6,
+                        'order' => 'ASC',
+                        'post__in' => array( 290, 294, 296, 298, 282)
+                    );
+                    $toursofperu_query = new WP_Query($args);
 
-                if ($toursofperu_query->have_posts()) :
-                    while ($toursofperu_query->have_posts()) : $toursofperu_query->the_post();
-                        $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
-                        $titulo = get_post_meta(get_the_ID(), 'custom_field_titulo_menu', true);
-                        $text = get_the_content(get_the_ID());
-                        $imagen = get_post_meta(get_the_ID(), 'custom_field_imagen_portada', true);
-                        $text2 = get_post_meta(get_the_ID(), 'custom_field_contenido_editor', true);
+                    if ($toursofperu_query->have_posts()) :
+                        while ($toursofperu_query->have_posts()) : $toursofperu_query->the_post();
+                            $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
+                            $titulo = get_post_meta(get_the_ID(), 'custom_field_titulo_menu', true);
+                            $text = get_the_content(get_the_ID());
+                            $imagen = get_post_meta(get_the_ID(), 'custom_field_imagen_portada', true);
+                            $text2 = get_post_meta(get_the_ID(), 'custom_field_contenido_editor', true);
+                    ?>
+                        <li class="item_menu position-relative">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php echo $titulo ?> <i class="bi bi-chevron-down ms-1"></i>
+                            </a>
+                            <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
+                                <ul class="px-2 py-2 border rounded-2">
+                                    <?php
+                                        $toursofperu = get_posts([
+                                            'post_type' => 'tour',
+                                            'numberposts' => -1, //cantidad de entradas
+                                            'order' => 'desc',
+                                            'ignore_sticky_posts' => 0,
+                                            'category_name' => $categoria
+                                        ]);
+
+                                        foreach ($toursofperu as $post) :
+                                    ?>
+                                            <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
+                                    <?php  endforeach;
+                                        wp_reset_postdata();
+                                    ?>
+                                </ul>
+                            </div>
+                        </li>
+                    <?php   
+                        endwhile;
+                        wp_reset_postdata();
+                    endif;
                 ?>
-                    <li class="item_menu position-relative">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php echo $titulo ?> <i class="bi bi-chevron-down ms-1"></i>
-                        </a>
-                        <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
-                            <ul class="px-2 py-2 border rounded-2">
-                                <?php
-                                    $toursofperu = get_posts([
-                                        'post_type' => 'tour',
-                                        'numberposts' => -1, //cantidad de entradas
-                                        'order' => 'desc',
-                                        'ignore_sticky_posts' => 0,
-                                        'category_name' => $categoria
-                                    ]);
+                <?php if(APP_LANG==="en"){ ?>
+                <li class="item_menu position-relative">
+                    <a class="text-white">
+                        E-bike Trips <i class="bi bi-chevron-down ms-1"></i>
+                    </a>
+                    <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
+                        <ul class="px-2 py-2 border rounded-2">
+                            <?php
+                                $toursofperu = get_posts([
+                                    'post_type' => 'tour',
+                                    'numberposts' => -1, //cantidad de entradas
+                                    'order' => 'desc',
+                                    'ignore_sticky_posts' => 0,
+                                    'category_name' => 'e-bike-trips'
+                                ]);
 
-                                    foreach ($toursofperu as $post) :
-                                ?>
-                                        <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
-                                <?php  endforeach;
-                                    wp_reset_postdata();
-                                ?>
-                            </ul>
-                        </div>
-                    </li>
-                <?php   
-                    endwhile;
-                    wp_reset_postdata();
-                endif;
-            ?>
-            <?php if(APP_LANG==="en"){ ?>
-            <li class="item_menu position-relative">
-                <a>
-                    E-bike Trips <i class="bi bi-chevron-down ms-1"></i>
-                </a>
-                <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
-                    <ul class="px-2 py-2 border rounded-2">
-                        <?php
-                            $toursofperu = get_posts([
-                                'post_type' => 'tour',
-                                'numberposts' => -1, //cantidad de entradas
-                                'order' => 'desc',
-                                'ignore_sticky_posts' => 0,
-                                'category_name' => 'e-bike-trips'
-                            ]);
-
-                            foreach ($toursofperu as $post) :
-                        ?>
-                                <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
-                        <?php  endforeach;
-                            wp_reset_postdata();
-                        ?>
-                    </ul>
-                </div>
-            </li>
-            <?php } ?>
-        </ul>
-        <div class="btn_menu">
-            <span></span><span></span><span></span>
+                                foreach ($toursofperu as $post) :
+                            ?>
+                                    <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
+                            <?php  endforeach;
+                                wp_reset_postdata();
+                            ?>
+                        </ul>
+                    </div>
+                </li>
+                <?php } ?>
+            </ul>
+            <div class="btn_menu">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </nav>
 </header>

@@ -221,7 +221,7 @@ get_header();
                             </svg>
                         </div>
                         <div class="ms-2">
-                            <p class="fw-bold mb-1"><?php echo PearTheme::lang('Type Tours','Tipo de Tours','类型旅游','Tipo de passeios') ?></p>
+                            <p class="fw-bold mb-1"><?php echo PearTheme::lang('Type of Tour','Tipo de Tour','类型旅游','Tipo de passeio') ?></p>
                             <p class="m-0"><?php echo $estilo ?></p>
                         </div>
                     </div>
