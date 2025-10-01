@@ -61,10 +61,7 @@ get_header();
 <!-- End Our Story -->
 
 <!--  Why Choose home -->
-<div class="position-relative">
-    <!-- Background -->
-    <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+<div class="bg-section position-relative">
     <?php get_template_part('/template/why-us','/why-us') ?>
 </div>
 <!-- Fin Why Choose home -->
@@ -98,10 +95,7 @@ get_header();
 </div>
 
 <!-- Reviews -->
-<div class="position-relative">
-    <!-- Background -->
-    <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+<div class="bg-section position-relative">
     <?php get_template_part('/template/reviews','reviews') ?>
 </div>
 <!-- Fin Reviews -->

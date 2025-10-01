@@ -38,10 +38,7 @@
     <!-- Fin Banner -->
 
     <!-- About us -->
-    <section class="py-default position-relative">
-        <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+    <section class="bg-section py-default position-relative">
         <div class="container">
             <div class="d-flex align-items-center px-0 px-sm-2 px-lg-5 flex-wrap flex-md-nowrap">
                 <div class="d-flex justify-content-center w-100 order-2 order-md-1">
@@ -526,10 +523,7 @@
     <!-- Fin Tours inca trail -->
 
     <!-- Categories Home -->
-    <section class="py-default position-relative">
-        <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+    <section class="bg-section py-default position-relative">
         <div class="container">
             <!-- titulo -->
             <div class="mb-45 text-center position-relative z-2">
@@ -614,10 +608,7 @@
     <!-- Fin Reviews -->
 
     <!-- Blogs -->
-    <section class="py-default position-relative">
-        <!-- Background -->
-        <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+    <section class="bg-section py-default position-relative">
         <div class="container">
             <!-- titulo -->
             <div class="w-lg-75 mx-auto mb-45 text-center position-relative z-2">

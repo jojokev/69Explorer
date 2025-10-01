@@ -29,7 +29,7 @@ function registerStyles() {
         'main',
         get_template_directory_uri() .'/assets/css/main.css',
         false,
-        '4.4.2'
+        '4.4.3'
     );
     /* wp_register_style(
         'app',
@@ -37,12 +37,6 @@ function registerStyles() {
         false,
         '4.2.1'
     );*/
-    wp_register_style(
-        'styles',
-        get_template_directory_uri() .'/assets/css/styles.css', 
-        false,
-        '4.4.2'
-    );
 
     // Encolar los estilos para que se apliquen
     wp_enqueue_style('main');

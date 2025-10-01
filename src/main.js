@@ -1039,13 +1039,23 @@ document.addEventListener("DOMContentLoaded", function() {
   //
 
   const $tableContentBlogs = document.getElementById("contentTitlesBlog");
-  const $titleH2Blogs = document.querySelectorAll("#text-blog h2");
+  const $titlesBlogs = document.querySelectorAll("#text-blog h2,#text-blog h3");
+  console.log($titlesBlogs)
+
   const $fragmentTitle = document.createDocumentFragment();
   if($tableContentBlogs){
 
-    $titleH2Blogs.forEach(title => {
+    $titlesBlogs.forEach(title => {
         const $li = document.createElement("li");
-        $li.textContent = title.textContent;
+        $li.style.padding = "4px 0px";
+        if(title.nodeName === "H2"){
+          $li.textContent = title.textContent;
+          $li.style.fontWeight = "600";
+        }
+        else{
+          $li.innerHTML = `<i class="bi bi-arrow-return-right text-primary"></i> ${title.textContent}`;
+          $li.style.listStyleType = "none";
+        }
 
         $li.addEventListener('click',()=>{
             title.scrollIntoView({

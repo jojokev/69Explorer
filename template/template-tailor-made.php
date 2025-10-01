@@ -6,10 +6,7 @@
 
 <main class="position-relative">
   <!-- Titulo Tailor made -->
-  <section class="py-default position-relative">
-      <!-- Background -->
-      <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+  <section class="bg-section py-default position-relative">
       <div class="container text-center">
         <h1 class="text-center fs-1 fw-bold mb-5"><?php the_title(); ?></h1>
 
@@ -544,10 +541,7 @@
 </main>
 
 <!--  Why Choose home -->
-<div class="py-default position-relative">
-  <!-- Background -->
-  <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+<div class="bg-section py-default position-relative">
   <?php get_template_part('/template/why-us','/why-us') ?>
 </div>
 <!-- Fin Why Choose home -->
@@ -637,10 +631,7 @@
 <!-- End Recommended Tours -->
 
 <!-- Reviews -->
-<div class="py-default position-relative">
-    <!-- Background -->
-    <img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+<div class="bg-section py-default position-relative">
     <?php get_template_part('/template/reviews','reviews') ?>
 </div>
 <!-- Fin Reviews -->

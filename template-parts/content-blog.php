@@ -1,8 +1,5 @@
 <main class=" ">
-    <div class="py-default position-relative mb-45">
-		<!-- Background -->
-    	<img class="p position-absolute start-0 top-0 w-100 h-100 object-fit-cover" src="<?php echo get_template_directory_uri(); ?>/assets/imagenes/fondos/Bg-sections.webp" alt="background page">
-
+    <div class="bg-section py-default position-relative mb-45">
 		<div class="container">
 			<h1 class="h2 fw-bold mb-3 text-center z-2 position-relative"><?php the_title(); ?></h1>
 		</div>
