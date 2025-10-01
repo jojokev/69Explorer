@@ -37,7 +37,7 @@
   <section class="py-default">
     <div class="container position-relative ">
       <form id="contact_form" class="row" data-action="<?php echo get_template_directory_uri()?>/inc/src/pear-email.php" action="#" method="post">
-        <div class="col-12 col-lg-9 mx-auto">
+        <div class="col-12 col-lg-10 mx-auto">
           <!-- Text DEscription -->
           <article class="mb-45 text-center">
             <?php the_content(); ?>

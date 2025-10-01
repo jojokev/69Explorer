@@ -19,9 +19,10 @@ get_header();
                         <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                           <path d="M10.9991 1.00003C12.9392 0.999677 14.8376 1.56371 16.4628 2.62339C18.0879 3.68306 19.3698 5.19262 20.152 6.96807C20.9343 8.74352 21.1832 10.7082 20.8684 12.6226C20.5536 14.537 19.6887 16.3186 18.3791 17.75M10.9991 5.00003V11L14.9991 13M1.49908 7.87503C1.18043 8.84369 1.01182 9.85539 0.999084 10.875M1.82908 15C2.39059 16.2919 3.21867 17.4505 4.25908 18.4M3.63508 4.23503C3.91413 3.93126 4.21169 3.64505 4.52608 3.37803M7.64308 20.42C10.1368 21.3084 12.881 21.1717 15.2741 20.04" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <?php $readingTime = get_field("reading_time");
-                            if($readingTime){ echo $readingTime." min. read";}
-                            else{ echo "5 min. read";}
+                        <?php 
+                            $readingTime = get_field("reading_time");
+                            if($readingTime){ echo PearTheme::lang($readingTime.' min. read',$readingTime.' min. de lectura','阅读时间约'.$readingTime.'分钟',$readingTime.' min. de leitura');}
+                            else{ echo PearTheme::lang('5 min. read','5 min. de lectura','阅读时间约5分钟','5 min. de leitura');}
                         ?>
                     </span>
                 </div>

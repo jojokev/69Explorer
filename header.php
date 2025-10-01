@@ -5,16 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="theme-color" content="#E91E3E">
-    <meta name="author" content="Juan carlos Serrano">
-    <meta name="twitter:site" content="<?php echo get_bloginfo('url') . '/' ?>" />
-    <meta name="twitter:title" content="<?php wp_title('&laquo;', true, 'right'); ?>" />
-    <meta name="twitter:image" content="<?php echo (get_the_post_thumbnail_url(get_the_ID())); ?>" />
-    <meta name="twitter:description" content="<?php echo get_the_excerpt() ?>" >
 
-    <meta name="google-site-verification" content="d62BGVQjleiztK-fTswTuEB4xWPTnmkzCMn6codh-QM" />
     <meta name="google-site-verification" contenido="oqxA-CpMsr8QFU1R-e7LwlkEVKfaE_ZlwOh_mTH_Giw" />
 
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!--  -->
@@ -22,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
+
     <!-- clarity  -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -44,7 +38,7 @@
                 <strong class="me-2" style="color: #F80;"><?php echo PearTheme::lang('Inca Trail 2026','Camino Inca 2026','印加古道2026','Trilha Inca 2026')?></strong> 
                 – <?php echo PearTheme::lang('Limited spots! Book in advance & secure your place','¡Plazas limitadas! Reserve con antelación y asegúrese su plaza.','名额有限！提前预约，锁定席位','Vagas limitadas! Reserve com antecedência e garanta o seu lugar.')?>
             </span>
-            <a href="<?php echo esc_url(get_permalink(pll_get_post(94))); ?>" class="btn bg-primary text-white py-1 px-2 fw-bold-600">
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(927))); ?>" class="btn bg-primary text-white py-1 px-2 fw-bold-600">
                 <?php echo PearTheme::lang('See more','Ver más','查看更多','Veja mais')?>
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2661 7.99958L9.02693 4.85852L9.72307 4.14062L14.2183 8.49958L9.72307 12.8585L9.02693 12.1406L12.2661 8.99958H2.5V7.99958H12.2661Z" fill="white"/>
@@ -80,7 +74,7 @@
                 <div class="items-links-header d-flex align-items-center justify-content-center justify-content-lg-end text-center mb-2">
                     <div class="" id="copy-links-header"> 
                         <!-- copy-links-header - crear una copia de este div en el menu de navegacion de un tour -->
-                        <a href="<?php echo  get_permalink(pll_get_post(927)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Inca Trail Availability','Disponibilidad del Camino Inca','印加古道可用情况','Disponibilidade da Trilha Inca') ?></a>
+                        <a href="<?php echo  get_permalink(pll_get_post(5355)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Tailor-Made','Hecho a medida','量身定制','Feito sob medida') ?></a>
                         <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-3 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
                         <a href="<?php echo  get_permalink(pll_get_post(420)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Payments','Pagos','支付','Pagamentos') ?></a>
                         <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
@@ -129,7 +123,7 @@
                         </svg>
                         <?php echo PearTheme::lang('Reviews','Reseñas','评论','Comentários') ?>
                     </a>
-                    <a href="<?php echo  get_permalink(pll_get_post(324)); ?>" class="d-flex align-items-center fs-95 fw-bold-600  py-2 py-sm-0">
+                    <a href="<?php echo  get_permalink(pll_get_post(324)); ?>" class="d-flex align-items-center fs-95 fw-bold-600 py-2 py-sm-0 d-inline-block d-lg-none d-xl-inline-block">
                         <?php echo PearTheme::lang('Inquire Now','Contáctenos','联系我们','Informe-se agora') ?>
                         <i class="bi bi-arrow-right ms-1"></i>
                     </a>
