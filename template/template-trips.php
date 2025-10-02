@@ -1,0 +1,559 @@
+<?php
+/*
+  Template Name: Trips Template
+  Template Post Type: page
+*/
+get_header();
+$categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
+?>
+
+<!--  Banner Category -->
+<div class="py-5 px-3 mb-3 bg-50 position-relative wrapper-banner-tour-page">
+    <div class="img-background-banner">
+        <?php the_post_thumbnail('full-size',array('class'=>'img-cover')) ?>
+    </div>
+    <h1 class="py-5 text-center fs-1 fw-bold"><?php the_title(); ?></h1>
+</div>
+<!--  Fin Banner Category -->
+
+<!--  Content Category -->
+<article class="py-default position-relative">
+    <div class="container">
+        <div class="text-center article-blog w-lg-75 mx-auto">
+            <!-- content -->
+            <?php the_content(); ?>
+        </div>
+    </div>
+</article>
+<!--  Fin Content Category -->
+
+<!--  Why Choose home -->
+<div class="bg-section position-relative">
+    <?php get_template_part('/template/why-us','/why-us') ?>
+</div>
+<!-- Fin Why Choose home -->
+
+<!-- Categories Home -->
+<section class="py-default position-relative">
+    <div class="container">
+        <!-- titulo -->
+        <div class="mb-45 text-center position-relative z-2">
+            <span class="fw-bold text-uppercase mb-1 text-primary"><?php the_title(); ?></span>
+            <h2 class="fw-bold h3 text-uppercase mb-3">
+                <?php echo PearTheme::lang('The Best Places to Visit in Cusco and Peru','Los mejores lugares para visitar en Cusco y Perú','库斯科和秘鲁最值得游览的地方','Os melhores locais para visitar em Cusco e no Peru')?>
+            </h2>
+            <p>
+                <?php echo PearTheme::lang('Explore the wonders of our popular destinations','Explore las maravillas de nuestros destinos populares','探索我们热门目的地的奇妙之处','Explore as maravilhas dos nossos destinos populares')?>
+            </p>
+        </div>
+
+        <!-- Categories carousel -->
+        <div class="px-2 position-relative">
+                <div class="swiper mainCarousel pb-5 position-static">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $args = array(
+                            'post_type' => 'page',
+                            'order' => 'ASC',
+                            'post__in' => array(282, 294, 290, 298)
+                        );
+                        $toursofperu = new WP_Query($args);
+                        if ($toursofperu->have_posts()) :
+                            while ($toursofperu->have_posts()) : $toursofperu->the_post();
+                            
+                        ?>
+                        <div class="swiper-slide">
+                            <div class="item_destination">
+                                <?php $imagen = get_post_meta(get_the_ID(), 'custom_field_imagen_portada', true); ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <img class="w-100 hx-380 object-fit-cover rounded-4" src="<?php echo $imagen?>" alt="<?php the_title(); ?>">
+                                    <div class="px-3 py-3">
+                                        <h3 class="h5 text-dark fw-bold-600 m-0">
+                                            <?php the_title(); ?>
+                                            <i class="bi bi-arrow-right"></i>
+                                        </h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>    
+                        <?php
+                        endwhile;
+                            wp_reset_postdata(); 
+                        else :
+                            echo 'No hay publicaciones con la categoría "inca-trail".';
+                        endif;
+                        ?>
+                    </div>
+                    <div class="swiper-button-next position-absolute end-0 top-50 translate-middle-y"><i class="bi bi-arrow-right-circle-fill h2 text-primary m-0"></i></div>
+                    <div class="swiper-button-prev position-absolute start-0 top-50 translate-middle-y"><i class="bi bi-arrow-left-circle-fill h2 text-primary m-0"></i></div>
+                    <div class="swiper-pagination position-absolute start-50 bottom-0 translate-middle-x"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin Categories Home -->
+
+<!-- Tours de varias categorias -->
+<section class="bg-section categories-tour py-default position-relative">
+    <div class="container">
+        <!-- titulo -->
+        <div class="mb-3 text-center">
+            <span class="fw-bold text-uppercase text-primary mb-1"><?php echo PearTheme::lang('Choose your destination','Elige tu destino','选择您的目的地','Escolha o seu destino') ?></span>
+            <h2 class="fw-bold h3 text-uppercase mb-3">
+                <?php echo PearTheme::lang('Unique Adventures in Cusco','Aventuras Únicas en Cusco','库斯科的独特冒险','Aventuras únicas em Cusco') ?>
+            </h2>
+            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                <!--  Inca trail -->
+                <li class="m-2 m-lg-0" role="presentation">
+                    <button
+                        class="categories-tour__button active py-2 px-3 rounded-3 fw-bold-600"
+                        id="pills-trail-tab" data-bs-toggle="pill" data-bs-target="#pills-trail" type="button"
+                        role="tab" aria-controls="pills-trail" aria-selected="true">
+                        Inca trail
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </li>
+                <!-- Alternative trail -->
+                <li class="m-2 m-lg-0 ms-lg-3 mb-2" role="presentation">
+                    <button
+                        class="categories-tour__button py-2 px-3 rounded-3 fw-bold-600"
+                        id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab"
+                        aria-controls="pills-home" aria-selected="false">
+                        <?php echo PearTheme::lang('Alternative Tours','Tours Alternativos','另类旅游','Excursões alternativas') ?>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </li>
+                <!--  tour to machu picchu -->
+                <li class="m-2 m-lg-0 ms-lg-3 mb-2" role="presentation">
+                    <button
+                        class="categories-tour__button py-2 px-3 rounded-3 fw-bold-600"
+                        id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button"
+                        role="tab" aria-controls="pills-profile" aria-selected="false">
+                        <?php echo PearTheme::lang('Tours to machu Picchu','Tours a Machu Picchu','马丘比丘旅游','Excursões a Machu Picchu') ?>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </li>
+                <!--  day tours -->
+                <li class="m-2 m-lg-0 ms-lg-3 mb-2" role="presentation">
+                    <button
+                        class="categories-tour__button py-2 px-3 rounded-3 fw-bold-600"
+                        id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button"
+                        role="tab" aria-controls="pills-contact" aria-selected="false">
+                        <?php echo PearTheme::lang('Day Tours','Tours de un Dia','一日游','Excursões de um dia') ?>
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+                </li>
+                <!--  Others route -->
+            </ul>
+        </div>
+
+        <!-- categorias -->
+        <div class="tab-content" id="pills-tabContent">
+            <!-- content Inca trail -->
+            <div class="tab-pane fade show active" id="pills-trail" role="tabpanel" aria-labelledby="pills-trail-tab"
+                tabindex="0">
+                <div class="w-lg-75 mb-5 text-center m-auto">
+                    <p><?php echo PearTheme::lang('Explore the wonders of our popular destinations','Explore las maravillas de nuestros destinos populares','探索我们热门目的地的奇妙之处','Explore as maravilhas dos nossos destinos populares')?></p>
+                    </p>
+                </div>
+
+                <div class="px-2 position-relative mb-4">
+                    <div class="swiper mainCarousel py-5 position-static">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $queryincatrail = new WP_Query(
+                                    array(
+                                        'post_type' => 'tour',
+                                        'posts_per_page' => 6,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'category',
+                                                'field' => 'term_id',
+                                                'terms' => 54,
+                                            ),
+                                        ),
+                                    )
+                                );
+                                if ($queryincatrail->have_posts()) :
+                                    while ($queryincatrail->have_posts()) :$queryincatrail->the_post();
+                                    $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+                                    $lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+                                    $dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+                                    $dificulty = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+                                    $estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+                            ?>
+                            <div class="swiper-slide h-auto">
+                                <div class="border rounded-4 gx-3 px-2 py-2 bg-white h-100 d-flex flex-column">
+                                    <a href="<?php the_permalink(); ?>" class="d-flex position-relative w-100 rounded-3 mtn-50 mb-1 hx-250 overflow-hidden">
+                                        <?php the_post_thumbnail('full-size',array('class'=>'w-100 h-100 object-fit-cover') ) ?>
+                                    </a>
+                                    <div class="p-2 flex-grow-1 flex-shrink-1 d-flex flex-column">
+                                        <div class="border-bottom pb-4 mb-4 flex-grow-1 flex-shrink-1">
+                                            <a href="<?php the_permalink(); ?>" class="text-dark"><h3 class="fw-bold-600 h5"><?php the_title(); ?></h3></a>
+                                            <div class="d-flex mb-2">
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                      <g clip-path="url(#clip0_157_115)">
+                                                        <path d="M8.038 3.44395C8.87441 3.44395 9.55234 2.76576 9.55234 1.9296C9.55234 1.09298 8.87441 0.415039 8.038 0.415039C7.20138 0.415039 6.52344 1.09298 6.52344 1.9296C6.52344 2.76579 7.20138 3.44395 8.038 3.44395Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M11.3271 12.8593L10.6269 9.15953L10.3154 5.88016C10.1135 3.7055 8.00621 3.86138 6.97756 4.86888L5.26815 6.62172L3.66552 7.14075L3.35027 5.35106C3.31574 5.15553 3.12915 5.02475 2.93359 5.05903C2.73781 5.09353 2.60706 5.28016 2.64177 5.47594L2.9744 7.36469L2.9324 7.37831C2.62112 7.49285 2.45424 7.83091 2.55259 8.14778L2.56034 8.17197C2.64649 8.44991 2.91127 8.62503 3.19321 8.60791L4.50684 16.0679C4.54137 16.2634 4.72774 16.3942 4.92352 16.3596C5.11909 16.3251 5.24981 16.1388 5.21531 15.943L3.89746 8.45813L5.32706 8.13419C5.66087 8.05719 5.97799 7.91963 6.26181 7.72831L7.19306 7.10225L7.52193 9.60203C7.54587 9.78538 7.33012 10.5563 7.28106 10.7352L5.87824 15.4906C5.77165 15.8742 5.99587 16.2721 6.37943 16.3803L6.40593 16.3878C6.76862 16.4899 7.14912 16.2974 7.28106 15.9446L9.17215 11.3067L9.67359 13.414C9.74352 13.5535 9.83602 13.6798 9.94727 13.7887L12.1809 16.1601C12.4452 16.4183 12.8633 16.4298 13.141 16.1864L13.1746 16.1575C13.3166 16.0329 13.4032 15.8566 13.4145 15.6678C13.4257 15.4789 13.3612 15.2934 13.2346 15.153L11.3271 12.8593Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M12.5993 8.90293C12.854 8.87993 13.0892 8.75668 13.2526 8.56C13.4165 8.36328 13.4954 8.10975 13.4717 7.85506L13.2618 5.58343C13.213 5.05478 12.7451 4.66509 12.2162 4.71275L11.0493 4.81815L11.4364 9.00787L12.5993 8.90293Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                      </g>
+                                                      <defs>
+                                                        <clipPath id="clip0_157_115">
+                                                          <rect width="16" height="16" fill="white" transform="translate(0 0.415039)"/>
+                                                        </clipPath>
+                                                      </defs>
+                                                    </svg>
+                                                    <?php echo $dificulty ?>
+                                                </span>
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                        <path d="M10.6667 9.74835V11.215L11.7333 11.8817M10.6667 1.74835V4.41502M14 5.41502V4.41502C14 4.0614 13.8595 3.72226 13.6095 3.47221C13.3594 3.22216 13.0203 3.08169 12.6667 3.08169H3.33333C2.97971 3.08169 2.64057 3.22216 2.39052 3.47221C2.14048 3.72226 2 4.0614 2 4.41502V13.7484C2 14.102 2.14048 14.4411 2.39052 14.6912C2.64057 14.9412 2.97971 15.0817 3.33333 15.0817H5.66667M2 7.08169H5.33333M5.33333 1.74835V4.41502M14.6667 11.0817C14.6667 13.2908 12.8758 15.0817 10.6667 15.0817C8.45753 15.0817 6.66667 13.2908 6.66667 11.0817C6.66667 8.87255 8.45753 7.08169 10.6667 7.08169C12.8758 7.08169 14.6667 8.87255 14.6667 11.0817Z" stroke="#E91E3E" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <?php echo PearTheme::days($dias)?>
+                                                </span>
+                                            </div>
+                                            <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <?php echo get_field("description"); ?>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fs-85 text-dark-emphasis"><?php echo PearTheme::lang('Price from','Precio desde','价格  起','Preço a partir de') ?>:</span>
+                                                <p class="mb-0 h5 fw-bold text-primary">$<?php echo $precio ?> <span class="fs-85 text-dark-emphasis">/ <?php echo PearTheme::lang('per person','por persona','每人','por pessoa') ?></span></p>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="home-page__buttom2">
+                                                <?php echo PearTheme::lang('View Itinerary','Ver itinerario','查看行程','Ver itinerário') ?>
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                             endwhile;
+                             wp_reset_postdata( );
+                             endif;
+                            ?>
+                        </div>
+                        <div class="swiper-button-next position-absolute end-0 top-50 translate-middle-y"><i class="bi bi-arrow-right-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-button-prev position-absolute start-0 top-50 translate-middle-y"><i class="bi bi-arrow-left-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-pagination position-absolute start-50 bottom-0 translate-middle-x"></div>
+                    </div>
+                </div>
+
+                <!-- Button Day tours -->
+                <div class="d-flex justify-content-center w-100">
+                    <a href="<?php echo  get_permalink(pll_get_post(298)); ?>" class="home-page__buttom1"><?php echo PearTheme::lang('See All Tours','Ver todos los tours','查看所有行程','Ver todos os passeios') ?><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!--  content Alternatives treks -->
+            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+                <div class="w-lg-75 mb-5 text-center m-auto">
+                    <p class="fs-95">
+                        <?php echo PearTheme::lang('Explore fascinating routes beyond the Inca Trail and immerse yourself in a unique trekking experience in the Peruvian Andes. Discover ancient trails that will take you to impressive archaeological sites, surrounded by spectacular landscapes. Each alternative route offers a physical and mental challenge. If you are looking for adventure, culture and nature in one trip, our alternative tours are the perfect option for you.','Explora rutas fascinantes más allá del Camino Inca y sumérgete en una experiencia de trekking única en los Andes peruanos. Descubre senderos ancestrales que te llevarán a impresionantes sitios arqueológicos, rodeados de paisajes espectaculares. Cada ruta alternativa ofrece un desafío físico y mental. Si buscas aventura, cultura y naturaleza en un solo viaje, nuestros tours alternativos son la opción perfecta para ti.','探索印加古道之外的迷人路线，沉浸在秘鲁安第斯山脉的独特徒步旅行体验中。探索古老的小径，带您前往令人印象深刻的考古遗址，周围环绕着壮观的风景。每条替代路线都会带来体力和精神上的挑战。如果您想在一次旅行中体验冒险、文化和自然，我们的替代旅游是您的完美选择。','Explore rotas fascinantes além da Trilha Inca e mergulhe numa experiência única de trekking nos Andes peruanos. Descubra trilhas antigas que o levarão a impressionantes sítios arqueológicos, rodeados por paisagens espetaculares. Cada rota alternativa oferece um desafio físico e mental. Se procura aventura, cultura e natureza numa única viagem, os nossos passeios alternativos são a opção perfeita para si.') ?>
+                    </p>
+                </div>
+                <div class="px-2 position-relative mb-4">
+                    <div class="swiper mainCarousel py-5 position-static">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $queryincatrail = new WP_Query(
+                                    array(
+                                        'post_type' => 'tour',
+                                        'posts_per_page' => 6,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'category',
+                                                'field' => 'term_id',
+                                                'terms' => 52,
+                                            ),
+                                        ),
+                                    )
+                                );
+                                if ($queryincatrail->have_posts()) :
+                                    while ($queryincatrail->have_posts()) :$queryincatrail->the_post();
+                                    $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+                                    $lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+                                    $dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+                                    $dificulty = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+                                    $estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+                            ?>
+                            <div class="swiper-slide h-auto">
+                                <div class="border rounded-4 gx-3 px-2 py-2 bg-white h-100 d-flex flex-column">
+                                    <a href="<?php the_permalink(); ?>" class="d-flex position-relative w-100 rounded-3 mtn-50 mb-1 hx-250 overflow-hidden">
+                                        <?php the_post_thumbnail('full-size',array('class'=>'w-100 h-100 object-fit-cover') ) ?>
+                                    </a>
+                                    <div class="p-2 flex-grow-1 flex-shrink-1 d-flex flex-column">
+                                        <div class="border-bottom pb-4 mb-4 flex-grow-1 flex-shrink-1">
+                                            <a href="<?php the_permalink(); ?>" class="text-dark"><h3 class="fw-bold-600 h5"><?php the_title(); ?></h3></a>
+                                            <div class="d-flex mb-2">
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                      <g clip-path="url(#clip0_157_115)">
+                                                        <path d="M8.038 3.44395C8.87441 3.44395 9.55234 2.76576 9.55234 1.9296C9.55234 1.09298 8.87441 0.415039 8.038 0.415039C7.20138 0.415039 6.52344 1.09298 6.52344 1.9296C6.52344 2.76579 7.20138 3.44395 8.038 3.44395Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M11.3271 12.8593L10.6269 9.15953L10.3154 5.88016C10.1135 3.7055 8.00621 3.86138 6.97756 4.86888L5.26815 6.62172L3.66552 7.14075L3.35027 5.35106C3.31574 5.15553 3.12915 5.02475 2.93359 5.05903C2.73781 5.09353 2.60706 5.28016 2.64177 5.47594L2.9744 7.36469L2.9324 7.37831C2.62112 7.49285 2.45424 7.83091 2.55259 8.14778L2.56034 8.17197C2.64649 8.44991 2.91127 8.62503 3.19321 8.60791L4.50684 16.0679C4.54137 16.2634 4.72774 16.3942 4.92352 16.3596C5.11909 16.3251 5.24981 16.1388 5.21531 15.943L3.89746 8.45813L5.32706 8.13419C5.66087 8.05719 5.97799 7.91963 6.26181 7.72831L7.19306 7.10225L7.52193 9.60203C7.54587 9.78538 7.33012 10.5563 7.28106 10.7352L5.87824 15.4906C5.77165 15.8742 5.99587 16.2721 6.37943 16.3803L6.40593 16.3878C6.76862 16.4899 7.14912 16.2974 7.28106 15.9446L9.17215 11.3067L9.67359 13.414C9.74352 13.5535 9.83602 13.6798 9.94727 13.7887L12.1809 16.1601C12.4452 16.4183 12.8633 16.4298 13.141 16.1864L13.1746 16.1575C13.3166 16.0329 13.4032 15.8566 13.4145 15.6678C13.4257 15.4789 13.3612 15.2934 13.2346 15.153L11.3271 12.8593Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M12.5993 8.90293C12.854 8.87993 13.0892 8.75668 13.2526 8.56C13.4165 8.36328 13.4954 8.10975 13.4717 7.85506L13.2618 5.58343C13.213 5.05478 12.7451 4.66509 12.2162 4.71275L11.0493 4.81815L11.4364 9.00787L12.5993 8.90293Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                      </g>
+                                                      <defs>
+                                                        <clipPath id="clip0_157_115">
+                                                          <rect width="16" height="16" fill="white" transform="translate(0 0.415039)"/>
+                                                        </clipPath>
+                                                      </defs>
+                                                    </svg>
+                                                    <?php echo $dificulty ?>
+                                                </span>
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                        <path d="M10.6667 9.74835V11.215L11.7333 11.8817M10.6667 1.74835V4.41502M14 5.41502V4.41502C14 4.0614 13.8595 3.72226 13.6095 3.47221C13.3594 3.22216 13.0203 3.08169 12.6667 3.08169H3.33333C2.97971 3.08169 2.64057 3.22216 2.39052 3.47221C2.14048 3.72226 2 4.0614 2 4.41502V13.7484C2 14.102 2.14048 14.4411 2.39052 14.6912C2.64057 14.9412 2.97971 15.0817 3.33333 15.0817H5.66667M2 7.08169H5.33333M5.33333 1.74835V4.41502M14.6667 11.0817C14.6667 13.2908 12.8758 15.0817 10.6667 15.0817C8.45753 15.0817 6.66667 13.2908 6.66667 11.0817C6.66667 8.87255 8.45753 7.08169 10.6667 7.08169C12.8758 7.08169 14.6667 8.87255 14.6667 11.0817Z" stroke="#E91E3E" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <?php echo PearTheme::days($dias)?>
+                                                </span>
+                                            </div>
+                                            <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <?php echo get_field("description"); ?>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fs-85 text-dark-emphasis"><?php echo PearTheme::lang('Price from','Precio desde','价格  起','Preço a partir de') ?>:</span>
+                                                <p class="mb-0 h5 fw-bold text-primary">$<?php echo $precio ?> <span class="fs-85 text-dark-emphasis">/ <?php echo PearTheme::lang('per person','por persona','每人','por pessoa') ?></span></p>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="home-page__buttom2">
+                                                <?php echo PearTheme::lang('View Itinerary','Ver itinerario','查看行程','Ver itinerário') ?>
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                             endwhile;
+                             wp_reset_postdata( );
+                             endif;
+                            ?>
+                        </div>
+                        <div class="swiper-button-next position-absolute end-0 top-50 translate-middle-y"><i class="bi bi-arrow-right-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-button-prev position-absolute start-0 top-50 translate-middle-y"><i class="bi bi-arrow-left-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-pagination position-absolute start-50 bottom-0 translate-middle-x"></div>
+                    </div>
+                </div>
+
+                <!-- Button Alternatives treks -->
+                <div class="d-flex justify-content-center w-100">
+                    <a href="<?php echo  get_permalink(pll_get_post(290)); ?>" class="home-page__buttom1"><?php echo PearTheme::lang('See All Tours','Ver todos los tours','查看所有行程','Ver todos os passeios') ?><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- content Tours to machu Picchu -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <div class="w-lg-75 mb-5 text-center m-auto">
+                    <p class="fs-95"><?php echo PearTheme::lang('Machu Picchu, the most popular destination in South America and what most people visit Peru to see. There are several ways to visit the magnificent site, the most popular being a trip on one of the fabulous trains, either as a day tour or an overnight tour. Another popular choice is to combine a tour to Machu Picchu with the other attractions around Cusco like the Sacred Valley or Rainbow Mountain. Becoming a popular way to visit for those who like a challenge, is one of the many treks through the Andes that finish in Machu Picchu.','Machu Picchu, el destino más popular de Sudamérica y el lugar que la mayoría de la gente visita en Perú. Hay varias formas de visitar este magnífico lugar, la más popular es un viaje en uno de los fabulosos trenes, ya sea como una excursión de un día o una excursión de una noche. Otra opción popular es combinar una excursión a Machu Picchu con otras atracciones alrededor de Cusco, como el Valle Sagrado o la Montaña Arcoíris. Una de las muchas caminatas por los Andes que terminan en Machu Picchu se está convirtiendo en una forma popular de visitar para aquellos que buscan un desafío.','马丘比丘是南美洲最受欢迎的目的地，也是大多数人前往秘鲁游览的景点。游览这个壮丽景点的方式有很多种，最受欢迎的是乘坐一列神奇的火车，可以一日游或过夜游。另一个受欢迎的选择是将马丘比丘之旅与库斯科周围的其他景点（如圣谷或彩虹山）结合起来。对于那些喜欢挑战的人来说，马丘比丘是众多穿越安第斯山脉并以马丘比丘为终点的徒步旅行之一，也成为一种受欢迎的游览方式。','Machu Picchu, o destino mais popular da América do Sul e o que a maioria das pessoas visita no Peru. Existem várias maneiras de visitar este magnífico local, sendo a mais popular uma viagem num dos fabulosos comboios, seja numa excursão de um dia ou numa excursão com pernoite. Outra opção popular é combinar uma excursão a Machu Picchu com outras atrações ao redor de Cusco, como o Vale Sagrado ou a Montanha Arco-Íris. Uma forma popular de visitar o local para aqueles que gostam de desafios é uma das muitas caminhadas pelos Andes que terminam em Machu Picchu.') ?>
+                    </p>
+                </div>
+                <div class="px-2 position-relative mb-4">
+                    <div class="swiper mainCarousel py-5 position-static">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $queryincatrail = new WP_Query(
+                                    array(
+                                        'post_type' => 'tour',
+                                        'posts_per_page' => 6,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'category',
+                                                'field' => 'term_id',
+                                                'terms' => 56,
+                                            ),
+                                        ),
+                                    )
+                                );
+                                if ($queryincatrail->have_posts()) :
+                                    while ($queryincatrail->have_posts()) :$queryincatrail->the_post();
+                                    $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+                                    $lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+                                    $dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+                                    $dificulty = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+                                    $estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+                            ?>
+                            <div class="swiper-slide h-auto">
+                                <div class="border rounded-4 gx-3 px-2 py-2 bg-white h-100 d-flex flex-column">
+                                    <a href="<?php the_permalink(); ?>" class="d-flex position-relative w-100 rounded-3 mtn-50 mb-1 hx-250 overflow-hidden">
+                                        <?php the_post_thumbnail('full-size',array('class'=>'w-100 h-100 object-fit-cover') ) ?>
+                                    </a>
+                                    <div class="p-2 flex-grow-1 flex-shrink-1 d-flex flex-column">
+                                        <div class="border-bottom pb-4 mb-4 flex-grow-1 flex-shrink-1">
+                                            <a href="<?php the_permalink(); ?>" class="text-dark"><h3 class="fw-bold-600 h5"><?php the_title(); ?></h3></a>
+                                            <div class="d-flex mb-2">
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                      <g clip-path="url(#clip0_157_115)">
+                                                        <path d="M8.038 3.44395C8.87441 3.44395 9.55234 2.76576 9.55234 1.9296C9.55234 1.09298 8.87441 0.415039 8.038 0.415039C7.20138 0.415039 6.52344 1.09298 6.52344 1.9296C6.52344 2.76579 7.20138 3.44395 8.038 3.44395Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M11.3271 12.8593L10.6269 9.15953L10.3154 5.88016C10.1135 3.7055 8.00621 3.86138 6.97756 4.86888L5.26815 6.62172L3.66552 7.14075L3.35027 5.35106C3.31574 5.15553 3.12915 5.02475 2.93359 5.05903C2.73781 5.09353 2.60706 5.28016 2.64177 5.47594L2.9744 7.36469L2.9324 7.37831C2.62112 7.49285 2.45424 7.83091 2.55259 8.14778L2.56034 8.17197C2.64649 8.44991 2.91127 8.62503 3.19321 8.60791L4.50684 16.0679C4.54137 16.2634 4.72774 16.3942 4.92352 16.3596C5.11909 16.3251 5.24981 16.1388 5.21531 15.943L3.89746 8.45813L5.32706 8.13419C5.66087 8.05719 5.97799 7.91963 6.26181 7.72831L7.19306 7.10225L7.52193 9.60203C7.54587 9.78538 7.33012 10.5563 7.28106 10.7352L5.87824 15.4906C5.77165 15.8742 5.99587 16.2721 6.37943 16.3803L6.40593 16.3878C6.76862 16.4899 7.14912 16.2974 7.28106 15.9446L9.17215 11.3067L9.67359 13.414C9.74352 13.5535 9.83602 13.6798 9.94727 13.7887L12.1809 16.1601C12.4452 16.4183 12.8633 16.4298 13.141 16.1864L13.1746 16.1575C13.3166 16.0329 13.4032 15.8566 13.4145 15.6678C13.4257 15.4789 13.3612 15.2934 13.2346 15.153L11.3271 12.8593Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M12.5993 8.90293C12.854 8.87993 13.0892 8.75668 13.2526 8.56C13.4165 8.36328 13.4954 8.10975 13.4717 7.85506L13.2618 5.58343C13.213 5.05478 12.7451 4.66509 12.2162 4.71275L11.0493 4.81815L11.4364 9.00787L12.5993 8.90293Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                      </g>
+                                                      <defs>
+                                                        <clipPath id="clip0_157_115">
+                                                          <rect width="16" height="16" fill="white" transform="translate(0 0.415039)"/>
+                                                        </clipPath>
+                                                      </defs>
+                                                    </svg>
+                                                    <?php echo $dificulty ?>
+                                                </span>
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                        <path d="M10.6667 9.74835V11.215L11.7333 11.8817M10.6667 1.74835V4.41502M14 5.41502V4.41502C14 4.0614 13.8595 3.72226 13.6095 3.47221C13.3594 3.22216 13.0203 3.08169 12.6667 3.08169H3.33333C2.97971 3.08169 2.64057 3.22216 2.39052 3.47221C2.14048 3.72226 2 4.0614 2 4.41502V13.7484C2 14.102 2.14048 14.4411 2.39052 14.6912C2.64057 14.9412 2.97971 15.0817 3.33333 15.0817H5.66667M2 7.08169H5.33333M5.33333 1.74835V4.41502M14.6667 11.0817C14.6667 13.2908 12.8758 15.0817 10.6667 15.0817C8.45753 15.0817 6.66667 13.2908 6.66667 11.0817C6.66667 8.87255 8.45753 7.08169 10.6667 7.08169C12.8758 7.08169 14.6667 8.87255 14.6667 11.0817Z" stroke="#E91E3E" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <?php echo PearTheme::days($dias)?>
+                                                </span>
+                                            </div>
+                                            <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <?php echo get_field("description"); ?>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fs-85 text-dark-emphasis"><?php echo PearTheme::lang('Price from','Precio desde','价格  起','Preço a partir de') ?>:</span>
+                                                <p class="mb-0 h5 fw-bold text-primary">$<?php echo $precio ?> <span class="fs-85 text-dark-emphasis">/ <?php echo PearTheme::lang('per person','por persona','每人','por pessoa') ?></span></p>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="home-page__buttom2">
+                                                <?php echo PearTheme::lang('View Itinerary','Ver itinerario','查看行程','Ver itinerário') ?>
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                             endwhile;
+                             wp_reset_postdata( );
+                             endif;
+                            ?>
+                        </div>
+                        <div class="swiper-button-next position-absolute end-0 top-50 translate-middle-y"><i class="bi bi-arrow-right-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-button-prev position-absolute start-0 top-50 translate-middle-y"><i class="bi bi-arrow-left-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-pagination position-absolute start-50 bottom-0 translate-middle-x"></div>
+                    </div>
+                </div>
+
+                <!-- Button Tours to machu Picchu -->
+                <div class="d-flex justify-content-center w-100">
+                    <a href="<?php echo  get_permalink(pll_get_post(294)); ?>" class="home-page__buttom1"><?php echo PearTheme::lang('See All Tours','Ver todos los tours','查看所有行程','Ver todos os passeios') ?><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- content Day tours -->
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                tabindex="0">
+                <div class="w-lg-75 mb-5 text-center m-auto">
+                    <p class="fs-95"><?php echo PearTheme::lang('Around the Cusco region there are many and varied things to do and see. A great start is a Cusco City tour, where you will discover the history of this fascinating Inca City. Travel further afield and tour the beautiful Sacred Valley of the Incas, this truly spectacular part of Peru will blow you away with its history and beauty. Take a day tour to Rainbow Mountain for an experience that you will not soon forget. The pinnacle of any Peruvian tour would have to be a day tour to the Inca Citadel of Machu Picchu, the most talked about tour in Peru.','En la región de Cusco hay muchas y variadas cosas para hacer y ver. Un buen comienzo es un tour por la ciudad de Cusco, donde descubrirás la historia de esta fascinante ciudad inca. Viaja más lejos y recorre el hermoso Valle Sagrado de los Incas, esta parte verdaderamente espectacular de Perú te dejará boquiabierto con su historia y belleza. Haz un tour de un día a la Montaña de Colores para vivir una experiencia que no olvidarás fácilmente. El punto culminante de cualquier tour peruano sería un tour de un día a la Ciudadela Inca de Machu Picchu, el tour del que más se habla en Perú.','库斯科地区有很多不同的事情可做可看。库斯科城市之旅是开始游览的好地方，您将在那里发现这座迷人的印加城市的历史。再远一点，参观美丽的印加圣谷，这是秘鲁真正壮观的地区，其历史和美景将让您惊叹不已。前往彩虹山一日游，享受难忘的体验。秘鲁之旅的巅峰必须是前往印加城堡马丘比丘的一日游，这是秘鲁最受关注的旅游项目。','Na região de Cusco, há muitas e variadas coisas para fazer e ver. Um ótimo começo é um passeio pela cidade de Cusco, onde descobrirá a história desta fascinante cidade inca. Viaje mais longe e visite o belo Vale Sagrado dos Incas, esta parte verdadeiramente espetacular do Peru irá impressioná-lo com a sua história e beleza. Faça um passeio de um dia à Montanha Arco-Íris para uma experiência que não esquecerá tão cedo. O ponto alto de qualquer passeio pelo Peru seria um passeio de um dia à cidadela inca de Machu Picchu, o passeio mais comentado do Peru.') ?>
+                    </p>
+                </div>
+
+                <div class="px-2 position-relative mb-4">
+                    <div class="swiper mainCarousel py-5 position-static">
+                        <div class="swiper-wrapper">
+                            <?php
+                                $queryincatrail = new WP_Query(
+                                    array(
+                                        'post_type' => 'tour',
+                                        'posts_per_page' => 6,
+                                        'tax_query' => array(
+                                            array(
+                                                'taxonomy' => 'category',
+                                                'field' => 'term_id',
+                                                'terms' => 50,
+                                            ),
+                                        ),
+                                    )
+                                );
+                                if ($queryincatrail->have_posts()) :
+                                    while ($queryincatrail->have_posts()) :$queryincatrail->the_post();
+                                    $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
+                                    $lugares = get_post_meta(get_the_ID(), 'custom_field_lugares', true);
+                                    $dias = get_post_meta(get_the_ID(), 'custom_field_lugares_visitar', true);
+                                    $dificulty = get_post_meta(get_the_ID(), 'custom_field_dificultad', true);
+                                    $estilo = get_post_meta(get_the_ID(), 'custom_field_estilo', true);
+                            ?>
+                            <div class="swiper-slide h-auto">
+                                <div class="border rounded-4 gx-3 px-2 py-2 bg-white h-100 d-flex flex-column">
+                                    <a href="<?php the_permalink(); ?>" class="d-flex position-relative w-100 rounded-3 mtn-50 mb-1 hx-250 overflow-hidden">
+                                        <?php the_post_thumbnail('full-size',array('class'=>'w-100 h-100 object-fit-cover') ) ?>
+                                    </a>
+                                    <div class="p-2 flex-grow-1 flex-shrink-1 d-flex flex-column">
+                                        <div class="border-bottom pb-4 mb-4 flex-grow-1 flex-shrink-1">
+                                            <a href="<?php the_permalink(); ?>" class="text-dark"><h3 class="fw-bold-600 h5"><?php the_title(); ?></h3></a>
+                                            <div class="d-flex mb-2">
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                      <g clip-path="url(#clip0_157_115)">
+                                                        <path d="M8.038 3.44395C8.87441 3.44395 9.55234 2.76576 9.55234 1.9296C9.55234 1.09298 8.87441 0.415039 8.038 0.415039C7.20138 0.415039 6.52344 1.09298 6.52344 1.9296C6.52344 2.76579 7.20138 3.44395 8.038 3.44395Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M11.3271 12.8593L10.6269 9.15953L10.3154 5.88016C10.1135 3.7055 8.00621 3.86138 6.97756 4.86888L5.26815 6.62172L3.66552 7.14075L3.35027 5.35106C3.31574 5.15553 3.12915 5.02475 2.93359 5.05903C2.73781 5.09353 2.60706 5.28016 2.64177 5.47594L2.9744 7.36469L2.9324 7.37831C2.62112 7.49285 2.45424 7.83091 2.55259 8.14778L2.56034 8.17197C2.64649 8.44991 2.91127 8.62503 3.19321 8.60791L4.50684 16.0679C4.54137 16.2634 4.72774 16.3942 4.92352 16.3596C5.11909 16.3251 5.24981 16.1388 5.21531 15.943L3.89746 8.45813L5.32706 8.13419C5.66087 8.05719 5.97799 7.91963 6.26181 7.72831L7.19306 7.10225L7.52193 9.60203C7.54587 9.78538 7.33012 10.5563 7.28106 10.7352L5.87824 15.4906C5.77165 15.8742 5.99587 16.2721 6.37943 16.3803L6.40593 16.3878C6.76862 16.4899 7.14912 16.2974 7.28106 15.9446L9.17215 11.3067L9.67359 13.414C9.74352 13.5535 9.83602 13.6798 9.94727 13.7887L12.1809 16.1601C12.4452 16.4183 12.8633 16.4298 13.141 16.1864L13.1746 16.1575C13.3166 16.0329 13.4032 15.8566 13.4145 15.6678C13.4257 15.4789 13.3612 15.2934 13.2346 15.153L11.3271 12.8593Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                        <path d="M12.5993 8.90293C12.854 8.87993 13.0892 8.75668 13.2526 8.56C13.4165 8.36328 13.4954 8.10975 13.4717 7.85506L13.2618 5.58343C13.213 5.05478 12.7451 4.66509 12.2162 4.71275L11.0493 4.81815L11.4364 9.00787L12.5993 8.90293Z" fill="#E91E3E" fill-opacity="0.5"/>
+                                                      </g>
+                                                      <defs>
+                                                        <clipPath id="clip0_157_115">
+                                                          <rect width="16" height="16" fill="white" transform="translate(0 0.415039)"/>
+                                                        </clipPath>
+                                                      </defs>
+                                                    </svg>
+                                                    <?php echo $dificulty ?>
+                                                </span>
+                                                <span class="me-2 fs-85 text-dark-emphasis">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                                                        <path d="M10.6667 9.74835V11.215L11.7333 11.8817M10.6667 1.74835V4.41502M14 5.41502V4.41502C14 4.0614 13.8595 3.72226 13.6095 3.47221C13.3594 3.22216 13.0203 3.08169 12.6667 3.08169H3.33333C2.97971 3.08169 2.64057 3.22216 2.39052 3.47221C2.14048 3.72226 2 4.0614 2 4.41502V13.7484C2 14.102 2.14048 14.4411 2.39052 14.6912C2.64057 14.9412 2.97971 15.0817 3.33333 15.0817H5.66667M2 7.08169H5.33333M5.33333 1.74835V4.41502M14.6667 11.0817C14.6667 13.2908 12.8758 15.0817 10.6667 15.0817C8.45753 15.0817 6.66667 13.2908 6.66667 11.0817C6.66667 8.87255 8.45753 7.08169 10.6667 7.08169C12.8758 7.08169 14.6667 8.87255 14.6667 11.0817Z" stroke="#E91E3E" stroke-opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <?php echo PearTheme::days($dias)?>
+                                                </span>
+                                            </div>
+                                            <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <?php echo get_field("description"); ?>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="fs-85 text-dark-emphasis"><?php echo PearTheme::lang('Price from','Precio desde','价格  起','Preço a partir de') ?>:</span>
+                                                <p class="mb-0 h5 fw-bold text-primary">$<?php echo $precio ?> <span class="fs-85 text-dark-emphasis">/ <?php echo PearTheme::lang('per person','por persona','每人','por pessoa') ?></span></p>
+                                            </div>
+                                            <a href="<?php the_permalink(); ?>" class="home-page__buttom2">
+                                                <?php echo PearTheme::lang('View Itinerary','Ver itinerario','查看行程','Ver itinerário') ?>
+                                                <i class="bi bi-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                             endwhile;
+                             wp_reset_postdata( );
+                             endif;
+                            ?>
+                        </div>
+                        <div class="swiper-button-next position-absolute end-0 top-50 translate-middle-y"><i class="bi bi-arrow-right-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-button-prev position-absolute start-0 top-50 translate-middle-y"><i class="bi bi-arrow-left-circle-fill h2 text-primary m-0"></i></div>
+                        <div class="swiper-pagination position-absolute start-50 bottom-0 translate-middle-x"></div>
+                    </div>
+                </div>
+
+                <!-- Button Day tours -->
+                <div class="d-flex justify-content-center w-100">
+                    <a href="<?php echo  get_permalink(pll_get_post(298)); ?>" class="home-page__buttom1"><?php echo PearTheme::lang('See All Tours','Ver todos los tours','查看所有行程','Ver todos os passeios') ?><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<!-- Fin Tours de varias categorias -->
+ 
+<!-- Reviews -->
+  <?php get_template_part('/template/reviews','reviews') ?>
+<!-- Fin Reviews -->
+ 
+<?php
+get_footer();
+?>
