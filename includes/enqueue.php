@@ -29,7 +29,7 @@ function registerStyles() {
         'main',
         get_template_directory_uri() .'/assets/css/main.css',
         false,
-        '4.4.3'
+        '4.4.4'
     );
     /* wp_register_style(
         'app',
@@ -55,7 +55,7 @@ function registerScripts() {
         'main',
         get_template_directory_uri() . '/assets/js/main.js',
         [],
-        '4.4.2',
+        '4.4.3',
         true
     );
 

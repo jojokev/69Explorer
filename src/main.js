@@ -8,6 +8,7 @@ import 'fslightbox';
 import {Spinner} from './loandig';
 import Swal from 'sweetalert2';
 import 'bootstrap';
+import * as bootstrap from 'bootstrap';
 // ***
 
 
@@ -1040,7 +1041,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const $tableContentBlogs = document.getElementById("contentTitlesBlog");
   const $titlesBlogs = document.querySelectorAll("#text-blog h2,#text-blog h3");
-  console.log($titlesBlogs)
 
   const $fragmentTitle = document.createDocumentFragment();
   if($tableContentBlogs){
@@ -1069,4 +1069,36 @@ document.addEventListener("DOMContentLoaded", function() {
     $tableContentBlogs.appendChild($fragmentTitle)
   }
 
+  // Abrir y cerrar todos los tabs de un div
+  let $closeTabs = document.querySelectorAll('.closeFaqs');
+  $closeTabs.forEach($closeTab=>{
+    $closeTab.addEventListener('click', function() {
+      if($closeTab.dataset.open === "false"){
+        const accordionCollapseElementList = document.querySelectorAll(`.${$closeTab.dataset.tab} .collapse:not(.show)`);
+        
+        accordionCollapseElementList.forEach(accordionCollapseEl => {
+          const collapseInstance = bootstrap.Collapse.getInstance(accordionCollapseEl) 
+            || new bootstrap.Collapse(accordionCollapseEl, { toggle: false });
+          collapseInstance.show();
+        });
+
+        $closeTab.dataset.open = "true";
+      }
+      else{
+        const accordionCollapseElementList = document.querySelectorAll(`.${$closeTab.dataset.tab} .collapse.show`);
+        
+        accordionCollapseElementList.forEach(accordionCollapseEl => {
+          const collapseInstance = bootstrap.Collapse.getInstance(accordionCollapseEl) 
+            || new bootstrap.Collapse(accordionCollapseEl, { toggle: false });
+          collapseInstance.hide();
+        });
+
+        $closeTab.dataset.open = "false";
+      }
+      
+    });
+  })
+
 });
+
+

@@ -82,7 +82,7 @@ html {
   }
 }
 // Loop to generate height
-@for $i from 50 through 600 {
+@for $i from 20 through 600 {
   @if $i % 10 == 0 {
     .hx-#{$i} {
       height:  #{$i}px ;

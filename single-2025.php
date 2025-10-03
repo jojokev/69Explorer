@@ -314,11 +314,17 @@ get_header();
     <!-- Itinerary Tour -->
     <section class="itinerary-tour py-4" data-section="navigation">
         <div class="container-xl">
-            <p class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Itinerary','Itinerario','行程安排','Itinerário') ?></p>
             <div class="bg-info rounded-3 px-3 py-3 mb-3">
                 <h3 class="h5 fw-bold-600"><?php echo PearTheme::lang('69 Explorer Machu Pichu Guaranty :','69 Explorer Machu Pichu Garantía:','69探险者马丘比丘保障承诺：','69 Explorer Machu Pichu Garantia:') ?></h3>
                 <p><strong><?php echo PearTheme::lang("We promise your entry to Machu Picchu Citadel or we'll refund your money.",'Le garantizamos su entrada a la ciudadela de Machu Picchu o le devolvemos su dinero.','我们保证您能进入马丘比丘古城，否则全额退款。','Garantimos sua entrada na cidadela de Machu Picchu ou devolvemos seu dinheiro.') ?></strong></p>
                 <p><?php echo PearTheme::lang('Note: Bookings made with 8 or less weeks in prior to the trip, may require adjustments in the itinerary to ensure validity of the ticket including earlier start or rescheduling of certain activities. In order to guarantee your whole experience.','Nota: Las reservas realizadas con 8 semanas o menos de antelación al viaje pueden requerir ajustes en el itinerario para garantizar la validez del billete, incluyendo el inicio anticipado o la reprogramación de determinadas actividades. Con el fin de garantizar su experiencia completa.','注：若在行程开始前8周或更短时间内预订，为确保门票有效性，可能需要调整行程安排，包括提前开始或重新安排某些活动。此举旨在保障您全程体验。','Observação: reservas feitas com menos de 8 semanas de antecedência da viagem podem exigir ajustes no itinerário para garantir a validade do ingresso, incluindo início antecipado ou reprogramação de determinadas atividades. Isso é feito para garantir que você tenha uma experiência completa.') ?></p>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <h2 class="h2 fw-bold"><?php echo PearTheme::lang('Itinerary','Itinerario','行程安排','Itinerário') ?></h2>
+                <div class="closeFaqs form-check form-switch d-flex align-items-center" data-tab="itinerary-tour__item" data-open="false">
+                  <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefault">
+                  <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefault"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
+                </div>
             </div>
             <?php the_content(); ?>
         </div>
@@ -583,7 +589,13 @@ get_header();
     <?php if(get_field("preguntas_frecuentes")){ ?>
     <section class="faqs-tour py-4" data-section="navigation">
         <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Frequently asked questions','Preguntas frecuentes','常见问题解答','Perguntas frequentes') ?></h2>
+            <div class="d-flex justify-content-between mb-3">
+                <h2 class="h2 fw-bold"><?php echo PearTheme::lang('Frequently asked questions','Preguntas frecuentes','常见问题解答','Perguntas frequentes') ?></h2>
+                <div class="closeFaqs form-check form-switch d-flex align-items-center" data-tab="faqs-tour__item" data-open="false">
+                  <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefault">
+                  <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefault"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
+                </div>
+            </div>
             <?php echo get_field("preguntas_frecuentes"); ?>
         </div>
     </section>

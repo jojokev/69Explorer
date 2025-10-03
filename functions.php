@@ -415,12 +415,12 @@ function diaItinerario($atts, $content = null){
     }
 
     $content = do_shortcode( $content);
-    $textHtml = '<div class="accordion-item">
+    $textHtml = '<div class="itinerary-tour__item accordion-item">
                 <div class="accordion-header d-flex justify-content-start align-items-center">
                    '. $svg .'
                   <button class="itinerary-tour__button w-100 px-3 ps-0 py-3 bg-white text-start" type="button" data-bs-toggle="collapse" data-bs-target="#itinerary-day-'.$countItinerary.'" aria-expanded="'.$expand.'" aria-controls="itinerary-day-'.$countItinerary.'">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="h5 fw-bold-600 m-0">'. esc_attr($atts['titulo']) .'</h2>
+                        <h3 class="h5 fw-bold-600 m-0">'. esc_attr($atts['titulo']) .'</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                           <g clip-path="url(#clip0_63_4649)">
                             <path d="M6.6665 10.7479H13.3332M9.99984 7.41455V14.0812M18.3332 10.7479C18.3332 15.3503 14.6022 19.0812 9.99984 19.0812C5.39746 19.0812 1.6665 15.3503 1.6665 10.7479C1.6665 6.14551 5.39746 2.41455 9.99984 2.41455C14.6022 2.41455 18.3332 6.14551 18.3332 10.7479Z" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -486,7 +486,7 @@ function recommendTour($atts, $content = null){
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                           <path d="M21.8011 10.415C22.2578 12.6563 21.9323 14.9865 20.879 17.0168C19.8256 19.0472 18.108 20.6551 16.0126 21.5723C13.9172 22.4896 11.5707 22.6608 9.3644 22.0574C7.15807 21.454 5.22529 20.1124 3.88838 18.2564C2.55146 16.4005 1.89122 14.1423 2.01776 11.8584C2.14431 9.57456 3.04998 7.40312 4.58375 5.7062C6.11752 4.00928 8.18668 2.88946 10.4462 2.53348C12.7056 2.1775 15.0189 2.60689 17.0001 3.75003M9.0001 11.415L12.0001 14.415L22.0001 4.41503" stroke="#FF8800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <h3 class="h5 fw-bold m-0 ms-2 w-100">'.esc_attr($atts['titulo']).'</h3>
+                        <h3 class="h5 fw-bold m-0 ms-2">'.esc_attr($atts['titulo']).'</h3>
                     </div>
                 </div>
                 <div class="col-12 col-md-8">';
