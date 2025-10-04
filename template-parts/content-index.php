@@ -13,7 +13,7 @@
                         <div class="container">
                             <div class="col-md-12">
                                 <h1 class="text-white mb-3 text-center">
-                                    <?php echo PearTheme::lang('Budget Friendly Tours & Treks to Machu Picchu','Excursiones y caminatas económicas a Machu Picchu','前往马丘比丘的廉价旅游和徒步旅行','Excursões e caminhadas económicas a Machu Picchu') ?>
+                                    <?php echo PearTheme::lang('Budget Friendly Tours & Treks to Machu Picchu','Excursiones y caminatas económicas a Machu Picchu','前往马丘比丘的廉价旅游和徒步旅行','Excursões e caminhadas econômicas a Machu Picchu') ?>
                                 </h1>
                                 <p class="fs-6 fw-bold-600 text-white text-center"><?php echo PearTheme::lang("Experience Machu Picchu's beauty and history with our guided tours and treks. Join us for an unforgettable adventure!",'Experimente la belleza y la historia de Machu Picchu con nuestras visitas guiadas y caminatas. ¡Únase a nosotros para vivir una aventura inolvidable!','参加我们的导游和徒步旅行，体验马丘比丘的美丽和历史。加入我们，享受一次难忘的冒险！','Experimente a beleza e a história de Machu Picchu com as nossas visitas guiadas e caminhadas. Junte-se a nós para uma aventura inesquecível!') ?></p>
                                 
