@@ -9,8 +9,18 @@ import {Spinner} from './loandig';
 import Swal from 'sweetalert2';
 import 'bootstrap';
 import * as bootstrap from 'bootstrap';
-// ***
+// Photo Swipe Lightbox //
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#map-tour',
+  children: 'a',
+  pswpModule: () => import('photoswipe')
+});
+lightbox.init();
+
+// Photo Swipe Lightbox //
 
 document.addEventListener('shown.bs.tab', function (event) {
   // Actualiza todos los carousels
@@ -1100,5 +1110,3 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
 });
-
-

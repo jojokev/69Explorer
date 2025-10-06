@@ -295,11 +295,11 @@ get_header();
                         </span>
                     </button>
                 </div>
-                <div class="order-1 order-md-2 col-12 col-md-5 mb-3 mb-md-0">
+                <div class="order-1 order-md-2 col-12 col-md-5 mb-3 mb-md-0 pswp-gallery pswp-gallery--single-column" id="map-tour">
                     <?php 
                         $imagen = get_field('mapa'); 
                         if( $imagen ) : ?>
-                            <a href="<?php echo esc_url($imagen['url']); ?>" data-fslightbox="galleryMap" class="d-block">
+                            <a href="<?php echo esc_url($imagen['url']); ?>" class="d-block" data-pswp-width="1920" data-pswp-height="1080">
                                 <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr($imagen['alt']); ?>" class="w-100 rounded-3 border"/>
                             </a>
                         <?php endif; 

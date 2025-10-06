@@ -139,12 +139,14 @@
   </div>
   <!-- footer -->
   <div class="d-block py-3 text-center text-light">
-      <p class="link-light mb-0">
+      <p class="link-light mb-0 fs-95">
           69Explorer Copyright ©
           <script>
           document.write(new Date().getFullYear());
           </script> All rights reserved | <i class="bi bi-lock"></i> developed by
           <a class="link-light"href="https://eltiosam.net/" target="_blank">Tio Sam</a>
+          | 
+          <a class="link-light" href="https://69explorer.com/site-map/">Site Map</a>
       </p>
   </div>
 </footer>

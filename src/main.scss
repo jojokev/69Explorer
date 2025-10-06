@@ -3063,7 +3063,10 @@ footer{
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-
+.itinerary-tour__button h3,
+.itinerary-tour__button h2{
+    font-size: 1.25rem;
+}
 .included-tour__content > ul li::before{
     content: "\F270";
     font-family: "bootstrap-icons";

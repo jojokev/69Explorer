@@ -632,16 +632,16 @@
                         while ($toursofperu->have_posts()) : $toursofperu->the_post();
                 ?>
                 <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="border rounded-4 gx-3 px-2 py-2 bg-white">
+                    <div class="border rounded-4 gx-3 px-2 py-2 bg-white d-flex flex-column h-100">
                         <figure class="mb-0">
                             <?php the_post_thumbnail('large',array('class'=>'w-100 hx-200 object-fit-cover rounded-3')) ?>
                         </figure>
-                        <div class="px-2 py-2 flex-column">
-                            <h3 class="fw-bold-600 h6 line-clamp-3"><a href="<?php the_permalink() ?>" class="fw-bold-600 h6"><?php the_title() ?></a></h3>
-                            <div class="mb-3">
+                        <div class="px-2 py-2 flex-column flex-grow-1 flex-shrink-1 d-flex flex-column">
+                            <div class="mb-3 flex-grow-1 flex-shrink-1 ">
+                                <h3 class="fw-bold-600 h6 line-clamp-3mb-1"><a href="<?php the_permalink() ?>" class="fw-bold-600 h6"><?php the_title() ?></a></h3>
                                 <span class="fs-85 text-dark-emphasis"><i class="bi bi-calendar-check mb-3 text-primary"></i> <?php echo get_the_date() ?></span>
                             </div>
-                            <a href="<?php the_permalink() ?>" class="home-page__buttom2">
+                            <a href="<?php the_permalink() ?>" class="home-page__buttom2 text-center">
                                 <?php echo PearTheme::lang('See more','Ver mas','查看更多','Ver mais')?> <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>

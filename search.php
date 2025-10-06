@@ -19,6 +19,7 @@ get_header();
     <div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-8">
+                <h2 class="h3 fw-bold-600 mb-4 text-primary text-capitalize"><?php echo PearTheme::lang('Search results','Resultados de la búsqueda','搜索结果') ?></h2>
 				<div class="row gy-3">
 					<?php 
 						if ( have_posts() ){
@@ -40,6 +41,19 @@ get_header();
 					}
 					?>
 				</div>
+        		<div class="items_navigation">
+        			<?php 
+        				the_posts_pagination( array( 
+        				'prev_text'          => __( 'prev', 'cm' ),
+        				'next_text'          => __( 'next', 'cm' ),
+        				) );
+        			?>
+        		</div>
+        		<style>
+        			.items_navigation h2{
+        				display: none;
+        			}
+        		</style>
 			</div>
 			<div class="col-12 col-sm-8 col-lg-4">
 				<!-- Find Your Blog -->
@@ -106,19 +120,6 @@ get_header();
                 </div>
 		    </div>
 		</div>
-		<div class="items_navigation">
-			<?php 
-				the_posts_pagination( array( 
-				'prev_text'          => __( 'prev', 'cm' ),
-				'next_text'          => __( 'next', 'cm' ),
-				) );
-			?>
-		</div>
-		<style>
-			.items_navigation h2{
-				display: none;
-			}
-		</style>
 	</div>
 </section>
 <?php get_footer(); ?>
