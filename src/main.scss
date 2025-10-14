@@ -398,7 +398,7 @@ iframe#launcher {
 /*----- whatsap ------*/
 .whatsap{
     background-color: #4ddb40;
-    color: #fff;
+    color: $c2;
     font-size: 14px;
     padding: 10px 20px;
     border-radius: 50px;
@@ -2874,8 +2874,9 @@ footer{
     }
 }
 
-
-/* ################# Estilos tour - single-2025.php ################# */
+/* ############################# */
+/*  Estilos tour - single-2025.php */
+/* ############################# */
 .button-review{
     background-color: #00852f;
     color: #fff !important;
@@ -3110,6 +3111,15 @@ footer{
     rotate: -45deg;
 }
 
+.text-old-price{
+    text-decoration-color: $c1;
+}
+@media (max-width: 575px) {
+    .w-sm-100{
+        width: 100% !important;
+    }
+}
+
 .faqs-tour__item p,
 .faqs-tour__item li{
     text-align: start;
@@ -3125,45 +3135,9 @@ footer{
     rotate: 180deg;
 }
 
-/* ################# Estilos home 2025 - content index.php ################# */
-section.wrapper-banner-home-page.position-relative {
-    height: 80dvh;
-    min-height: 60vh;
-}
-
-.background-banner{
-    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.00) 16.83%, rgba(0, 0, 0, 0.0) 38.46%, rgba(0, 0, 0, 0.1) 59.13%, rgba(0, 0, 0, 0.2) 75.96%, rgba(0, 0, 0, 0.3) 100%);
-}
-
-.content-columns-banner-home h1{
-    font-size: 4rem;
-    font-weight: 700;
-    @media (max-width:991px) {
-        font-size: 3.5rem;
-        
-    }
-    @media (max-width:767px) {
-        font-size: 3rem;
-    }
-    @media (max-width:575px) {
-        font-size: 2.5rem;
-    }
-}
-
-.categories-tour__button{
-    background-color: transparent;
-    border: 1px solid $c1;
-    color: $c1;
-    &:hover{
-        background-color: rgba($c1, 0.05);
-    }
-    &.active{
-        background-color: $c1;
-        color: #fff;
-    }
-}
-/* Cambios generales 2025 */
-
+/* ############################# */
+/* Cambios generales 2025        */
+/* ############################# */
 .mega_menu {
     position: absolute;
     top: 100%;
@@ -3235,7 +3209,6 @@ section.wrapper-banner-home-page.position-relative {
     }    
 }
 
-/* */
 .styled-list-footer a::before{
     content: url(../imagenes/iconos/icon_logo.png);
     background-color: transparent;
@@ -3246,6 +3219,43 @@ section.wrapper-banner-home-page.position-relative {
 /* ############################# */
 /* Estilos generales - Home Page */
 /* ############################# */
+section.wrapper-banner-home-page.position-relative {
+    height: 80dvh;
+    min-height: 60vh;
+}
+
+.background-banner{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.00) 16.83%, rgba(0, 0, 0, 0.0) 38.46%, rgba(0, 0, 0, 0.1) 59.13%, rgba(0, 0, 0, 0.2) 75.96%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+.content-columns-banner-home h1{
+    font-size: 4rem;
+    font-weight: 700;
+    @media (max-width:991px) {
+        font-size: 3.5rem;
+        
+    }
+    @media (max-width:767px) {
+        font-size: 3rem;
+    }
+    @media (max-width:575px) {
+        font-size: 2.5rem;
+    }
+}
+
+.categories-tour__button{
+    background-color: transparent;
+    border: 1px solid $c1;
+    color: $c1;
+    &:hover{
+        background-color: rgba($c1, 0.05);
+    }
+    &.active{
+        background-color: $c1;
+        color: #fff;
+    }
+}
+
 .home-page__title h2{
     font-size: 1.75rem;
     font-style: normal;

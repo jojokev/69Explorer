@@ -13,6 +13,7 @@ get_header();
     $grupo = get_post_meta(get_the_ID(), 'custom_field_grupo', true);
     $precio = get_post_meta(get_the_ID(), 'custom_field_precio', true); 
 ?>
+
 <main class="main-Tour-2025">
 
     <!-- Title -->
@@ -92,7 +93,7 @@ get_header();
                     <a rel="nofollow" href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-3 py-2 fw-bold-600">
                         <?php echo PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora') ?> 
                     </a>
-                    <div class="px-3 align-items-center btn border-0 navigation-tour__show" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" id="btn-mnav-tour">
+                    <div class="px-3 align-items-center btn border-0 navigation-tour__show" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="btn-mnav-tour">
                         <i class="bi bi-list text-primary fs-5"></i>
                     </div>
                 </div>
@@ -258,56 +259,56 @@ get_header();
 
     <!-- Highlights Tour -->
     <?php if(get_field("HighLights")){ ?>
-    <section class="highlights-tour py-4">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Highlights','Lo más destacado','亮点','Destaques') ?></h2>
-            <div class="position-relative">
-                <span class="highlights-tour__line"></span>
-                <?php echo get_field("HighLights"); ?>
+        <section class="highlights-tour py-4">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Highlights','Lo más destacado','亮点','Destaques') ?></h2>
+                <div class="position-relative">
+                    <span class="highlights-tour__line"></span>
+                    <?php echo get_field("HighLights"); ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- End Highlights Tour -->
 
     <!-- Overview Tour -->
     <?php if(get_field("description")){?>
-    <section class="overview-tour py-4" data-section="navigation">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Overview','Descripción general','概述','Visão geral') ?></h2>
-            <div class="row">
-                <div class="order-2 order-md-1 col-12 col-md-7 fw-bold-500">
-                    <div class="mb-3 overflow-hidden hmx-300 bt-scroll-text" data-scrollText="overview" data-scrollHeight="300">
-                        <?php echo get_field("description"); ?>
+        <section class="overview-tour py-4" data-section="navigation">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Overview','Descripción general','概述','Visão geral') ?></h2>
+                <div class="row">
+                    <div class="order-2 order-md-1 col-12 col-md-7 fw-bold-500">
+                        <div class="mb-3 overflow-hidden hmx-300 bt-scroll-text" data-scrollText="overview" data-scrollHeight="300">
+                            <?php echo get_field("description"); ?>
+                        </div>
+                        <button class="rounded-3 px-2 py-2 bt-scroll-button" data-scrollButton="overview">
+                            <span>
+                                <?php echo PearTheme::lang('Read more','Leer más','阅读更多','Leia mais') ?> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                  <path d="M19 3.74805H5M12 21.748V7.74805M12 21.748L6 15.748M12 21.748L18 15.748" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <span>
+                                <?php echo PearTheme::lang('Read less','Leer menos','少读点','Leia menos') ?> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                  <path d="M18 9.74805L12 3.74805M12 3.74805L6 9.74805M12 3.74805V17.748M5 21.748H19" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
-                    <button class="rounded-3 px-2 py-2 bt-scroll-button" data-scrollButton="overview">
-                        <span>
-                            <?php echo PearTheme::lang('Read more','Leer más','阅读更多','Leia mais') ?> 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                              <path d="M19 3.74805H5M12 21.748V7.74805M12 21.748L6 15.748M12 21.748L18 15.748" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                        <span>
-                            <?php echo PearTheme::lang('Read less','Leer menos','少读点','Leia menos') ?> 
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                              <path d="M18 9.74805L12 3.74805M12 3.74805L6 9.74805M12 3.74805V17.748M5 21.748H19" stroke="#E91E3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                </div>
-                <div class="order-1 order-md-2 col-12 col-md-5 mb-3 mb-md-0 pswp-gallery pswp-gallery--single-column" id="map-tour">
-                    <?php 
-                        $imagen = get_field('mapa'); 
-                        if( $imagen ) : ?>
-                            <a href="<?php echo esc_url($imagen['url']); ?>" class="d-block" data-pswp-width="1920" data-pswp-height="1080">
-                                <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr($imagen['alt']); ?>" class="w-100 rounded-3 border"/>
-                            </a>
-                        <?php endif; 
-                    ?>
+                    <div class="order-1 order-md-2 col-12 col-md-5 mb-3 mb-md-0 pswp-gallery pswp-gallery--single-column" id="map-tour">
+                        <?php 
+                            $imagen = get_field('mapa'); 
+                            if( $imagen ) : ?>
+                                <a href="<?php echo esc_url($imagen['url']); ?>" class="d-block" data-pswp-width="1920" data-pswp-height="1080" aria-label="<?php echo PearTheme::lang('Tour map','Mapa del recorrido','游览路线图','Mapa do passeio') ?>">
+                                    <img src="<?php echo esc_url($imagen['url']); ?>" alt="<?php echo esc_attr($imagen['alt']); ?>" class="w-100 rounded-3 border"/>
+                                </a>
+                            <?php endif; 
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- End Overview Tour -->
 
@@ -322,8 +323,8 @@ get_header();
             <div class="d-flex justify-content-between mb-3">
                 <h2 class="h2 fw-bold"><?php echo PearTheme::lang('Itinerary','Itinerario','行程安排','Itinerário') ?></h2>
                 <div class="closeFaqs form-check form-switch d-flex align-items-center" data-tab="itinerary-tour__item" data-open="false">
-                  <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefault">
-                  <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefault"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
+                  <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefaultItinerary">
+                  <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefaultItinerary"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
                 </div>
             </div>
             <?php the_content(); ?>
@@ -400,205 +401,84 @@ get_header();
 
     <!-- Includes Tour -->
     <?php if(get_field("inclusiones")){ ?>
-    <section class="included-tour py-4" data-section="navigation">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('What’s included?','¿Qué incluye?','包含哪些内容？','O que está incluído?') ?></h2>
-            <div class="included-tour__content">
-                <?php echo get_field("inclusiones"); ?>
+        <section class="included-tour py-4" data-section="navigation">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('What’s included?','¿Qué incluye?','包含哪些内容？','O que está incluído?') ?></h2>
+                <div class="included-tour__content">
+                    <?php echo get_field("inclusiones"); ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- End Includes Tour -->
 
     <!-- No Includes Tour -->
     <?php if(get_field("no_incluye")){ ?>
-    <section class="excludes-tour py-4">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Excludes','No incluye','不包括','Exclui') ?></h2>
-            <div class="excludes-tour__list">
-                <?php echo get_field("no_incluye"); ?>
+        <section class="excludes-tour py-4">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Excludes','No incluye','不包括','Exclui') ?></h2>
+                <div class="excludes-tour__list">
+                    <?php echo get_field("no_incluye"); ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- End No Includes Tour -->
 
     <!-- Recommends Tour -->
     <?php if(get_field("recomendaciones")){ ?>
-    <section class="recommend-tour py-4" data-section="navigation">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Recommend to carry','Recomendamos llevar','建议携带','Recomenda-se levar') ?></h2>
-            <div class="mb-3 overflow-hidden hmx-450 bt-scroll-text" data-scrollText="Recommend" data-scrollHeight="450">
-                <div class="recommend-tour__content">
-                    <?php echo get_field("recomendaciones"); ?>
+        <section class="recommend-tour py-4" data-section="navigation">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3"><?php echo PearTheme::lang('Recommend to carry','Recomendamos llevar','建议携带','Recomenda-se levar') ?></h2>
+                <div class="mb-3 overflow-hidden hmx-450 bt-scroll-text" data-scrollText="Recommend" data-scrollHeight="450">
+                    <div class="recommend-tour__content">
+                        <?php echo get_field("recomendaciones"); ?>
+                    </div>
                 </div>
+                <button class="rounded-3 px-2 py-2 bt-scroll-button bt-scroll-button--recommend" data-scrollButton="Recommend">
+                    <span>
+                        <?php echo PearTheme::lang('Read more','Leer más','阅读更多','Leia mais') ?> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                          <path d="M19 3.41504H5M12 21.415V7.41504M12 21.415L6 15.415M12 21.415L18 15.415" stroke="#FF8800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <span>
+                        <?php echo PearTheme::lang('Read less','Leer menos','少读点','Leia menos') ?> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                          <path d="M18 9.41504L12 3.41504M12 3.41504L6 9.41504M12 3.41504V17.415M5 21.415H19" stroke="#FF8800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </button>
             </div>
-            <button class="rounded-3 px-2 py-2 bt-scroll-button bt-scroll-button--recommend" data-scrollButton="Recommend">
-                <span>
-                    <?php echo PearTheme::lang('Read more','Leer más','阅读更多','Leia mais') ?> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M19 3.41504H5M12 21.415V7.41504M12 21.415L6 15.415M12 21.415L18 15.415" stroke="#FF8800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-                <span>
-                    <?php echo PearTheme::lang('Read less','Leer menos','少读点','Leia menos') ?> 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M18 9.41504L12 3.41504M12 3.41504L6 9.41504M12 3.41504V17.415M5 21.415H19" stroke="#FF8800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </span>
-            </button>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- Fin Recommends Tour -->
 
     <!-- Prices Tour -->
-    <?php if(is_single(100)){ ?>
-    <section class="prices-tour py-4">
-        <div class="container-xl">
-            <h2 class="h2 fw-bold mb-3">Tour Price</h2>
-            <div class="mb-5">
-                <div class="px-3 py-2 bg-complementary text-white rounded-3 text-center">
-                    <h3 class="text-uppercase h5 fw-bold m-0">GROUP SERVICE</h3>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">REGULAR SERVICE</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$999.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$947.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <?php if(get_field("price")){ ?>
+        <section class="prices-tour py-4">
+            <div class="container-xl">
+                <h2 class="h2 fw-bold mb-3">Tour Price</h2>
+                <?php echo get_field("price"); ?>
             </div>
-            <div class="mb-5">
-                <div class="px-3 py-2 bg-dark text-white rounded-3 text-center">
-                    <h3 class="text-uppercase h5 fw-bold m-0">PRIVATE SERVICE</h3>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">Per Group 2 Persons</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$1097.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$1047.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap bg-light">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">Per Group 3 Persons</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$1047.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$997.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">Per Group 4 Persons</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$997.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$947.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap bg-light">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">Per Group 5 Persons</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$947.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$897.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">Per Group 6 to + Persons</p>
-                    </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">$897.00</del>USD</p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">$847.00</strong>USD</p>
-                        </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
-                                Booking Now
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
     <?php } ?>
-    <style>
-        .text-old-price{
-            text-decoration-color: #eb0000;
-        }
-        @media (max-width: 575px) {
-            .w-sm-100{
-                width: 100% !important;
-            }
-        }
-    </style>
     <!-- End Prices Tour -->
 
     <!-- FAQs Tour -->
     <?php if(get_field("preguntas_frecuentes")){ ?>
-    <section class="faqs-tour py-4" data-section="navigation">
-        <div class="container-xl">
-            <div class="d-flex justify-content-between mb-3">
-                <h2 class="h2 fw-bold"><?php echo PearTheme::lang('Frequently asked questions','Preguntas frecuentes','常见问题解答','Perguntas frequentes') ?></h2>
-                <div class="closeFaqs form-check form-switch d-flex align-items-center" data-tab="faqs-tour__item" data-open="false">
-                  <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefault">
-                  <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefault"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
+        <section class="faqs-tour py-4" data-section="navigation">
+            <div class="container-xl">
+                <div class="d-flex justify-content-between mb-3">
+                    <h2 class="h2 fw-bold"><?php echo PearTheme::lang('Frequently asked questions','Preguntas frecuentes','常见问题解答','Perguntas frequentes') ?></h2>
+                    <div class="closeFaqs form-check form-switch d-flex align-items-center" data-tab="faqs-tour__item" data-open="false">
+                      <input class="form-check-input hx-20 wx-50 m-0" type="checkbox" role="switch" id="switchCheckDefaultFaq">
+                      <label class="form-check-label px-2 white-space-nowrap fw-bold-500" for="switchCheckDefaultFaq"><?php echo PearTheme::lang('Expand All','Expandir todo','展开全部','Expandir tudo'); ?></label>
+                    </div>
                 </div>
+                <?php echo get_field("preguntas_frecuentes"); ?>
             </div>
-            <?php echo get_field("preguntas_frecuentes"); ?>
-        </div>
-    </section>
+        </section>
     <?php } ?>
     <!-- End FAQs Tour -->
 
@@ -608,7 +488,9 @@ get_header();
 </main>
 
 <!-- Reviews Tour -->
-<?php get_template_part('template/reviews','reviews',array('class'=>'bg-light')) ?>
+<section class="bg-section">
+    <?php get_template_part('template/reviews','reviews') ?>
+</section>
 <!-- End Reviews Tour -->
 
 <!-- Recommended Tours -->

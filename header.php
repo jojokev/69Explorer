@@ -3,7 +3,7 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta name="theme-color" content="#E91E3E">
 
     <meta name="google-site-verification" contenido="oqxA-CpMsr8QFU1R-e7LwlkEVKfaE_ZlwOh_mTH_Giw" />
@@ -39,7 +39,7 @@
                 – <?php echo PearTheme::lang('Limited spots! Book in advance & secure your place','¡Plazas limitadas! Reserve con antelación y asegúrese su plaza.','名额有限！提前预约，锁定席位','Vagas limitadas! Reserve com antecedência e garanta o seu lugar.')?>
             </span>
             <a href="<?php echo esc_url(get_permalink(pll_get_post(927))); ?>" class="btn bg-primary text-white py-1 px-2 fw-bold-600">
-                <?php echo PearTheme::lang('See more','Ver más','查看更多','Veja mais')?>
+                <?php echo PearTheme::lang('Check availability','Comprobar disponibilidad','查询可用性','Verifique a disponibilidade')?>
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2661 7.99958L9.02693 4.85852L9.72307 4.14062L14.2183 8.49958L9.72307 12.8585L9.02693 12.1406L12.2661 8.99958H2.5V7.99958H12.2661Z" fill="white"/>
                 </svg>
@@ -52,24 +52,24 @@
     <div class="container-xl">
         <div class="d-flex justify-content-between align-items-center border-bottom py-3 flex-column flex-lg-row">
             <div class="logo">
-                <a href="<?php echo APP_LANG == 'en' ? esc_url(get_permalink(7)) : (APP_LANG == 'es' ? esc_url(get_permalink(603)) :(APP_LANG == 'pt'?esc_url(get_permalink(4045)):esc_url(get_permalink(2873)))); ?>">
+                <a href="<?php echo APP_LANG == 'en' ? esc_url(get_permalink(7)) : (APP_LANG == 'es' ? esc_url(get_permalink(603)) :(APP_LANG == 'pt'?esc_url(get_permalink(4045)):esc_url(get_permalink(2873)))); ?>"  aria-label="Link to Home Page">
                     <?php echo wp_get_attachment_image(544,'full-size', null, array('class'=>'wx-250 h-auto'))?>
                 </a>
             </div>
-            <ul class="p-0 d-flex jutify-content-center flex-wrap px-2  ">
-                <a href="https://www.facebook.com/69explorerperu" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+            <div class="p-0 d-flex jutify-content-center flex-wrap px-2  ">
+                <a href="https://www.facebook.com/69explorerperu" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank" aria-label="Facebook Link">
                   <i class="bi bi-facebook"></i>
                 </a>
-                <a href="https://www.instagram.com/69explorerperu/" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                <a href="https://www.instagram.com/69explorerperu/" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank" aria-label="Instagram Link">
                   <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://www.tiktok.com/@69explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                <a href="https://www.tiktok.com/@69explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank" aria-label="Tiktok Link">
                   <i class="bi bi-tiktok"></i>
                 </a>
-                <a href="https://www.youtube.com/@69Explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank">
+                <a href="https://www.youtube.com/@69Explorer" class="text-primary px-3 py-2 bg-light rounded-3 me-1 h6" target="_blank" aria-label="Youtube Link">
                   <i class="bi bi-youtube"></i>
                 </a>
-            </ul>
+            </div>
             <div class="content-nav-page w-auto">
                 <div class="items-links-header d-flex align-items-center justify-content-center justify-content-lg-end text-center mb-2">
                     <div class="" id="copy-links-header"> 
@@ -80,7 +80,7 @@
                         <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
                     </div>
                     <div class="lang-dropdown position-relative my-2 m-sm-0" id="content-languages-page">
-                        <span id="language-page" lang="<?php echo PearTheme::lang('en','es','zh','pt')?>"></span>
+                        <ul class="m-0 p-0" id="language-page" lang="<?php echo PearTheme::lang('en','es','zh','pt')?>"></ul>
                         <ul id="languages-options">
                             <?php pll_the_languages( array( 'show_flags' => 1,'show_names' => 1,'display_names_as'  => 'slug') ); ?>
                         </ul>
@@ -183,7 +183,7 @@
                 ?>
                 <?php if(APP_LANG==="en"){ ?>
                 <li class="item_menu position-relative">
-                    <a class="text-white">
+                    <a href="#" class="text-white">
                         E-bike Trips <i class="bi bi-chevron-down ms-1"></i>
                     </a>
                     <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">

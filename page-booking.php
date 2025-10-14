@@ -15,7 +15,7 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
 ?>
 
 <section>
-
+    
     <div class="container-xxl py-5 mb-5">
         <div class="py-3">
             <h1 class="fw-bold fs-4 text-center text-uppercase"><?php the_title(); ?></h1>
@@ -64,7 +64,6 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
                                                 ),
                                             );
                                         
-   
                                         
                                             // Perform the query
                                             $query = new WP_Query($argss);
@@ -119,9 +118,7 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
                                         <label for="tours" class="form-label fw-bold"><?php echo PearTheme::lang('Start date','Fecha de inicio','开始日期','Data de início') ?></label>
                                         <input type="text" value="<?php echo $dateStar ?>" name="dateStart" required=""
                                             id="datebooking" class="form-control rounded-0 flatpickr-input <?php echo PearTheme::lang('datebirthday','datebirthday','datebirthdayZh','datebirthday') ?>"
-                                             spellcheck="false" data-ms-editor="true" data-date="<?php echo $dateStar ?>" 
->
-
+                                             spellcheck="false" data-ms-editor="true" data-date="<?php echo $dateStar ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -137,7 +134,16 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
                         </div>
                     </div>
 
-                    <!-- card passenger infomations 2-->
+                    <?php 
+                        $terms = get_the_terms( $uuid, 'category' );
+                        $category_slug = '';                          
+                        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                            $category_slug = $terms[0]->slug;
+                        }
+                    ?>
+
+                    <?php if($category_slug === "inca-trail" || $category_slug === "machu-picchu"){ ?>
+                    <!-- card passenger infomations 2 -->
                     <div class="card border-1 mt-2 rounded-0" id="wrapper-travellers-cards">
                         <div class="card-header m-0 px-2 py-3 bg-white border-bottom-dotted">
                             <h2 class="fw-bold fs-6 mb-0 text-primary"><?php echo PearTheme::lang('PASSENGER INFORMATION','INFORMACIÓN DEL PASAJERO','乘客须知','INFORMAÇÕES SOBRE PASSAGEIROS') ?></h2>
@@ -219,6 +225,62 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
                             </div>
                         </div>
                     </div>
+                    <?php }else{ ?>
+                    <!-- card passenger infomations 2 -->
+                    <div class="card border-1 mt-2 rounded-0" id="wrapper-travellers-cards">
+                        <div class="card-header m-0 px-2 py-3 bg-white border-bottom-dotted">
+                            <h2 class="fw-bold fs-6 mb-0 text-primary"><?php echo PearTheme::lang('PASSENGER INFORMATION','INFORMACIÓN DEL PASAJERO','乘客须知','INFORMAÇÕES SOBRE PASSAGEIROS') ?></h2>
+                        </div>
+                        
+                        <div class="card-body" id-base="item-travellers-card-" id="item-travellers-card-0">
+                            <div class="row mb-3 pb-3 border-bottom border-primary">
+                                <div class="col-11 fw-bold" id="title-traveller"><?php echo PearTheme::lang('PASSENGER','PASAJERO','乘客','PASSAGEIRO') ?> 1</div>
+                                <div class="col-1 d-flex justify-content-end"><button class=" btn-close buttonFormSearch bg-danger" id-base="close-traveller-" id="close-traveller-0" id-form="0"></button></div>
+                            </div>
+                            <div class="row gy-3">
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold"><?php echo PearTheme::lang('Full Name','Nombre completo','姓名','Nome completo') ?></label>
+                                    <input type="text" class="form-control rounded-0" base-name="travellers-name-" name="travellers-name-0" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold"><?php echo PearTheme::lang('Country','País','国家','País') ?></label>
+                                    <input type="text" class="form-control rounded-0" base-name="travellers-country-" name="travellers-country-0" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold"><?php echo PearTheme::lang('Date of Birth','Fecha de nacimiento','出生日期','Data de nascimento') ?></label>
+                                    <input type="text" class="form-control rounded-0 <?php echo PearTheme::lang('datebirthday2','datebirthday2','datebirthdayZh2','datebirthday2') ?>" id="datebirthday" base-name="travellers-birth-" name="travellers-birth-0" required>         
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold w-100"><?php echo PearTheme::lang('Gender','Género','性别','Gênero') ?></label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" base-name="travellers-geneder-" name="travellers-geneder-0"
+                                            id="inlineRadio1" value="Male" checked>
+                                        <label class="form-check-label" ><?php echo PearTheme::lang('Male','Hombre','男性','Masculino') ?></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" base-name="travellers-geneder-" name="travellers-geneder-0"
+                                            id="inlineRadio2" value="Female">
+                                        <label class="form-check-label" ><?php echo PearTheme::lang('Female','Mujer','女性','Mulher') ?></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold w-100"><?php echo PearTheme::lang('Food Restrictions / Allergies?','¿Restricciones alimentarias / Alergias?','食物限制/过敏？','Restrições alimentares/alergias?') ?></label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" base-name="travellers-restrictions-" name="travellers-restrictions-0"
+                                            id="inlineRadio1" value="Yes_Allergies">
+                                        <label class="form-check-label" ><?php echo PearTheme::lang('Yes','Si','是的','Sim') ?></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" base-name="travellers-restrictions-" name="travellers-restrictions-0"
+                                            id="inlineRadio2" value="No_Allergies" checked>
+                                        <label class="form-check-label" ><?php echo PearTheme::lang('No','No','不','Não') ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+
                     <div class="d-flex justify-content-end my-3">
                         <button id="add-traveler" class="btn btn-primary">
                             <i class="bi bi-person-plus-fill"></i> <?php echo PearTheme::lang('PASSENGER','PASAJERO','乘客','PASSAGEIRO') ?> 
@@ -345,6 +407,7 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
         </div>
     </div>
 </section>
+
 <?php
 get_footer();
 ?>

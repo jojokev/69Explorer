@@ -311,6 +311,16 @@ function agregarclase2( $atts, $content = null ) {
 
 add_shortcode('div2', 'agregarclase2');
 
+function agregarclase3( $atts, $content = null ) {
+    $atts = shortcode_atts([
+        'class' => '',
+        'id' => '',
+    ], $atts);
+
+    return '<div class="' . esc_attr($atts['class']) . '" id="' . esc_attr($atts['id']) . '">' . do_shortcode($content) . '</div>';
+}
+
+add_shortcode('div3', 'agregarclase3');
 
 add_filter('wpseo_breadcrumb_links', function($links) {
     if (!empty($links)) {
@@ -517,7 +527,7 @@ function faqsTour($atts, $content = null){
 
     $textHtml = '<div class="faqs-tour__item rounded-3 border mb-3">
                     <div class="px-3 py-3 rounded-3 w-100">
-                      <div class="faqs-tour__button d-flex justify-content-between align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#faq-'.$countFAQ.'" aria-expanded="'.$expand.'" aria-controls="faq-'.$countFAQ.'">
+                      <div class="faqs-tour__button d-flex justify-content-between align-items-center" role="button" tabindex="0" data-bs-toggle="collapse" data-bs-target="#faq-'.$countFAQ.'" aria-expanded="'.$expand.'" aria-controls="faq-'.$countFAQ.'">
                         <h3 class="m-0 h5 fw-bold-600">'.esc_attr($atts['titulo']).'</h3>
                         <i class="bi bi-chevron-down h5"></i>
                       </div>
@@ -567,6 +577,7 @@ function contentAvailabilityPasos($atts, $content = null){
 }
 add_shortcode('availabilityStep', 'contentAvailabilityPasos');
 $countAvailability = 1;
+
 function availabilityPasos($atts, $content = null){
     global $countAvailability;
 
@@ -594,4 +605,68 @@ function availabilityPasos($atts, $content = null){
     $countAvailability++;
     return $textHtml;
 }
+
 add_shortcode('paso', 'availabilityPasos');
+
+$countPrices = 1;
+function contentPricesTour($atts){
+    global $countPrices;
+    $atts = shortcode_atts([
+        'titulo' => '',
+        'fondo' => '',
+    ], $atts);
+    
+    $bg = "bg-dark";
+
+    if(esc_attr($atts['fondo']) != ""){
+        $bg = "bg-complementary";
+    }
+
+    $countPrices = 1;
+    return '<div class="mb-5 prices-tour__list">
+                <div class="px-3 py-2 '.$bg.' text-white rounded-3 text-center mb-2">
+                    <h3 class="text-uppercase h5 fw-bold m-0">'.esc_attr($atts['titulo']).'</h3>
+                </div>';
+}
+add_shortcode('Content-Price', 'contentPricesTour');
+
+function EndContentPricesTour($atts){
+    global $countPrices;
+    $countPrices = 1;
+    return '</div>';
+}
+add_shortcode('End-Content-Price', 'EndContentPricesTour');
+
+function pricesTour($atts){
+    global $countPrices;
+
+    $atts = shortcode_atts([
+        'texto' => '',
+        'before' => '',
+        'after' => '',
+    ], $atts);
+
+    $bg = $countPrices%2==0?"bg-light":"";
+
+    $textHtml = '<div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap '. $bg .'">
+                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
+                        <p class="m-0">'.esc_attr($atts['texto']).'</p>
+                    </div>
+                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
+                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
+                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">'. esc_attr($atts['before']).'</del></p>
+                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">'.esc_attr($atts['after']).'</strong></p>
+                        </div>
+                        <div class="d-flex align-items-center ps-2">
+                            <a href="'. esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()) .'" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
+                                '.PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora').'
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>';
+    $countPrices++;
+    return $textHtml;
+}
+
+add_shortcode('price', 'pricesTour');

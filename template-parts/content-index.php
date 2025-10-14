@@ -43,7 +43,7 @@
             <div class="d-flex align-items-center px-0 px-sm-2 px-lg-5 flex-wrap flex-md-nowrap">
                 <div class="d-flex justify-content-center w-100 order-2 order-md-1">
                     <div class="position-relative w-auto">
-                        <?php echo wp_get_attachment_image(4843, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
+                        <?php echo wp_get_attachment_image(5916, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
                         <span class="wx-480 hx-480 wx-responsive hx-responsive rounded-circle bg-primary position-absolute top-9 start-0 z-1"></span>
                         <?php echo wp_get_attachment_image(4844, 'full', false, ['class' => 'wx-130 h-auto z-3 position-absolute top-100 start-50 translate-middle px-3 py-2 bg-white rounded-3']); ?>
                     </div>
@@ -54,7 +54,7 @@
                         <?php the_content(); ?>
                     </div>
                     <a href="<?php echo  get_permalink(pll_get_post(333)); ?>" class="home-page__buttom1">
-                        <?php echo PearTheme::lang('Learn more','Leer más','了解更多','Leia mais')?> 
+                        <?php echo PearTheme::lang('Learn more about us','Más información sobre nosotros','了解更多关于我们','Saiba mais sobre nós')?> 
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -555,7 +555,7 @@
                                 <div class="item_destination">
                                     <?php $imagen = get_post_meta(get_the_ID(), 'custom_field_imagen_portada', true); ?>
                                     <a href="<?php the_permalink(); ?>">
-                                        <img class="w-100 hx-380 object-fit-cover rounded-4" src="<?php echo $imagen?>" alt="<?php the_title(); ?>">
+                                        <img class="w-100 hx-380 object-fit-cover rounded-4" src="<?php echo $imagen?>" alt="<?php echo PearTheme::lang('Category image','Imagen de categoría','分类图片','Imagem da categoria')?>">
                                         <div class="px-3 py-3">
                                             <h3 class="h5 text-dark fw-bold-600 m-0">
                                                 <?php the_title(); ?>
@@ -641,8 +641,8 @@
                                 <h3 class="fw-bold-600 h6 line-clamp-3mb-1"><a href="<?php the_permalink() ?>" class="fw-bold-600 h6"><?php the_title() ?></a></h3>
                                 <span class="fs-85 text-dark-emphasis"><i class="bi bi-calendar-check mb-3 text-primary"></i> <?php echo get_the_date() ?></span>
                             </div>
-                            <a href="<?php the_permalink() ?>" class="home-page__buttom2 text-center">
-                                <?php echo PearTheme::lang('See more','Ver mas','查看更多','Ver mais')?> <i class="bi bi-arrow-right"></i>
+                            <a href="<?php the_permalink() ?>" class="home-page__buttom2 text-center" aria-label="Read more about this article">
+                                <?php echo PearTheme::lang('Read full article','Leer artículo completo','阅读全文','Leia o artigo completo')?> <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>

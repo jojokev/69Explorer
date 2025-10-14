@@ -20,7 +20,7 @@ get_header();
       <!-- inca trail tours -->
       <div class="item">
         <div class="mb-2 pb-2">
-          <h3 class="h4 fw-bold-500">Inca Trail Tours </h3>
+          <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('Inca Trail Tours','Excursiones al Camino Inca','---','---') ?></h3>
           <ul>
             <?php
               $args = array(
@@ -51,7 +51,7 @@ get_header();
 
       <!-- Alternative Treks tours -->
       <div class="item mb-2 pb-2">
-        <h3 class="h4 fw-bold-500">Alternative Treks</h3>
+        <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('Alternative Treks','Rutas alternativas','---','---') ?></h3>
         <ul>
           <?php
             $args = array(
@@ -81,7 +81,7 @@ get_header();
 
       <!-- Day tour tours -->
       <div class="item mb-2 pb-2">
-        <h3 class="h4 fw-bold-500">Day tours</h3>
+        <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('Day tours','Excursiones de un día','---','---') ?></h3>
         <ul>
           <?php
             $args = array(
@@ -111,7 +111,7 @@ get_header();
 
       <!-- E-bike Trips -->
       <div class="item mb-2 pb-2">
-        <h3 class="h4 fw-bold-500">E-bike Trips</h3>
+        <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('E-bike Trips','Excursiones en bicicleta eléctrica','---','---') ?></h3>
         <ul>
           <?php
             $args = array(
@@ -141,7 +141,7 @@ get_header();
 
       <!-- Machu Picchu Tours -->
       <div class="item mb-2 pb-2">
-        <h3 class="h4 fw-bold-500">Machu Picchu Tours</h3>
+        <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('Machu Picchu Tours','Excursiones a Machu Picchu','---','---') ?></h3>
         <ul>
           <?php
             $args = array(
@@ -171,7 +171,7 @@ get_header();
 
       <!-- Packages -->
       <div class="item mb-2 pb-2">
-        <h3 class="h4 fw-bold-500">Packages</h3>
+        <h3 class="h4 fw-bold-500"><?php echo PearTheme::lang('Packages','Paquetes','---','---') ?></h3>
         <ul>
           <?php
             $args = array(
@@ -200,7 +200,7 @@ get_header();
       </div>
 
       <!-- Categories -->
-      <h2 class="item h3 fw-bold-500 mb-3">Categories</h2>
+      <h2 class="item h3 fw-bold-500 mb-3"><?php echo PearTheme::lang('Categories','Categorías','---','---') ?></h2>
       <ul>
         <?php
           $categories = get_categories( array(
@@ -216,7 +216,7 @@ get_header();
 
       <!-- Blogs -->
       <div class="item">
-        <h2 class="h3 fw-bold-500 mb-3">Blogs</h2>
+        <h2 class="h3 fw-bold-500 mb-3"><?php echo PearTheme::lang('Blogs','Blogs','---','---') ?></h2>
         <ul>
           <?php
             $args = array(
@@ -239,7 +239,7 @@ get_header();
 
       <!-- Pages -->
       <div class="item">
-        <h2 class="h3 fw-bold-500 mb-3">Pages</h2>
+        <h2 class="h3 fw-bold-500 mb-3"><?php echo PearTheme::lang('Pages','Páginas','---','---') ?></h2>
         <ul>
           <?php
             $args = array(
@@ -262,7 +262,7 @@ get_header();
 
       <!-- Faqs -->
       <div class="item">
-        <h2 class="h3 fw-bold-500 mb-3">FAQs</h2>
+        <h2 class="h3 fw-bold-500 mb-3"><?php echo PearTheme::lang('FAQs','Preguntas frecuentes','---','---') ?></h2>
         <ul>
           <?php
             $args = array(
@@ -285,7 +285,7 @@ get_header();
 
       <!-- Posts -->
       <div class="item">
-        <h2 class="h3 fw-bold-500 mb-3">Posts</h2>
+        <h2 class="h3 fw-bold-500 mb-3"><?php echo PearTheme::lang('Posts','Publicaciones','---','---') ?></h2>
         <ul>
           <?php
             $args = array(

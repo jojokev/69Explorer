@@ -39,24 +39,24 @@
                   <div class="text-white py-2">
                       <p><?php echo PearTheme::lang('Welcome to 69EXPLORER.COM. We are a tour operator focused on quality budget-friendly experiences. Our HQ is located in the heart of the Inca Empire, Cusco-Peru. We are specialists creating unforgettable travel experiences across the Peruvian Andes','Bienvenido a 69EXPLORER.COM. Somos un operador turístico especializado en experiencias de calidad a precios asequibles. Nuestra sede se encuentra en el corazón del Imperio Inca, Cusco-Perú. Somos especialistas en crear experiencias de viaje inolvidables a través de los Andes peruanos.','欢迎访问69EXPLORER.COM。我们是一家专注于提供高品质经济型旅行体验的旅行社，总部坐落于印加帝国的心脏地带——秘鲁库斯科。我们致力于打造穿越秘鲁安第斯山脉的难忘旅程。','Bem-vindo ao 69EXPLORER.COM. Somos uma operadora de turismo focada em experiências de qualidade a preços acessíveis. Nossa sede está localizada no coração do Império Inca, em Cusco, Peru. Somos especialistas em criar experiências de viagem inesquecíveis pelos Andes peruanos.') ?>
                       </p>
-                      <ul class="p-0 d-flex jutify-content-center">
+                      <div class="p-0 d-flex jutify-content-center">
                           <a href="https://www.facebook.com/69explorerperu"
-                              class="text-decoration-none mx-2 btn btn-light" target="_blank">
+                              class="text-decoration-none mx-2 btn btn-light" target="_blank" aria-label="Facebook Link">
                               <i class="bi bi-facebook"></i>
                           </a>
                           <a href="https://www.instagram.com/69explorerperu/"
-                              class="text-decoration-none mx-2 btn btn-light" target="_blank">
+                              class="text-decoration-none mx-2 btn btn-light" target="_blank" aria-label="Instagram Link">
                               <i class="bi bi-instagram"></i>
                           </a>
                           <a href="https://www.tiktok.com/@69explorer"
-                              class="text-decoration-none mx-2 btn btn-light" target="_blank">
+                              class="text-decoration-none mx-2 btn btn-light" target="_blank" aria-label="Tiktok Link">
                               <i class="bi bi-tiktok"></i>
                           </a>
                           <a href="https://www.youtube.com/@69Explorer"
-                              class="text-decoration-none mx-2 btn btn-light" target="_blank">
+                              class="text-decoration-none mx-2 btn btn-light" target="_blank" aria-label="Youtube Link">
                               <i class="bi bi-youtube"></i>
                           </a>
-                      </ul>
+                      </div>
                   </div>
               </div>
           </div>
@@ -213,7 +213,7 @@
 </script>
 
   <script type="text/javascript">
-    window.$zopim || (function(d, s) {
+    /*window.$zopim || (function(d, s) {
         var z = $zopim = function(c) {
                 z._.push(c)
             },
@@ -234,6 +234,7 @@
         type = "text/javascript";
         e.parentNode.insertBefore($, e)
     })(document, "script");
+    */
   </script>
   <?php wp_footer(); ?>
   </body>

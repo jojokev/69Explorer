@@ -5,6 +5,15 @@ get_header();
 <!-- Contenido Blog -->
 <section class="py-default position-relative">
     <div class="container">
+        <!-- Find Your Blog -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item fs-95"><a href="<?php echo  get_permalink(pll_get_post(7)); ?>"><?php echo PearTheme::lang('Home','Inicio','首页','Página inicial') ?></a></li>
+            <li class="breadcrumb-item fs-95"><a href="<?php echo  get_permalink(pll_get_post(335)); ?>"><?php echo PearTheme::lang('Travel Blog','Blog de viajes','旅行博客','Blog de viagens') ?></a></li>
+            <li class="breadcrumb-item fs-95 active" aria-current="page"><?php the_title(); ?></li>
+          </ol>
+        </nav>
+
         <div class="row gx-3 gy-4 w-100">
             <div class="col-12 col-lg-8 article-blog pe-0 pe-lg-4">
                 <h1 class="h1 fw-bold mb-3 text-center"><?php the_title(); ?></h1>
