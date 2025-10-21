@@ -371,7 +371,7 @@ $travellers = isset($_REQUEST['travellers'])? $_REQUEST['travellers']: 02;
                 </form>
             </div>
             <div class="col-md-4">
-                <aside class="position-sticky sticky-top" style="top:1rem;">
+                <aside class="position-sticky top-5" style="top:1rem;">
                     <div class="card rounded-0 border-0 shadow-sm">
                         <div class="card-header text-center bg-primary text-white py-3 mb-0 border-0">
                             <span class="py-1"><?php echo PearTheme::lang('QUESTIONS?','¿PREGUNTAS?','问题？','DÚVIDAS?') ?></span>

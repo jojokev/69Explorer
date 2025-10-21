@@ -1,4 +1,11 @@
 @use './app.scss';
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("../fonts/bootstrap-icons.woff2") format("woff2"),
+       url("../fonts/bootstrap-icons.woff") format("woff");
+}
+
 *
 {
     padding: 0;

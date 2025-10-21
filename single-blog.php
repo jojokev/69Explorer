@@ -51,7 +51,7 @@ get_header();
                     <form action="<?php echo esc_url(home_url('/')); ?>" role="search">
                         <div class="d-flex ">
                             <input type="text" class="w-100 px-2 py-2 fs-95 border rounded-3 rounded-end-0" placeholder="<?php echo PearTheme::lang('Destinos, Excursões','Destinos, Tours','目的地、旅行','Destinos') ?>" name="s" aria-label="Username" aria-describedby="basic-addon1">
-                            <button class="roun rounded-end-3 bg-primary text-white px-3 py-2 border-0">
+                            <button class="roun rounded-end-3 bg-primary text-white px-3 py-2 border-0" aria-label="Search blogs">
                                 <i class="bi bi-search"></i>
                             </button>
                             <input type="hidden" name="post_type" value="blog"> 
@@ -88,8 +88,8 @@ get_header();
                         ?>
                             <div class="col-12">
                                 <div class="d-flex border rounded-3 px-2 py-2">
-                                    <a class="" href="<?php the_permalink(); ?>">
-                                         <?php if ( has_post_thumbnail() ) {
+                                    <a href="<?php the_permalink(); ?>" aria-label="Latest Blog">
+                                        <?php if ( has_post_thumbnail() ) {
                                             the_post_thumbnail( 'medium', array( 'class' => 'wx-100 hx-80 object-fit-cover rounded-3' ) );
                                         } ?>
                                     </a>

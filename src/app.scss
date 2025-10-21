@@ -16,6 +16,7 @@ $custom-pumpkin-colors: (
 $primary: #eb0000;
 $dark: #15252d;
 $info: #CEF4FC;
+$warning: #ffc107;
 $success: #E91E3E; 
 $light: #f1f8fa; 
 $complementary: #008D8D;
@@ -27,7 +28,7 @@ $theme-colors: (
   //"secondary":  $secondary,
   "success":    $success,
   "info":       $info,
-  //"warning":    $warning,
+  "warning":    $warning,
   //"danger":     $danger,
   "light":      $light,
   "dark":       $dark,

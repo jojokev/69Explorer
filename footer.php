@@ -1,3 +1,4 @@
+<!-- Our Permits -->
 <section class="py-default position-relative">
   <div class="container">
     <!-- titulo -->
@@ -30,6 +31,56 @@
     </div>
   </div>
 </section>
+<!-- Fin Our Permits -->
+
+<!-- Our Accommodations -->
+<?php if(get_the_ID() === 7 || get_the_ID() === 603 || get_the_ID() === 4045){ ?>
+    <section class="pb-5 mb-3">
+        <div class="container px-3">
+            <!-- titulo -->
+            <div class="w-lg-75 mx-auto mb-45 text-center position-relative z-2">
+                <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('Discover the Comfort You Deserve!','¡Descubra la comodidad que se merece! ','发现您应得的舒适！','Descubra o conforto que você merece! ') ?></span>
+                <h2 class="fw-bold h3 text-uppercase mb-3">
+                    <?php echo PearTheme::lang('Our Hotel in Ollantayatmbo and & Air BnB in Cusco Partners','Nuestro hotel en Ollantaytambo y nuestros socios de Airbnb en Cusco','我们在奥兰塔坦博的酒店及库斯科的Airbnb合作伙伴','Nosso hotel em Ollantaytambo e nossos parceiros do Airbnb em Cusco') ?>
+                </h2>
+            </div>
+            <div class="row gx-5 gy-3">
+                <div class="col-md-6 flex-grow-1 flex-shrink-1">
+                    <div class="row bg-dark rounded-4 px-0 py-0 overflow-hidden h-100">
+                        <div class="col-12 col-lg-6 px-0 py-0">
+                            <?php echo wp_get_attachment_image(5983,'full-size ', null,array('class'=>'w-100 h-100 object-fit-cover max-h-380') ) ?>
+                        </div>
+                        <div class="col-12 col-lg-6 text-white px-4 py-4 d-flex flex-column justify-content-center">
+                            <?php echo wp_get_attachment_image(5986,'full-size ', null,array('class'=>'wx-120 mb-3 h-auto') ) ?>
+                            <h3 class="h4 fw-bold-600 text-warning">Hotel Andenes del Inca</h3>
+                            <p class="fs-90"><?php echo PearTheme::lang('Comfortable lodging near the ruins of Ollantaytambo, in the Sacred Valley of the Incas','Alojamiento confortable cerca de las ruinas de Ollantaytambo, en el Valle Sagrado de los Incas.','位于印加圣谷奥兰泰坦博遗址附近的舒适住宿','Alojamento confortável perto das ruínas de Ollantaytambo, no Vale Sagrado dos Incas') ?></p>
+                            <div>
+                                <a href="https://www.andenesdelinca.com/" target="_blank" class="btn btn-warning fw-bold-600"><?php echo PearTheme::lang('Lear More','Más información','了解更多','Saiba mais') ?> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 flex-grow-1 flex-shrink-1">
+                    <div class="row rounded-4 px-0 py-0 overflow-hidden h-100" style="background-color: #270570;">
+                        <div class="col-12 col-lg-6 px-0 py-0">
+                            <?php echo wp_get_attachment_image(5984,'full-size ', null,array('class'=>'w-100 h-100 object-fit-cover max-h-380') ) ?>
+                        </div>
+                        <div class="col-12 col-lg-6 text-white px-4 py-4 d-flex flex-column justify-content-center align-items-start">
+                            <?php echo wp_get_attachment_image(6014,'full-size ', null,array('class'=>'wx-120 mb-3 h-auto') ) ?>
+                            <h3 class="h4 fw-bold-600">SAM Apartment</h3>
+                            <p class="fs-90"><?php echo PearTheme::lang('Discover the Comfort You Deserve, modern Home in the City of the Incas','Descubra la comodidad que se merece, una casa moderna en la ciudad de los incas.','探索您应得的舒适，印加古城中的现代之家','Descubra o conforto que você merece, uma casa moderna na cidade dos Incas') ?></p>
+                            <div>
+                                <a href="https://samapartmentsperu.com/" target="_blank" class="btn bg-white fw-bold-600"  style="color: #270570;"><?php echo PearTheme::lang('Lear More','Más información','了解更多','Saiba mais') ?> <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php } ?>
+<!-- End Our Accommodations -->
+
 <footer class="">
   <div class="container-xxl">
       <div class="row gy-3 py-5">
@@ -154,6 +205,12 @@
 <div id="scroll-top-page">
     <i class="bi bi-arrow-up-circle-fill text-primary"></i>
 </div>
+
+<a id="help-footer" href="<?php echo  get_permalink(pll_get_post(324)); ?>">
+    <i class="bi bi-question-circle"></i>
+    <?php echo PearTheme::lang("help","ayuda","帮助","ajuda") ?>
+</a>
+
 <style>
     #scroll-top-page{
         position: fixed;
@@ -171,10 +228,29 @@
         justify-content: center;
         padding: 1rem;
     }
+    #help-footer{
+        background-color: #ff7000;
+        color: #051036;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        position: fixed;
+        right: 25px;
+        bottom: 12px;
+        z-index: 100;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
     @media (max-width:991px) {
         #scroll-top-page{
+            right: 10px;
             bottom: 120px;
         } 
+        #help-footer{
+            right: 10px;
+            bottom: 72px;
+        }
     }
 </style>
 
@@ -212,31 +288,31 @@
     });
 </script>
 
-  <script type="text/javascript">
-    /*window.$zopim || (function(d, s) {
-        var z = $zopim = function(c) {
-                z._.push(c)
-            },
-            $ = z.s =
-            d.createElement(s),
-            e = d.getElementsByTagName(s)[0];
-        z.set = function(o) {
-            z.set.
-            _.push(o)
-        };
-        z._ = [];
-        z.set._ = [];
-        $.async = !0;
-        $.setAttribute("charset", "utf-8");
-        $.src = "https://v2.zopim.com/?5M0hjOF9TfA89uBJmGlNzBQzF7pH5Dnr";
-        z.t = +new Date;
-        $.
-        type = "text/javascript";
-        e.parentNode.insertBefore($, e)
-    })(document, "script");
-    */
-  </script>
-  <?php wp_footer(); ?>
-  </body>
+<script type="text/javascript">
+/*window.$zopim || (function(d, s) {
+    var z = $zopim = function(c) {
+            z._.push(c)
+        },
+        $ = z.s =
+        d.createElement(s),
+        e = d.getElementsByTagName(s)[0];
+    z.set = function(o) {
+        z.set.
+        _.push(o)
+    };
+    z._ = [];
+    z.set._ = [];
+    $.async = !0;
+    $.setAttribute("charset", "utf-8");
+    $.src = "https://v2.zopim.com/?5M0hjOF9TfA89uBJmGlNzBQzF7pH5Dnr";
+    z.t = +new Date;
+    $.
+    type = "text/javascript";
+    e.parentNode.insertBefore($, e)
+})(document, "script");
+*/
+</script>
+<?php wp_footer(); ?>
+</body>
 
-  </html>
+</html>

@@ -75,7 +75,7 @@
                     <div class="" id="copy-links-header"> 
                         <!-- copy-links-header - crear una copia de este div en el menu de navegacion de un tour -->
                         <a href="<?php echo  get_permalink(pll_get_post(5355)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Tailor-Made','Hecho a medida','量身定制','Feito sob medida') ?></a>
-                        <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-3 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
+                        <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
                         <a href="<?php echo  get_permalink(pll_get_post(420)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Payments','Pagos','支付','Pagamentos') ?></a>
                         <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
                     </div>
