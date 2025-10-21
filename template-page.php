@@ -145,18 +145,8 @@ $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
 </section>
 <!-- old -->
 
-<!--  Why Choose home -->
-<div class="bg-section position-relative">
-    <?php get_template_part('/template/why-us','/why-us') ?>
-</div>
-<!-- Fin Why Choose home -->
-
-<!-- Reviews Tour -->
-<?php get_template_part('template/reviews','reviews') ?>
-<!-- End Reviews Tour -->
-
-<!-- Reviews Tour -->
-<section class="py-default position-relative">
+<!-- Join 69 Explorer -->
+<section class="bg-section py-default position-relative">
   <div class="container-xxl">
     <!-- titulo -->
     <div class="mb-45 text-center position-relative z-2">
@@ -167,7 +157,7 @@ $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
 
     <div class="row gx-4 gy-4">
         <div class="col-12 col-lg-5">
-            <?php echo wp_get_attachment_image(3415, 'full', false, ['class' => 'w-100 h-auto rounded-3 object-fit-cover max-h-580']); ?>
+            <?php echo wp_get_attachment_image(5916, 'full', false, ['class' => 'w-100 h-auto rounded-3 object-fit-cover max-h-580']); ?>
         </div>
         <div class="col-12 col-lg-7">
             <div class="row mb-3">
@@ -249,7 +239,12 @@ $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
     </div>
   </div>
 </section>
-<!-- EndReviews Tour -->
+<!-- End Join 69 Explorer -->
+
+<!-- Reviews Tour -->
+<?php get_template_part('template/reviews','reviews') ?>
+<!-- End Reviews Tour -->
+
 
 <?php
 get_footer();
