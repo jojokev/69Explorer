@@ -66,6 +66,7 @@ get_header();
                         <i class="ms-2 bi bi-chevron-down"></i>
                     </h2>
                     <ul class="collapse mt-4" id="contentTitlesBlog">
+                        <li style="padding: 0px 0px; list-style-type: none; margin: 0px"></li>
                     </ul>
                 </div>
              

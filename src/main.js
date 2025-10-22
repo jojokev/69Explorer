@@ -1079,34 +1079,5 @@ document.addEventListener("DOMContentLoaded", function() {
     $tableContentBlogs.appendChild($fragmentTitle)
   }
 
-  // Abrir y cerrar todos los tabs de un div
-  let $closeTabs = document.querySelectorAll('.closeFaqs');
-  $closeTabs.forEach($closeTab=>{
-    $closeTab.addEventListener('click', function() {
-      if($closeTab.dataset.open === "false"){
-        const accordionCollapseElementList = document.querySelectorAll(`.${$closeTab.dataset.tab} .collapse:not(.show)`);
-        
-        accordionCollapseElementList.forEach(accordionCollapseEl => {
-          const collapseInstance = bootstrap.Collapse.getInstance(accordionCollapseEl) 
-            || new bootstrap.Collapse(accordionCollapseEl, { toggle: false });
-          collapseInstance.show();
-        });
-
-        $closeTab.dataset.open = "true";
-      }
-      else{
-        const accordionCollapseElementList = document.querySelectorAll(`.${$closeTab.dataset.tab} .collapse.show`);
-        
-        accordionCollapseElementList.forEach(accordionCollapseEl => {
-          const collapseInstance = bootstrap.Collapse.getInstance(accordionCollapseEl) 
-            || new bootstrap.Collapse(accordionCollapseEl, { toggle: false });
-          collapseInstance.hide();
-        });
-
-        $closeTab.dataset.open = "false";
-      }
-      
-    });
-  })
-
 });
+

@@ -200,6 +200,7 @@
           <a class="link-light" href="https://69explorer.com/site-map/">Site Map</a>
       </p>
   </div>
+  
 </footer>
 
 <div id="scroll-top-page">
