@@ -26,36 +26,36 @@ get_header();
                         <!-- Name -->
                         <div class="col-md-12">
                             <div class="mb-4 form-control-bg-light">
-                                <label class="form-label">
+                                <label for="fullname" class="form-label">
                                     <?php echo PearTheme::lang('Full Name','Nombres','姓名','Nome completo') ?>
                                     <span class="text-danger">*</span> </label>
-                                <input type="text" name="fullname" class="form-control rounded-0" spellcheck="false"
+                                <input type="text" name="fullname" id="fullname" class="form-control rounded-0" spellcheck="false"
                                     data-ms-editor="true">
                             </div>
                         </div>
                         <!-- Email -->
                         <div class="col-md-6">
                             <div class="mb-4 form-control-bg-light">
-                                <label class="form-label">
+                                <label for="email" class="form-label">
                                     <?php echo PearTheme::lang('Email address','Correo Electronico','电子邮件','Endereço de e-mail') ?>
                                     <span class="text-danger">*</span> </label>
-                                <input type="email" name="email" class="form-control rounded-0">
+                                <input type="email" name="email" id="email" class="form-control rounded-0">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4 form-control-bg-light">
-                                <label id="Phone" class="form-label"> 
+                                <label for="phone" class="form-label"> 
                                     <?php echo PearTheme::lang('Number Phone','Número Telefónico','电话号码','Número de telefone') ?>
                                     <span
                                         class="fs-sm">(<?php echo PearTheme::lang('Optional','Opcional','选修的','Opcional') ?>)
                                     </span>
                                 </label>
-                                <input type="Phone" name="phone" class="form-control rounded-0">
+                                <input type="Phone" name="phone" id="phone" class="form-control rounded-0">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-4 form-control-bg-light">
-                                <label id="country" class="form-label">
+                                <label for="country" class="form-label">
                                     <?php echo PearTheme::lang('Where do you live?','¿Dónde vives?','你住在哪里？','Onde você mora?') ?>
                                     <span class="text-danger">*</span> </label>
                                 <select name="country" class="form-select" id="country" required>
@@ -339,19 +339,19 @@ get_header();
                         </div>
                         <div class="col-md-12">
                             <div class="mb-4 form-control-bg-light">
-                                <label id="Subject" class="form-label">
+                                <label for="subject" class="form-label">
                                     <?php echo PearTheme::lang('Subject','Asunto','主题','Assunto') ?>
                                     <span class="text-danger">*</span></label>
-                                <input type="text" name="subject" class="form-control rounded-0">
+                                <input type="text" id="subject" name="subject" class="form-control rounded-0">
                             </div>
                         </div>
                         <!-- Message -->
                         <div class="mb-4 form-control-bg-light">
-                            <label class="form-label">
+                            <label for="messaje" class="form-label">
                                 <?php echo PearTheme::lang('Questions and Comments','Preguntas y comentarios','问题和评论','Perguntas e comentários') ?>
                                 <?php echo ""; ?>
                             </label>
-                            <textarea class="form-control rounded-0" name="messaje" rows="4" spellcheck="false"
+                            <textarea class="form-control rounded-0" name="messaje" id="messaje" rows="4" spellcheck="false"
                                 data-ms-editor="true"></textarea>
                         </div>
                         <!-- token recapcha -->
@@ -374,7 +374,7 @@ get_header();
     <div class="container-xxl">
         <div class="row">
             <div class="col-md-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3111.5181324933174!2d-71.98200594578233!3d-13.51648677016013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-13.517385299999999!2d-71.98066589999999!4m5!1s0x916dd6739cd7f175%3A0x27c9a9082fc6343!2sPlaza%20Mayor%20de%20Cuzco%2C%20Del%20Medio%20123%2C%20Cusco%2008000!3m2!1d-13.516772!2d-71.9787231!5e0!3m2!1ses!2spe!4v1710194331790!5m2!1ses!2spe" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d3111.5181324933174!2d-71.98200594578233!3d-13.51648677016013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-13.517385299999999!2d-71.98066589999999!4m5!1s0x916dd6739cd7f175%3A0x27c9a9082fc6343!2sPlaza%20Mayor%20de%20Cuzco%2C%20Del%20Medio%20123%2C%20Cusco%2008000!3m2!1d-13.516772!2d-71.9787231!5e0!3m2!1ses!2spe!4v1710194331790!5m2!1ses!2spe" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="69 explore Map"></iframe>
             </div>
         </div>
     </div>

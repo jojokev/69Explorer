@@ -43,7 +43,7 @@
             <div class="d-flex align-items-center px-0 px-sm-2 px-lg-5 flex-wrap flex-md-nowrap">
                 <div class="d-flex justify-content-center w-100 order-2 order-md-1">
                     <div class="position-relative w-auto">
-                        <?php echo wp_get_attachment_image(5916, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
+                        <?php echo wp_get_attachment_image(5913, 'full', false, ['class' => 'wx-480 hx-480 wx-responsive hx-responsive rounded-circle object-fit-cover position-relative z-2']); ?>
                         <span class="wx-480 hx-480 wx-responsive hx-responsive rounded-circle bg-primary position-absolute top-9 start-0 z-1"></span>
                         <?php echo wp_get_attachment_image(4844, 'full', false, ['class' => 'wx-130 h-auto z-3 position-absolute top-100 start-50 translate-middle px-3 py-2 bg-white rounded-3']); ?>
                     </div>
@@ -412,7 +412,7 @@
 
     <!-- Tours inca trail -->
     <section class="py-default position-relative pt-5">
-        <?php echo wp_get_attachment_image(4846, 'full', false, ['class' => 'w-100 hx-600 object-fit-cover position-absolute top-0 start-0 z-1 filter-5']); ?>
+        <span class="w-100 hx-600 object-fit-cover position-absolute top-0 start-0 z-1 filter-5"  style="background-image: url(<?php echo wp_get_attachment_url(6062); ?>);"></span>
         <span class="pt-5 d-block"></span>
         <div class="container position-relative z-2 pt-5 mt-5">
             <!-- titulo -->
@@ -584,7 +584,7 @@
     <!-- Fin Categories Home -->
 
     <!-- Join 69 Explorer -->
-    <section class="bg-section py-default position-relative">
+    <section class="py-default position-relative">
       <div class="container-xxl">
         <!-- titulo -->
         <div class="mb-45 text-center position-relative z-2">
@@ -595,7 +595,7 @@
 
         <div class="row gx-4 gy-4">
             <div class="col-12 col-lg-5">
-                <?php echo wp_get_attachment_image(5913, 'full', false, ['class' => 'w-100 h-auto rounded-3 object-fit-cover max-h-580']); ?>
+                <?php echo wp_get_attachment_image(5916, 'full', false, ['class' => 'w-100 h-auto rounded-3 object-fit-cover max-h-580']); ?>
             </div>
             <div class="col-12 col-lg-7">
                 <div class="row mb-3">

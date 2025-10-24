@@ -2674,9 +2674,6 @@ footer{
 }
 .row-text{
     margin-bottom: 1rem;
-    >div{
-        border: 1px solid #ffe3e3;
-    }
     >div:first-of-type{
         border-right: none;
     }
@@ -3503,4 +3500,12 @@ table tr:nth-child(even) {
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
+}
+/* ############################# */
+/* Estilos generales -  single.php */
+/* ############################# */
+.title-single{
+    h1, h2{
+        text-wrap: balance;
+    }
 }
