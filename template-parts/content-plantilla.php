@@ -1,4 +1,3 @@
-
 <?php if (has_post_thumbnail()) : ?>
     <section class="page_plantilla_img">
         <?php the_post_thumbnail('list_articles_thumbs'); ?>
@@ -12,7 +11,7 @@
     </div>
 <?php endif; ?>
     
-<div class="wp_page py-default position-relative">
+<div class="article-blog py-default position-relative">
     <div class="container">
         <?php the_content(); ?>
     </div>

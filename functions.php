@@ -623,27 +623,29 @@ function contentPricesTour($atts){
     }
 
     $countPrices = 1;
-    return '<div class="mb-5 prices-tour__list">
+    return '<div class="mt-3 mb-4 prices-tour__list">
                 <div class="px-3 py-2 '.$bg.' text-white rounded-3 text-center mb-2">
                     <h3 class="text-uppercase h5 fw-bold m-0">'.esc_attr($atts['titulo']).'</h3>
                 </div>';
 }
-add_shortcode('Content-Price', 'contentPricesTour');
+add_shortcode('table-price', 'contentPricesTour');
 
 function EndContentPricesTour($atts){
     global $countPrices;
     $countPrices = 1;
     return '</div>';
 }
-add_shortcode('End-Content-Price', 'EndContentPricesTour');
+add_shortcode('end-table', 'EndContentPricesTour');
 
 function pricesTour($atts){
     global $countPrices;
 
     $atts = shortcode_atts([
         'texto' => '',
-        'before' => '',
-        'after' => '',
+        'currency-before' => '',
+        'price-before' => '',
+        'price' => '',
+        'currency-after' => '',
     ], $atts);
 
     $bg = $countPrices%2==0?"bg-light":"";
@@ -654,8 +656,8 @@ function pricesTour($atts){
                     </div>
                     <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
                         <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
-                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">'. esc_attr($atts['before']).'</del></p>
-                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">'.esc_attr($atts['after']).'</strong></p>
+                            <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">'. esc_attr($atts['currency-before']) .''. esc_attr($atts['price-before']).'.00<span class="fs-75 fw-bold-600">'. esc_attr($atts['currency-after']) .'</span></del></p>
+                            <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">'. esc_attr($atts['currency-before']) .''.esc_attr($atts['price']).'.00 <span class="h6 fw-bold-600">'. esc_attr($atts['currency-after']) .'</span></strong></p>
                         </div>
                         <div class="d-flex align-items-center ps-2">
                             <a href="'. esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()) .'" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
@@ -669,4 +671,4 @@ function pricesTour($atts){
     return $textHtml;
 }
 
-add_shortcode('price', 'pricesTour');
+add_shortcode('option', 'pricesTour');

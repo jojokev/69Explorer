@@ -174,7 +174,11 @@
                                                     </span>
                                                 </div>
                                                 <div class="line-clamp-3 fs-85 text-dark-emphasi">
-                                                    <?php echo get_field("description"); ?>
+                                                    <?php
+                                                        $description = get_field('description');
+                                                        $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
+                                                        echo $description;
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center">
@@ -273,7 +277,11 @@
                                                     </span>
                                                 </div>
                                                 <div class="line-clamp-3 fs-85 text-dark-emphasi">
-                                                    <?php echo get_field("description"); ?>
+                                                    <?php
+                                                        $description = get_field('description');
+                                                        $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
+                                                        echo $description;
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center">
@@ -371,7 +379,11 @@
                                                     </span>
                                                 </div>
                                                 <div class="line-clamp-3 fs-85 text-dark-emphasi">
-                                                    <?php echo get_field("description"); ?>
+                                                    <?php
+                                                        $description = get_field('description');
+                                                        $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
+                                                        echo $description;
+                                                    ?>
                                                 </div>
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center">
@@ -486,7 +498,11 @@
                                             </span>
                                         </div>
                                         <div class="line-clamp-3 fs-85 text-dark-emphasi">
-                                            <?php echo get_field("description"); ?>
+                                            <?php
+                                                $description = get_field('description');
+                                                $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
+                                                echo $description;
+                                            ?>
                                         </div>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
