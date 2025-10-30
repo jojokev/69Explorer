@@ -38,8 +38,8 @@
                 <strong class="me-2" style="color: #F80;"><?php echo PearTheme::lang('Inca Trail 2026','Camino Inca 2026','印加古道2026','Trilha Inca 2026')?></strong> 
                 – <?php echo PearTheme::lang('Limited spots! Book in advance & secure your place','¡Plazas limitadas! Reserve con antelación y asegúrese su plaza.','名额有限！提前预约，锁定席位','Vagas limitadas! Reserve com antecedência e garanta o seu lugar.')?>
             </span>
-            <a href="<?php echo esc_url(get_permalink(pll_get_post(927))); ?>" class="btn bg-primary text-white py-1 px-2 fw-bold-600">
-                <?php echo PearTheme::lang('Check availability','Comprobar disponibilidad','查询可用性','Verifique a disponibilidade')?>
+            <a href="<?php echo esc_url(get_permalink(pll_get_post(94))); ?>" class="btn bg-primary text-white py-1 px-2 fw-bold-600">
+                <?php echo PearTheme::lang('Secure Your Spot','Asegura tu plaza','锁定席位','Garanta o seu lugar')?>
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12.2661 7.99958L9.02693 4.85852L9.72307 4.14062L14.2183 8.49958L9.72307 12.8585L9.02693 12.1406L12.2661 8.99958H2.5V7.99958H12.2661Z" fill="white"/>
                 </svg>
@@ -74,10 +74,11 @@
                 <div class="items-links-header d-flex align-items-center justify-content-center justify-content-lg-end text-center mb-2">
                     <div class="" id="copy-links-header"> 
                         <!-- copy-links-header - crear una copia de este div en el menu de navegacion de un tour -->
-                        <a href="<?php echo  get_permalink(pll_get_post(5355)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Tailor-Made','Hecho a medida','量身定制','Feito sob medida') ?></a>
-                        <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Novos circuitos') ?></a>
+                         <a href="<?php echo  get_permalink(pll_get_post(927)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Availability','Disponibilidad','查询可用性','Disponibilidade da Trilha Inca')?></a>
+                        <a href="<?php echo  get_permalink(pll_get_post(5355)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Tailor-Made','Hecho a medida','量身定制','Pacotes Personalizados') ?></a>
+                        <a href="<?php if(APP_LANG === 'en' || APP_LANG === 'es' || APP_LANG === 'pt'){echo  get_permalink(pll_get_post(562));}else{echo  get_permalink(pll_get_post(3122));} ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('New Circuits','Nuevos Circuitos','新赛道','Circuitos') ?></a>
                         <a href="<?php echo  get_permalink(pll_get_post(420)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 border-end fw-bold-600"><?php echo PearTheme::lang('Payments','Pagos','支付','Pagamentos') ?></a>
-                        <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Nossos blogs') ?></a>
+                        <a href="<?php echo  get_permalink(pll_get_post(335)); ?>" class="text-dark text-decoration-none py-2 py-sm-0 px-2 fw-bold-600"><?php echo PearTheme::lang('Our Blogs','Nuestro Blogs','我们的博客','Blogs') ?></a>
                     </div>
                     <div class="lang-dropdown position-relative my-2 m-sm-0" id="content-languages-page">
                         <ul class="m-0 p-0" id="language-page" lang="<?php echo PearTheme::lang('en','es','zh','pt')?>"></ul>
@@ -121,10 +122,10 @@
                         <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                           <path d="M11.745 7.43055C11.0105 7.43055 10.4155 8.02605 10.4155 8.76005C10.4155 9.49405 11.011 10.0895 11.745 10.0895C12.4795 10.0895 13.0745 9.49405 13.0745 8.76005C13.0745 8.51505 13.0085 8.28605 12.893 8.08905L12.8965 8.09555C12.6625 7.69555 12.2345 7.43055 11.745 7.43055ZM4.25245 7.43055C3.51795 7.43055 2.92295 8.02605 2.92295 8.76005C2.92295 9.49405 3.51845 10.0895 4.25245 10.0895C4.98695 10.0895 5.58195 9.49405 5.58195 8.76005C5.58195 8.51505 5.51595 8.28605 5.40045 8.08905L5.40395 8.09555C5.16995 7.69555 4.74195 7.43055 4.25245 7.43055ZM11.745 6.22455C11.7455 6.22455 11.7455 6.22455 11.746 6.22455C13.146 6.22455 14.281 7.35955 14.281 8.75955C14.281 10.1595 13.146 11.2945 11.746 11.2945C10.346 11.2945 9.21095 10.1595 9.21095 8.75955C9.21095 8.29305 9.33695 7.85605 9.55645 7.48055L9.54995 7.49255C9.99595 6.72905 10.8115 6.22505 11.745 6.22455ZM4.25245 6.22305C5.65295 6.22305 6.78845 7.35855 6.78845 8.75905C6.78845 10.1595 5.65295 11.295 4.25245 11.295C2.85195 11.295 1.71645 10.1595 1.71645 8.75905C1.71645 8.29205 1.84245 7.85455 2.06245 7.47905L2.05595 7.49105C2.50245 6.72755 3.31845 6.22305 4.25245 6.22305ZM7.99995 4.41005C9.01595 4.41055 9.98295 4.61805 10.862 4.99255L10.814 4.97455C9.22745 5.51955 8.09045 6.95955 7.99995 8.67705L7.99945 8.68705C7.90945 6.95955 6.77195 5.51905 5.21445 4.98305L5.18545 4.97455C6.01645 4.61855 6.98395 4.41155 7.99945 4.41105L7.99995 4.41005ZM8.00395 3.18555C8.00295 3.18555 8.00145 3.18555 8.00045 3.18555C6.21795 3.18555 4.56395 3.73505 3.19845 4.67455L3.22695 4.65605H0.501953L1.72845 5.99005C0.974453 6.67805 0.503453 7.66455 0.503453 8.76105C0.503453 10.83 2.18095 12.5075 4.24995 12.5075C5.23545 12.5075 6.13195 12.127 6.80095 11.505L6.79845 11.507L7.99945 12.814L9.20045 11.508C9.86695 12.1275 10.7635 12.508 11.749 12.508C13.8185 12.508 15.496 10.8305 15.496 8.76105C15.496 7.66455 15.025 6.67755 14.274 5.99255L14.271 5.99005L15.4975 4.65605H12.7795C11.443 3.73555 9.78945 3.18605 8.00695 3.18605C8.00545 3.18605 8.00445 3.18605 8.00295 3.18605L8.00395 3.18555Z" fill="#00852F"/>
                         </svg>
-                        <?php echo PearTheme::lang('Reviews','Reseñas','评论','Comentários') ?>
+                        <?php echo PearTheme::lang('Reviews','Reseñas','评论','Alvaliações') ?>
                     </a>
                     <a href="<?php echo  get_permalink(pll_get_post(324)); ?>" class="d-flex align-items-center fs-95 fw-bold-600 py-2 py-sm-0 d-inline-block d-lg-none d-xl-inline-block">
-                        <?php echo PearTheme::lang('Inquire Now','Contáctenos','联系我们','Informe-se agora') ?>
+                        <?php echo PearTheme::lang('Inquire Now','Contáctenos','联系我们','Contato') ?>
                         <i class="bi bi-arrow-right ms-1"></i>
                     </a>
                 </div>

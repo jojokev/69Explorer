@@ -73,6 +73,16 @@ get_header();
                             </span>
                         </div>
                         <?php } ?>
+                        <?php if(get_field("price")){ ?>
+                        <div class="py-2 px-2 ps-0 fw-bold-600 me-1 text-uppercase fs-90 lh-lg">
+                            <span class="ps-2 fw-bold-600 text-uppercase fs-90 lh-lg d-flex align-items-center">
+                                <svg class="me-1" xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 11 18" fill="none">
+                                  <path d="M0 12.5756C0.195861 14.7189 2.00229 16.2399 4.75229 16.4366V18H6.13258V16.4366C9.13667 16.2064 11 14.5877 11 12.1937C11 10.1494 9.74675 8.96657 7.08807 8.30057L6.13258 8.06014V3.17186C7.61742 3.31329 8.61923 4.08986 8.87199 5.24957H10.8174C10.5977 3.19243 8.77935 1.71643 6.13258 1.55314V0H4.75229V1.58529C2.18624 1.881 0.424808 3.47786 0.424808 5.643C0.424808 7.51243 1.7032 8.83543 3.94634 9.39343L4.75361 9.60171V14.7844C3.23304 14.5659 2.18624 13.7559 1.93347 12.5756H0ZM4.48761 7.64357C3.10731 7.30543 2.37019 6.58286 2.37019 5.56586C2.37019 4.35214 3.30185 3.456 4.75229 3.21557V7.70914L4.48761 7.64357ZM6.59312 10.0504C8.29632 10.4657 9.04403 11.1549 9.04403 12.3249C9.04403 13.7353 7.95091 14.6751 6.13258 14.8179V9.93857L6.59312 10.0504Z" fill="black"/>
+                                </svg>
+                                <?php echo PearTheme::lang('Precio','Price','价格','Preço') ?>
+                            </span>
+                        </div>
+                        <?php } ?>
                         <?php if(get_field("preguntas_frecuentes")){ ?>
                         <div class="py-2 px-2 ps-0 fw-bold-600 me-1 text-uppercase fs-90 lh-lg">
                             <span class="ps-2 fw-bold-600 text-uppercase fs-90 lh-lg d-flex align-items-center">
@@ -86,13 +96,19 @@ get_header();
                     </div>
                 </div>
                 <div class="d-flex justify-content-end w-100">
-                    <div class="me-2">
-                        <p class="m-0 fs-81 text-end"><?php echo PearTheme::lang('Price from','Precio desde','/ 价格从','Preço a partir de') ?></p>
-                        <p class="m-0 fs-81 text-end"><strong class="fs-93">$<?php echo $precio ?></strong>USD</p>
-                    </div>
-                    <a rel="nofollow" href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-3 py-2 fw-bold-600">
-                        <?php echo PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora') ?> 
-                    </a>
+                    <?php if(get_field("price")){ ?>
+                        <a rel="nofollow" href="#prices-tour" class="btn btn-primary px-3 py-2 fw-bold-600">
+                            <?php echo PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora') ?> 
+                        </a>
+                    <?php }else{ ?>
+                        <div class="me-2">
+                            <p class="m-0 fs-81 text-end"><?php echo PearTheme::lang('Price from','Precio desde','/ 价格从','Preço a partir de') ?></p>
+                            <p class="m-0 fs-81 text-end"><strong class="fs-93">$<?php echo $precio ?></strong>USD</p>
+                        </div>
+                            <a rel="nofollow" href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-3 py-2 fw-bold-600">
+                            <?php echo PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora') ?> 
+                        </a>
+                    <?php } ?>
                     <div class="px-3 align-items-center btn border-0 navigation-tour__show" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" id="btn-mnav-tour">
                         <i class="bi bi-list text-primary fs-5"></i>
                     </div>
@@ -248,9 +264,6 @@ get_header();
                             <p class="m-0">2 <?php echo PearTheme::lang('min.','min.','最小','min.'); ?> - <?php echo $grupo; ?> <?php echo PearTheme::lang('max.','max.','最大','max.'); ?></p>
                         </div>
                     </div>
-                </div>
-                <div class="text-primary fs-5 px-4 py-2 rounded-3 white-space-nowrap d-none d-lg-block">
-                    <span class="fw-bold">$<?php echo $precio ?></span><span class="fs-87"><?php echo PearTheme::lang('/ Per person','/ Por persona','/ 每人','/ Por pessoa') ?></span>
                 </div>
             </div>
         </div>
@@ -439,7 +452,7 @@ get_header();
 
     <!-- Prices Tour -->
     <?php if(get_field("price")){ ?>
-        <section class="prices-tour py-4">
+        <section class="prices-tour py-4" id="prices-tour" data-section="navigation">
             <div class="container-xl">
                 <?php echo get_field("price"); ?>
             </div>

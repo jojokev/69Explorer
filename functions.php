@@ -609,24 +609,48 @@ function availabilityPasos($atts, $content = null){
 add_shortcode('paso', 'availabilityPasos');
 
 $countPrices = 1;
+$countTablesTour = 1;
 function contentPricesTour($atts){
     global $countPrices;
+    global $countTablesTour;
     $atts = shortcode_atts([
-        'titulo' => '',
-        'fondo' => '',
+        'titulo1' => '',
+        'titulo2' => '',
+        'titulo3' => '',
     ], $atts);
     
-    $bg = "bg-dark";
-
-    if(esc_attr($atts['fondo']) != ""){
-        $bg = "bg-complementary";
-    }
+    $bg = $countTablesTour%2==0?"bg-dark":"bg-complementary";
+    $countTablesTour++;
 
     $countPrices = 1;
     return '<div class="mt-3 mb-4 prices-tour__list">
-                <div class="px-3 py-2 '.$bg.' text-white rounded-3 text-center mb-2">
-                    <h3 class="text-uppercase h5 fw-bold m-0">'.esc_attr($atts['titulo']).'</h3>
-                </div>';
+                <div class="px-2 px-sm-3 py-2 py-sm-3 '.$bg.' text-white rounded-3 text-center mb-2 d-flex justify-content-between">
+                    <div class="w-100 text-center">
+                        <p class="text-capitalize h5 fw-bold-600 m-0">
+                            <i class="bi bi-clipboard-check"></i>
+                            '.esc_attr($atts['titulo1']).'
+                        </p>
+                    </div>
+                    <div class="w-100 text-center d-none d-md-block">
+                        <p class="text-capitalize h5 fw-bold-600 m-0">
+                            <i class="bi bi-currency-dollar"></i>
+                            '.esc_attr($atts['titulo2']).'
+                        </p>
+                    </div>
+                    <div class="w-100 text-center d-none d-sm-block">
+                        <p class="text-capitalize h5 fw-bold-600 m-0">
+                            <i class="bi bi-geo-alt"></i>
+                            '.esc_attr($atts['titulo3']).'
+                        </p>
+                    </div>
+                </div>
+                <div class="w-100 text-center d-block d-sm-none my-3">
+                    <p class="text-capitalize h5 fw-bold-600 m-0">
+                        '.esc_attr($atts['titulo3']).'
+                    </p>
+                </div>
+                
+                ';
 }
 add_shortcode('table-price', 'contentPricesTour');
 
@@ -642,6 +666,7 @@ function pricesTour($atts){
 
     $atts = shortcode_atts([
         'texto' => '',
+        'sub-texto' => '',
         'currency-before' => '',
         'price-before' => '',
         'price' => '',
@@ -650,17 +675,30 @@ function pricesTour($atts){
 
     $bg = $countPrices%2==0?"bg-light":"";
 
-    $textHtml = '<div class="d-flex py-2 px-3 rounded-3 align-content-center w-100 flex-wrap flex-sm-nowrap '. $bg .'">
-                    <div class="w-50 w-sm-100 mb-2 mb-sm-0 d-flex align-items-center pe-3">
-                        <p class="m-0">'.esc_attr($atts['texto']).'</p>
+    $styleText = '';
+    if(esc_attr($atts['sub-texto']) === ''){
+        $styleText = '<p class="m-0 text-capitalize">'.esc_attr($atts['texto']).'</p>';
+    }
+    else{
+        $styleText = '<p class="m-0 fw-bold-600 d-flex flex-column fs-5 text-start text-sm-center text-capitalize">
+                        '.esc_attr($atts['texto']).'
+                        <span class="fs-90 fw-bold-500 text-dark-emphasis">'.esc_attr($atts['sub-texto']).'</span>
+                      </p>';
+    }
+
+    $textHtml = '<div class="d-flex flex-wrap justify-content-between px-2 py-2 '. $bg .' rounded-3">
+                    <div class="prices-tour__col2 text-start text-sm-center mb-3 mb-md-0 d-flex flex-column justify-content-center">
+                        '. $styleText .'
                     </div>
-                    <div class="w-50 w-sm-100 d-flex justify-content-between ps-0 ps-sm-3">
-                        <div class="d-flex flex-column align-items-start align-items-sm-center pe-2">
+                    <div class="prices-tour__col d-flex align-items-center">
+                        <div class="w-100 text-start text-sm-center">
                             <p class="fs-75 mb-1 text-opaco">Before: <del class="fw-bold-600 fs-87 text-old-price">'. esc_attr($atts['currency-before']) .''. esc_attr($atts['price-before']).'.00<span class="fs-75 fw-bold-600">'. esc_attr($atts['currency-after']) .'</span></del></p>
                             <p class="fs-93 mb-0">Now: <strong class="fw-bold-600 h5">'. esc_attr($atts['currency-before']) .''.esc_attr($atts['price']).'.00 <span class="h6 fw-bold-600">'. esc_attr($atts['currency-after']) .'</span></strong></p>
                         </div>
-                        <div class="d-flex align-items-center ps-2">
-                            <a href="'. esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()) .'" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
+                    </div>
+                    <div class="prices-tour__col d-flex align-items-center">
+                        <div class="w-100 text-end text-sm-start text-sm-center">
+                            <a href="'. esc_url(get_permalink(pll_get_post(339)) . '?uuid='. get_the_ID()) .'" class="btn btn-primary px-2 px-sm-3 py-2 rounded-3 fw-bold-600">
                                 '.PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora').'
                                 <i class="bi bi-arrow-right"></i>
                             </a>
