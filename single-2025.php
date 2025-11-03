@@ -102,8 +102,8 @@ get_header();
                         </a>
                     <?php }else{ ?>
                         <div class="me-2">
-                            <p class="m-0 fs-81 text-end"><?php echo PearTheme::lang('Price from','Precio desde','/ 价格从','Preço a partir de') ?></p>
-                            <p class="m-0 fs-81 text-end"><strong class="fs-93">$<?php echo $precio ?></strong>USD</p>
+                            <p class="m-0 fs-85 text-end"><?php echo PearTheme::lang('Price from','Precio desde','/ 价格从','Preço a partir de') ?></p>
+                            <p class="m-0 fs-85 text-end"><strong class="fs-93">$<?php echo $precio ?></strong>USD</p>
                         </div>
                             <a rel="nofollow" href="<?php echo esc_url(get_permalink(pll_get_post(339)) . '?uuid=' . get_the_ID()); ?>" class="btn btn-primary px-3 py-2 fw-bold-600">
                             <?php echo PearTheme::lang('Booking Now','Reservar ahora','立即预订','Reservar agora') ?> 
@@ -543,7 +543,7 @@ get_header();
                                     <?php echo PearTheme::days($dias)?>
                                 </span>
                             </div>
-                            <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                            <div class="line-clamp-3 fs-95 text-dark-emphasi">
                                 <?php
                                     $description = get_field('description');
                                     $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);

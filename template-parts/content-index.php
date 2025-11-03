@@ -113,7 +113,7 @@
                 <div class="tab-pane fade show active" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
                     tabindex="0">
                     <div class="w-lg-75 mb-5 text-center m-auto">
-                        <p class="fs-95"><?php echo PearTheme::lang('Around the Cusco region there are many and varied things to do and see. A great start is a Cusco City tour, where you will discover the history of this fascinating Inca City. Travel further afield and tour the beautiful Sacred Valley of the Incas, this truly spectacular part of Peru will blow you away with its history and beauty. Take a day tour to Rainbow Mountain for an experience that you will not soon forget. The pinnacle of any Peruvian tour would have to be a day tour to the Inca Citadel of Machu Picchu, the most talked about tour in Peru.','En la región de Cusco hay muchas y variadas cosas para hacer y ver. Un buen comienzo es un tour por la ciudad de Cusco, donde descubrirás la historia de esta fascinante ciudad inca. Viaja más lejos y recorre el hermoso Valle Sagrado de los Incas, esta parte verdaderamente espectacular de Perú te dejará boquiabierto con su historia y belleza. Haz un tour de un día a la Montaña de Colores para vivir una experiencia que no olvidarás fácilmente. El punto culminante de cualquier tour peruano sería un tour de un día a la Ciudadela Inca de Machu Picchu, el tour del que más se habla en Perú.','库斯科地区有很多不同的事情可做可看。库斯科城市之旅是开始游览的好地方，您将在那里发现这座迷人的印加城市的历史。再远一点，参观美丽的印加圣谷，这是秘鲁真正壮观的地区，其历史和美景将让您惊叹不已。前往彩虹山一日游，享受难忘的体验。秘鲁之旅的巅峰必须是前往印加城堡马丘比丘的一日游，这是秘鲁最受关注的旅游项目。','Na região de Cusco, há muitas e variadas coisas para fazer e ver. Um ótimo começo é um passeio pela cidade de Cusco, onde descobrirá a história desta fascinante cidade inca. Viaje mais longe e visite o belo Vale Sagrado dos Incas, esta parte verdadeiramente espetacular do Peru irá impressioná-lo com a sua história e beleza. Faça um passeio de um dia à Montanha Arco-Íris para uma experiência que não esquecerá tão cedo. O ponto alto de qualquer passeio pelo Peru seria um passeio de um dia à cidadela inca de Machu Picchu, o passeio mais comentado do Peru.') ?>
+                        <p class="fs-6"><?php echo PearTheme::lang('Around the Cusco region there are many and varied things to do and see. A great start is a Cusco City tour, where you will discover the history of this fascinating Inca City. Travel further afield and tour the beautiful Sacred Valley of the Incas, this truly spectacular part of Peru will blow you away with its history and beauty. Take a day tour to Rainbow Mountain for an experience that you will not soon forget. The pinnacle of any Peruvian tour would have to be a day tour to the Inca Citadel of Machu Picchu, the most talked about tour in Peru.','En la región de Cusco hay muchas y variadas cosas para hacer y ver. Un buen comienzo es un tour por la ciudad de Cusco, donde descubrirás la historia de esta fascinante ciudad inca. Viaja más lejos y recorre el hermoso Valle Sagrado de los Incas, esta parte verdaderamente espectacular de Perú te dejará boquiabierto con su historia y belleza. Haz un tour de un día a la Montaña de Colores para vivir una experiencia que no olvidarás fácilmente. El punto culminante de cualquier tour peruano sería un tour de un día a la Ciudadela Inca de Machu Picchu, el tour del que más se habla en Perú.','库斯科地区有很多不同的事情可做可看。库斯科城市之旅是开始游览的好地方，您将在那里发现这座迷人的印加城市的历史。再远一点，参观美丽的印加圣谷，这是秘鲁真正壮观的地区，其历史和美景将让您惊叹不已。前往彩虹山一日游，享受难忘的体验。秘鲁之旅的巅峰必须是前往印加城堡马丘比丘的一日游，这是秘鲁最受关注的旅游项目。','Na região de Cusco, há muitas e variadas coisas para fazer e ver. Um ótimo começo é um passeio pela cidade de Cusco, onde descobrirá a história desta fascinante cidade inca. Viaje mais longe e visite o belo Vale Sagrado dos Incas, esta parte verdadeiramente espetacular do Peru irá impressioná-lo com a sua história e beleza. Faça um passeio de um dia à Montanha Arco-Íris para uma experiência que não esquecerá tão cedo. O ponto alto de qualquer passeio pelo Peru seria um passeio de um dia à cidadela inca de Machu Picchu, o passeio mais comentado do Peru.') ?>
                         </p>
                     </div>
 
@@ -173,7 +173,7 @@
                                                         <?php echo PearTheme::days($dias)?>
                                                     </span>
                                                 </div>
-                                                <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <div class="line-clamp-3 fs-95 text-dark-emphasi">
                                                     <?php
                                                         $description = get_field('description');
                                                         $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
@@ -216,7 +216,7 @@
                 <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
                     tabindex="0">
                     <div class="w-lg-75 mb-5 text-center m-auto">
-                        <p class="fs-95">
+                        <p class="fs-6">
                             <?php echo PearTheme::lang('Explore fascinating routes beyond the Inca Trail and immerse yourself in a unique trekking experience in the Peruvian Andes. Discover ancient trails that will take you to impressive archaeological sites, surrounded by spectacular landscapes. Each alternative route offers a physical and mental challenge. If you are looking for adventure, culture and nature in one trip, our alternative tours are the perfect option for you.','Explora rutas fascinantes más allá del Camino Inca y sumérgete en una experiencia de trekking única en los Andes peruanos. Descubre senderos ancestrales que te llevarán a impresionantes sitios arqueológicos, rodeados de paisajes espectaculares. Cada ruta alternativa ofrece un desafío físico y mental. Si buscas aventura, cultura y naturaleza en un solo viaje, nuestros tours alternativos son la opción perfecta para ti.','探索印加古道之外的迷人路线，沉浸在秘鲁安第斯山脉的独特徒步旅行体验中。探索古老的小径，带您前往令人印象深刻的考古遗址，周围环绕着壮观的风景。每条替代路线都会带来体力和精神上的挑战。如果您想在一次旅行中体验冒险、文化和自然，我们的替代旅游是您的完美选择。','Explore rotas fascinantes além da Trilha Inca e mergulhe numa experiência única de trekking nos Andes peruanos. Descubra trilhas antigas que o levarão a impressionantes sítios arqueológicos, rodeados por paisagens espetaculares. Cada rota alternativa oferece um desafio físico e mental. Se procura aventura, cultura e natureza numa única viagem, os nossos passeios alternativos são a opção perfeita para si.') ?>
                         </p>
                     </div>
@@ -276,7 +276,7 @@
                                                         <?php echo PearTheme::days($dias)?>
                                                     </span>
                                                 </div>
-                                                <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <div class="line-clamp-3 fs-95 text-dark-emphasi">
                                                     <?php
                                                         $description = get_field('description');
                                                         $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
@@ -319,7 +319,7 @@
                 <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
                     tabindex="0">
                     <div class="w-lg-75 mb-5 text-center m-auto">
-                        <p class="fs-95"><?php echo PearTheme::lang('Machu Picchu, the most popular destination in South America and what most people visit Peru to see. There are several ways to visit the magnificent site, the most popular being a trip on one of the fabulous trains, either as a day tour or an overnight tour. Another popular choice is to combine a tour to Machu Picchu with the other attractions around Cusco like the Sacred Valley or Rainbow Mountain. Becoming a popular way to visit for those who like a challenge, is one of the many treks through the Andes that finish in Machu Picchu.','Machu Picchu, el destino más popular de Sudamérica y el lugar que la mayoría de la gente visita en Perú. Hay varias formas de visitar este magnífico lugar, la más popular es un viaje en uno de los fabulosos trenes, ya sea como una excursión de un día o una excursión de una noche. Otra opción popular es combinar una excursión a Machu Picchu con otras atracciones alrededor de Cusco, como el Valle Sagrado o la Montaña Arcoíris. Una de las muchas caminatas por los Andes que terminan en Machu Picchu se está convirtiendo en una forma popular de visitar para aquellos que buscan un desafío.','马丘比丘是南美洲最受欢迎的目的地，也是大多数人前往秘鲁游览的景点。游览这个壮丽景点的方式有很多种，最受欢迎的是乘坐一列神奇的火车，可以一日游或过夜游。另一个受欢迎的选择是将马丘比丘之旅与库斯科周围的其他景点（如圣谷或彩虹山）结合起来。对于那些喜欢挑战的人来说，马丘比丘是众多穿越安第斯山脉并以马丘比丘为终点的徒步旅行之一，也成为一种受欢迎的游览方式。','Machu Picchu, o destino mais popular da América do Sul e o que a maioria das pessoas visita no Peru. Existem várias maneiras de visitar este magnífico local, sendo a mais popular uma viagem num dos fabulosos comboios, seja numa excursão de um dia ou numa excursão com pernoite. Outra opção popular é combinar uma excursão a Machu Picchu com outras atrações ao redor de Cusco, como o Vale Sagrado ou a Montanha Arco-Íris. Uma forma popular de visitar o local para aqueles que gostam de desafios é uma das muitas caminhadas pelos Andes que terminam em Machu Picchu.') ?>
+                        <p class="fs-6"><?php echo PearTheme::lang('Machu Picchu, the most popular destination in South America and what most people visit Peru to see. There are several ways to visit the magnificent site, the most popular being a trip on one of the fabulous trains, either as a day tour or an overnight tour. Another popular choice is to combine a tour to Machu Picchu with the other attractions around Cusco like the Sacred Valley or Rainbow Mountain. Becoming a popular way to visit for those who like a challenge, is one of the many treks through the Andes that finish in Machu Picchu.','Machu Picchu, el destino más popular de Sudamérica y el lugar que la mayoría de la gente visita en Perú. Hay varias formas de visitar este magnífico lugar, la más popular es un viaje en uno de los fabulosos trenes, ya sea como una excursión de un día o una excursión de una noche. Otra opción popular es combinar una excursión a Machu Picchu con otras atracciones alrededor de Cusco, como el Valle Sagrado o la Montaña Arcoíris. Una de las muchas caminatas por los Andes que terminan en Machu Picchu se está convirtiendo en una forma popular de visitar para aquellos que buscan un desafío.','马丘比丘是南美洲最受欢迎的目的地，也是大多数人前往秘鲁游览的景点。游览这个壮丽景点的方式有很多种，最受欢迎的是乘坐一列神奇的火车，可以一日游或过夜游。另一个受欢迎的选择是将马丘比丘之旅与库斯科周围的其他景点（如圣谷或彩虹山）结合起来。对于那些喜欢挑战的人来说，马丘比丘是众多穿越安第斯山脉并以马丘比丘为终点的徒步旅行之一，也成为一种受欢迎的游览方式。','Machu Picchu, o destino mais popular da América do Sul e o que a maioria das pessoas visita no Peru. Existem várias maneiras de visitar este magnífico local, sendo a mais popular uma viagem num dos fabulosos comboios, seja numa excursão de um dia ou numa excursão com pernoite. Outra opção popular é combinar uma excursão a Machu Picchu com outras atrações ao redor de Cusco, como o Vale Sagrado ou a Montanha Arco-Íris. Uma forma popular de visitar o local para aqueles que gostam de desafios é uma das muitas caminhadas pelos Andes que terminam em Machu Picchu.') ?>
                         </p>
                     </div>
                     <div class="px-2 position-relative mb-4">
@@ -378,7 +378,7 @@
                                                         <?php echo PearTheme::days($dias)?>
                                                     </span>
                                                 </div>
-                                                <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                                <div class="line-clamp-3 fs-95 text-dark-emphasi">
                                                     <?php
                                                         $description = get_field('description');
                                                         $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
@@ -429,7 +429,7 @@
         <div class="container position-relative z-2 pt-5 mt-5">
             <!-- titulo -->
             <div class="mb-45 text-center text-white ">
-                <span class="fw-bold text-uppercase text-white mb-1"><?php echo PearTheme::lang('discover','descubre','发现','descobrir') ?></span>
+                <span class="fw-bold text-uppercase text-white mb-1"><?php echo PearTheme::lang('discover','descubre','发现','DESCUBRA') ?></span>
                 <h2 class="fw-bold h3 text-uppercase mb-3 text-white ">
                     <?php echo PearTheme::lang('Inca Trail Hike to Machu Picchu ','Caminata por el Camino Inca a Machu Picchu','印加古道徒步前往马丘比丘','Caminhada pela Trilha Inca até Machu Picchu') ?>
                     <span class="fw-bold h3"><?php $nextYear = date('Y') + 1; echo $nextYear;?></span>
@@ -497,7 +497,7 @@
                                                 <?php echo PearTheme::days($dias)?>
                                             </span>
                                         </div>
-                                        <div class="line-clamp-3 fs-85 text-dark-emphasi">
+                                        <div class="line-clamp-3 fs-95 text-dark-emphasi">
                                             <?php
                                                 $description = get_field('description');
                                                 $description = preg_replace('/<(h2|h3)\b[^>]*>.*?<\/\1>/is', '', $description);
@@ -543,7 +543,7 @@
         <div class="container">
             <!-- titulo -->
             <div class="mb-45 text-center position-relative z-2">
-                <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('discover','descubre','发现','descobrir') ?></span>
+                <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('discover','descubre','发现','DESCUBRA') ?></span>
                 <h2 class="fw-bold h3 text-uppercase mb-3">
                     <?php echo PearTheme::lang('The Best Places to Visit in Cusco and Peru','Los mejores lugares para visitar en Cusco y Perú','库斯科和秘鲁最值得游览的地方','Os melhores locais para visitar em Cusco e no Peru')?>
                 </h2>
@@ -604,7 +604,7 @@
       <div class="container-xxl">
         <!-- titulo -->
         <div class="mb-45 text-center position-relative z-2">
-            <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('EXPERIENCE PERU','EXPERIMENTA PERÚ','体验秘鲁','EXPERIMENTE O PERU') ?></span>
+            <span class="fw-bold text-uppercase mb-1 text-primary"><?php echo PearTheme::lang('EXPERIENCE PERU','EXPERIMENTA PERÚ','体验秘鲁','EXPERIENCIE O PERU') ?></span>
             <h2 class="fw-bold h3 text-uppercase mb-3"><?php echo PearTheme::lang('JOIN 69 EXPLORER FOR AN UNFORGETTABLE JOURNEY','ÚNETE A 69 EXPLORER PARA UN VIAJE INOLVIDABLE','加入69号探险者，开启难忘之旅','JUNTE-SE AO 69 EXPLORER PARA UMA VIAGEM INESQUECÍVEL') ?></h2>
             <p><?php echo PearTheme::lang('At 69 Explorer, we are committed to providing an exceptional experience. Your safety, comfort and enjoyment are our top priorities.','En 69 Explorer, nos comprometemos a ofrecerte una experiencia excepcional. Tu seguridad, comodidad y disfrute son nuestras principales prioridades.','在69 Explorer，我们致力于提供非凡的体验。您的安全、舒适与愉悦始终是我们的首要任务。','Na 69 Explorer, estamos comprometidos em proporcionar uma experiência excepcional. Sua segurança, conforto e diversão são nossas principais prioridades.') ?></p>
         </div>

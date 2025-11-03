@@ -710,3 +710,38 @@ function pricesTour($atts){
 }
 
 add_shortcode('option', 'pricesTour');
+
+function shorcodeHotel(){
+    return '<div class="row gx-5 gy-3 mx-auto mb-3">
+                <div class="col-sm-6 flex-grow-1 flex-shrink-1">
+                    <div class="row bg-dark rounded-4 px-0 py-0 overflow-hidden h-100">
+                        <div class="col-12 col-lg-6 px-0 py-0">
+                            '.  wp_get_attachment_image(5983,'full-size ', null,array('class'=>'w-100 h-100 object-fit-cover max-h-380') ) .'
+                        </div>
+                        <div class="col-12 col-lg-6 text-white px-4 py-4 d-flex flex-column justify-content-center">
+                            '.  wp_get_attachment_image(5986,'full-size ', null,array('class'=>'wx-120 mb-3 h-auto mx-0') ) .'
+                            <h3 class="h4 fw-bold-600 text-warning">Hotel Andenes del Inca</h3>
+                            <div>
+                                <a href="https://www.andenesdelinca.com/" target="_blank" class="btn btn-warning fw-bold-600">'. PearTheme::lang('Lear More','Más información','了解更多','Saiba mais') .' <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 flex-grow-1 flex-shrink-1">
+                    <div class="row rounded-4 px-0 py-0 overflow-hidden h-100" style="background-color: #270570;">
+                        <div class="col-12 col-lg-6 px-0 py-0">
+                            '. wp_get_attachment_image(5984,'full-size ', null,array('class'=>'w-100 h-100 object-fit-cover max-h-380') ) .'
+                        </div>
+                        <div class="col-12 col-lg-6 text-white px-4 py-4 d-flex flex-column justify-content-center align-items-start">
+                            '. wp_get_attachment_image(6014,'full-size ', null,array('class'=>'wx-120 mb-3 h-auto mx-0') ) .'
+                            <h3 class="h4 fw-bold-600">SAM Apartment</h3>
+                            <div>
+                                <a href="https://samapartmentsperu.com/" target="_blank" class="btn bg-white fw-bold-600"  style="color: #270570;">'. PearTheme::lang('Lear More','Más información','了解更多','Saiba mais') .' <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>';
+}
+
+add_shortcode( 'hotelAndenes', 'shorcodeHotel' );

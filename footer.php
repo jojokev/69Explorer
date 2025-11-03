@@ -161,15 +161,16 @@
                   <h3 class=" text-uppercase fs-6 text-light py-3 fw-bold-600"><?php echo PearTheme::lang('Contact Us','Contáctanos','联系我们','Entre em contato conosco') ?></h3>
                   <div class="text-light">
                       <div>
+                          <i class="bi bi-geo-alt"></i>
                           <span><?php echo PearTheme::lang('Address:','Dirección:','地址：','Endereço:') ?> </span>
                           <span><?php echo PearTheme::lang(' Garcilaso Street 210, Office Nº:207 (2nd Floor) in the CASA DEL ABUELO shopping
                               center','Calle Garcilaso 210, Oficina Nº:207 (2ª Planta) en el centro comercial CASA DEL ABUELO','Garcilaso 街 210 号，207 号办公室（二楼），位于 CASA DEL ABUELO 购物中心','Rua Garcilaso, 210, Escritório Nº: 207 (2º andar) no shopping center CASA DEL ABUELO') ?></span>
                       </div>
                       <a rel="nofollow" href="mailto:69explorerperu@gmail.com"
-                          class="d-block pt-2 link-light">69explorerperu@gmail.com</a>
+                          class="d-block pt-2 link-light"><i class="bi bi-envelope"></i> 69explorerperu@gmail.com</a>
                       <small class="d-block fs-sm text-light mb-2"><?php echo PearTheme::lang('Drop us a line','Escríbenos','给我们留言','Entre em contato conosco') ?></small>
-                      <div class="py-2">
-                          <span><?php echo PearTheme::lang('Monday to Saturday: 9:00 - 13:00 hrs. and from 3:00 p.m. to 7:00 p.m.','De lunes a sábado 9:00 - 13:00 h. y de 15:00 a 19:00 h.','周一至周六：9:00 - 13:00 和 3:00 - 7:00','De segunda a sábado: das 9h às 13h e das 15h às 19h.') ?></span>
+                      <div class="py-2">    
+                          <span><i class="bi bi-building-fill-check"></i> <?php echo PearTheme::lang('Monday to Saturday: 9:00 - 13:00 hrs. and from 3:00 p.m. to 7:00 p.m.','De lunes a sábado 9:00 - 13:00 h. y de 15:00 a 19:00 h.','周一至周六：9:00 - 13:00 和 3:00 - 7:00','De segunda a sábado: das 9h às 13h e das 15h às 19h.') ?></span>
                           <small class="d-block fs-sm text-light"><?php echo PearTheme::lang('Office hours','Horario de oficina','办公时间','Horário de atendimento') ?></small>
                       </div>
                   </div>
