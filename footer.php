@@ -44,7 +44,7 @@
                     <?php echo PearTheme::lang('Our Hotel in Ollantayatmbo and & Air BnB in Cusco Partners','Nuestro hotel en Ollantaytambo y nuestros socios de Airbnb en Cusco','我们在奥兰塔坦博的酒店及库斯科的Airbnb合作伙伴','Nosso hotel em Ollantaytambo e nossos parceiros do Airbnb em Cusco') ?>
                 </h2>
             </div>
-            <div class="row gx-5 gy-3">
+            <div class="row gx-5 gy-3 mx-auto">
                 <div class="col-md-6 flex-grow-1 flex-shrink-1">
                     <div class="row bg-dark rounded-4 px-0 py-0 overflow-hidden h-100">
                         <div class="col-12 col-lg-6 px-0 py-0">
@@ -208,15 +208,10 @@
     <i class="bi bi-arrow-up-circle-fill text-primary"></i>
 </div>
 
-<a id="help-footer" href="<?php echo  get_permalink(pll_get_post(324)); ?>">
-    <i class="bi bi-question-circle"></i>
-    <?php echo PearTheme::lang("help","ayuda","帮助","ajuda") ?>
-</a>
-
 <style>
     #scroll-top-page{
         position: fixed;
-        bottom: 60px;
+        bottom: 65px;
         right: 25px;
         font-size: 2rem;
         cursor: pointer;
@@ -230,29 +225,12 @@
         justify-content: center;
         padding: 1rem;
     }
-    #help-footer{
-        background-color: #ff7000;
-        color: #051036;
-        font-size: 1rem;
-        padding: 10px 20px;
-        border-radius: 50px;
-        text-decoration: none;
-        position: fixed;
-        right: 25px;
-        bottom: 12px;
-        z-index: 100;
-        font-weight: 500;
-        text-transform: capitalize;
-    }
+
     @media (max-width:991px) {
         #scroll-top-page{
             right: 10px;
             bottom: 120px;
         } 
-        #help-footer{
-            right: 10px;
-            bottom: 72px;
-        }
     }
 </style>
 
@@ -291,28 +269,27 @@
 </script>
 
 <script type="text/javascript">
-/*window.$zopim || (function(d, s) {
-    var z = $zopim = function(c) {
-            z._.push(c)
-        },
-        $ = z.s =
-        d.createElement(s),
-        e = d.getElementsByTagName(s)[0];
-    z.set = function(o) {
-        z.set.
-        _.push(o)
-    };
-    z._ = [];
-    z.set._ = [];
-    $.async = !0;
-    $.setAttribute("charset", "utf-8");
-    $.src = "https://v2.zopim.com/?5M0hjOF9TfA89uBJmGlNzBQzF7pH5Dnr";
-    z.t = +new Date;
-    $.
-    type = "text/javascript";
-    e.parentNode.insertBefore($, e)
-})(document, "script");
-*/
+    window.$zopim || (function(d, s) {
+        var z = $zopim = function(c) {
+                z._.push(c)
+            },
+            $ = z.s =
+            d.createElement(s),
+            e = d.getElementsByTagName(s)[0];
+        z.set = function(o) {
+            z.set.
+            _.push(o)
+        };
+        z._ = [];
+        z.set._ = [];
+        $.async = !0;
+        $.setAttribute("charset", "utf-8");
+        $.src = "https://v2.zopim.com/?5M0hjOF9TfA89uBJmGlNzBQzF7pH5Dnr";
+        z.t = +new Date;
+        $.
+        type = "text/javascript";
+        e.parentNode.insertBefore($, e)
+    })(document, "script");
 </script>
 <?php wp_footer(); ?>
 </body>

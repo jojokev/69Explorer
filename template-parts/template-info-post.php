@@ -1,5 +1,8 @@
 <?php
-/*Template Name: plantilla About Us*/
+/*
+Template Name: Post Informativo
+Template Post Type: post
+*/
 get_header();
 ?>
 

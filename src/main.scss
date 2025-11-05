@@ -3199,7 +3199,18 @@ footer{
 /* ############################# */
 /* Cambios generales 2025        */
 /* ############################# */
-.mega_menu {
+.item_menu {
+    position: relative;
+    > a{
+        color: #fff;
+        &::after{
+            content: "\F282";
+            font-family: "bootstrap-icons";
+            margin-left: .25rem;
+        }
+    }
+}
+.item_menu > .sub-menu{
     position: absolute;
     top: 100%;
     left: 50%;
@@ -3207,26 +3218,36 @@ footer{
     transform: translate(-50%,-20px);
     opacity: 0;
     display: none;
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: .25rem;
+    border: 1px solid #dee2e6;
+    a{
+        display: block;
+        white-space: nowrap;
+        color: $c2;
+        padding: .25rem;
+    }
 }
 
-.item_menu:last-child .mega_menu {
+.item_menu:last-child > .sub-menu{
     right: 0;
     left: auto;
     transform: translate(0,-20px);
 }
 
-.item_menu:first-child .mega_menu {
+.item_menu:first-child > .sub-menu{
     left: 0;
     transform: translate(0,-20px);
 }
 
-.item_menu:hover .mega_menu {
+.item_menu:hover > .sub-menu{
     display: block;
     animation: showMenu .25s ease-in-out forwards;
 }
 
-.item_menu:first-child:hover .mega_menu,
-.item_menu:last-child:hover .mega_menu {
+.item_menu:first-child:hover > .sub-menu,
+.item_menu:last-child:hover > .sub-menu{
     display: block;
     animation: showMenu2 .25s ease-in-out forwards;
 }
@@ -3252,15 +3273,56 @@ footer{
     }
 }
 
-.item_menu .mega_menu a::before{
+.item_menu .sub-menu a::before{
     content: url(../imagenes/iconos/icon_logo.png);
     background-color: transparent;
     position: relative;
     margin-right: 4px;
 }
-.item_menu .mega_menu a:hover{
+.item_menu .sub-menu:hover{
     color: $c1;
 }
+
+.item_menu.mega-menu{
+    position: initial;
+    ul{
+        padding: 0;
+    }
+}
+
+.item_menu.mega-menu > .sub-menu{
+    width: 1200px;
+    @media (max-width: 1200px) {
+        width: 991px;
+    }
+}
+
+.item_menu.mega-menu:hover > .sub-menu{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item_menu.mega-menu > .sub-menu > li{
+    width: calc(100%/3);
+    padding: .25rem;
+}
+
+.item_menu.mega-menu > .sub-menu > li > a{
+    background: #fdd;
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    font-weight: 600;
+    margin-bottom: .25rem;
+    font-size: .95rem;
+    &::before{
+        content: none;
+    }
+}
+
+.item_menu.mega-menu > .sub-menu a{
+    white-space: inherit;
+}
+
 .gal-img-rounded{
     img{
         width: 100%;

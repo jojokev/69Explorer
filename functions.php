@@ -677,10 +677,10 @@ function pricesTour($atts){
 
     $styleText = '';
     if(esc_attr($atts['sub-texto']) === ''){
-        $styleText = '<p class="m-0 text-capitalize">'.esc_attr($atts['texto']).'</p>';
+        $styleText = '<p class="m-0">'.esc_attr($atts['texto']).'</p>';
     }
     else{
-        $styleText = '<p class="m-0 fw-bold-600 d-flex flex-column fs-5 text-start text-sm-center text-capitalize">
+        $styleText = '<p class="m-0 fw-bold-600 d-flex flex-column fs-5 text-start text-sm-center">
                         '.esc_attr($atts['texto']).'
                         <span class="fs-90 fw-bold-500 text-dark-emphasis">'.esc_attr($atts['sub-texto']).'</span>
                       </p>';
@@ -745,3 +745,4 @@ function shorcodeHotel(){
 }
 
 add_shortcode( 'hotelAndenes', 'shorcodeHotel' );
+

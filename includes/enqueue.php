@@ -29,7 +29,7 @@ function registerStyles() {
         'main',
         get_template_directory_uri() .'/assets/css/main.css',
         false,
-        '4.4.8'
+        '4.5.0'
     );
     /* wp_register_style(
         'app',

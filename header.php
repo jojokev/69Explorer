@@ -128,87 +128,16 @@
             </div>
         </div>
     </div>
-    
+
     <nav class="bg-primary">
-        <div class="navigation-page py-2">
-            <ul class="d-flex justify-content-center">
-                <?php
-                    $args = array(
-                        'post_type' => 'page',
-                        'posts_per_page' => 6,
-                        'order' => 'ASC',
-                        'post__in' => array( 290, 294, 296, 298, 282)
-                    );
-                    $toursofperu_query = new WP_Query($args);
-
-                    if ($toursofperu_query->have_posts()) :
-                        while ($toursofperu_query->have_posts()) : $toursofperu_query->the_post();
-                            $categoria = get_post_meta(get_the_ID(), 'custom_field_titulo_menu2', true);
-                            $titulo = get_post_meta(get_the_ID(), 'custom_field_titulo_menu', true);
-                            $text = get_the_content(get_the_ID());
-                            $imagen = get_post_meta(get_the_ID(), 'custom_field_imagen_portada', true);
-                            $text2 = get_post_meta(get_the_ID(), 'custom_field_contenido_editor', true);
-                    ?>
-                        <li class="item_menu position-relative">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php echo $titulo ?> <i class="bi bi-chevron-down ms-1"></i>
-                            </a>
-                            <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
-                                <ul class="px-2 py-2 border rounded-2">
-                                    <?php
-                                        $toursofperu = get_posts([
-                                            'post_type' => 'tour',
-                                            'numberposts' => -1, //cantidad de entradas
-                                            'order' => 'desc',
-                                            'ignore_sticky_posts' => 0,
-                                            'category_name' => $categoria
-                                        ]);
-
-                                        foreach ($toursofperu as $post) :
-                                    ?>
-                                            <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
-                                    <?php  endforeach;
-                                        wp_reset_postdata();
-                                    ?>
-                                </ul>
-                            </div>
-                        </li>
-                    <?php   
-                        endwhile;
-                        wp_reset_postdata();
-                    endif;
-                ?>
-                <?php if(APP_LANG==="en"){ ?>
-                <li class="item_menu position-relative">
-                    <a href="#" class="text-white">
-                        E-bike Trips <i class="bi bi-chevron-down ms-1"></i>
-                    </a>
-                    <div class="mega_menu bg-white border-top border-2 border-primary rounded-2">
-                        <ul class="px-2 py-2 border rounded-2">
-                            <?php
-                                $toursofperu = get_posts([
-                                    'post_type' => 'tour',
-                                    'numberposts' => -1, //cantidad de entradas
-                                    'order' => 'desc',
-                                    'ignore_sticky_posts' => 0,
-                                    'category_name' => 'e-bike-trips'
-                                ]);
-
-                                foreach ($toursofperu as $post) :
-                            ?>
-                                    <li><a href="<?php the_permalink(); ?>" class="py-1 px-2 white-space-nowrap text-dark fw-bold-500 d-flex align-items-center"><?php the_title(); ?></a></li>
-                            <?php  endforeach;
-                                wp_reset_postdata();
-                            ?>
-                        </ul>
-                    </div>
-                </li>
-                <?php } ?>
-            </ul>
-            <div class="btn_menu">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
+        <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary',
+                'container'      => 'div',  
+                'container_class'=> 'navigation-page py-2', 
+                'menu_class'     => 'd-flex justify-content-center position-relative', 
+            ));
+        ?>
     </nav>
 </header>
 
