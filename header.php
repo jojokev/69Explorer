@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta name="theme-color" content="#E91E3E">
-
+    
     <meta name="google-site-verification" content="d62BGVQjleiztK-fTswTuEB4xWPTnmkzCMn6codh-QM" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">

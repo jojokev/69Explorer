@@ -3062,6 +3062,7 @@ footer{
 }
 .bt-scroll-text {
     position: relative;
+    transition: .5s;
 }
 .bt-scroll-text::before {
     content: "";

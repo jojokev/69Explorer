@@ -466,12 +466,6 @@ rates.forEach((navtitile) => {
   });
 });
 
-const btnmenu = document.querySelector('.btn_menu');
-const cont_menu = document.querySelector('.content_menu header');
-btnmenu.addEventListener("click", function() {
-  cont_menu.classList.add('active')
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   var tablinks = document.querySelectorAll('.tablinks');
   
@@ -1006,7 +1000,9 @@ document.addEventListener("DOMContentLoaded", function() {
       })
   })
 
-
+  //
+  // Read More Button - tours - single-2025.php
+  //
 
   const $scrollTextTour = document.querySelectorAll("[data-scrollText]");
   const $buttonScrollTextTour = document.querySelectorAll("[data-scrollButton]");
@@ -1025,19 +1021,11 @@ document.addEventListener("DOMContentLoaded", function() {
               if(!text.classList.contains("active")){
                   text.style.maxHeight = `${text.scrollHeight}px`
                   text.classList.add("active");
-                  text.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start"
-                  });
                   $buttonScrollTextTour[index].classList.add("active");
               }
               else{
                   text.style.maxHeight = `${parseInt(text.dataset.scrollheight,10)}px`
                   text.classList.remove("active");
-                  text.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start"
-                  }); 
                   $buttonScrollTextTour[index].classList.remove("active");
               }
           })
