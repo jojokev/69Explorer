@@ -3203,7 +3203,7 @@ footer{
 .item_menu {
     position: relative;
     > a{
-        color: #fff;
+        color: #fff !important;
         &::after{
             content: "\F282";
             font-family: "bootstrap-icons";
